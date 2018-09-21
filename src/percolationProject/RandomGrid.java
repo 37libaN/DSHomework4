@@ -24,11 +24,11 @@ public class RandomGrid {
 	}
 	
 	public void setValue(int row, int col, int value) {
-		
+		randomgrid[row][col] = value;
 	}
 
 	public int getSize() {
-		
+		return randomgrid.length;
 	}
 
 	public String toString() {
