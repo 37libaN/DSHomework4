@@ -28,7 +28,7 @@ public class RandomGrid {
 	}
 	
 	public void setValue(int row, int col, int value) {
-		if(value==1||value==0)
+		if(value>=0)
 			randomgrid[row][col] = value;
 		//not changed if given bad data
 	}
@@ -45,6 +45,8 @@ public class RandomGrid {
 					toString+= "  ";
 				else if(randomgrid[i][j]==1)
 					toString+= "X ";
+				else if(randomgrid[i][j]>=2)
+					toString+= "* ";
 			}
 			toString+="\n";
 		}
