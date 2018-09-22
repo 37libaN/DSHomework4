@@ -29,17 +29,22 @@ public class Percolate {
 		if (g.getValue(r, c) == 0) {
 			g.setValue(r, c, 2);
 		}
-		if (c + 1 >= 0) {
-			percolate(r, c + 1, g);
+		if (c + 1 >= 0 && !(c + 1 > (g.getSize() - 1))) {
+			if (g.getValue(r, c + 1) >= 1)
+				percolate(r, c + 1, g);
 		}
-		if (r + 1 >= 0) {
-			percolate(r + 1, c, g);
+		if (r + 1 >= 0 && !(r + 1 > (g.getSize() - 1))) {
+			if (g.getValue(r + 1, c) >= 1)
+				percolate(r + 1, c, g);
 		}
-		if (c - 1 >= 0) {
-			percolate(r, c - 1, g);
+		if (c - 1 >= 0 && !(c - 1 > (g.getSize() - 1))) {
+			if (g.getValue(r, c - 1) >= 1)
+				percolate(r, c - 1, g);
 		}
-		if (r - 1 >= 0) {
-			percolate(r - 1, c, g);
+		if (r - 1 >= 0 && !(r + 1 > (g.getSize() - 1))) {
+			if (g.getValue(r - 1, c) >= 1)
+				percolate(r - 1, c, g);
 		}
+		return;
 	}
 }
