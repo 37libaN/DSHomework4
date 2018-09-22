@@ -5,9 +5,13 @@ public class RandomGrid {
 	private int rannum;
 	public RandomGrid(int n, double p) {
 		Random random = new Random();
-		randomgrid = new int[n][n];
+		if(n<1){
+			//default grid size
+			n=1;
+		}
+		randomgrid = new int[n][n];		
 		for(int r = 0; r < randomgrid.length; r++) {
-			for(int c = 0; c < randomgrid[n].length; c++) {
+			for(int c = 0; c < randomgrid[r].length; c++) {
 				rannum = random.nextInt();
 				if(rannum <= p) {
 					randomgrid[r][c] = 1;
@@ -24,7 +28,9 @@ public class RandomGrid {
 	}
 	
 	public void setValue(int row, int col, int value) {
-		randomgrid[row][col] = value;
+		if(value==1||value==0)
+			randomgrid[row][col] = value;
+		//not changed if given bad data
 	}
 
 	public int getSize() {
@@ -32,11 +38,27 @@ public class RandomGrid {
 	}
 
 	public String toString() {
-		
+		String toString = "";
+		for(int i = 0; i<randomgrid.length; i++){
+			for(int j = 0; j<randomgrid[i].length; j++){
+				if(randomgrid[i][j]==0)
+					toString+= "  ";
+				else if(randomgrid[i][j]==1)
+					toString+= "X ";
+			}
+			toString+="\n";
+		}
+		return toString;
 	}
 
 	public static void main(String[] args) {
-		
+		Scanner input = new Scanner(System.in);
+		System.out.println("Number of rows?");
+		int n = input.nextInt();
+		System.out.println("Threshold?");
+		double p = input.nextDouble();
+		RandomGrid grid = new RandomGrid(n, p);
+		System.out.println(grid.toString());
 	}
 
 }
