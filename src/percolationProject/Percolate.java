@@ -18,7 +18,10 @@ public class Percolate {
 		String valueP = theinput.substring(theinput.indexOf(" ") + 1);
 		double p = Double.parseDouble(valueP);
 		RandomGrid rg = new RandomGrid(n, p);
-		percolate(0, 0, rg);
+		for(int j = 0; j < rg.getSize(); j++){ 
+			if(rg.getValue(0, j)==0) 
+				percolate(0, j, rg); 
+		} 
 		int lastRow = rg.getSize() - 1;
 		boolean percolated = false;
 		while (!percolated) {
@@ -36,22 +39,24 @@ public class Percolate {
 		if (g.getValue(r, c) == 0) {
 			g.setValue(r, c, 2);
 		}
+		
 		if (c + 1 >= 0 && !(c + 1 > (g.getSize() - 1))) {
-			if (g.getValue(r, c + 1) >= 1)
+			if (g.getValue(r, c + 1) == 0)
 				percolate(r, c + 1, g);
 		}
 		if (r + 1 >= 0 && !(r + 1 > (g.getSize() - 1))) {
-			if (g.getValue(r + 1, c) >= 1)
+			if (g.getValue(r + 1, c) == 0)
 				percolate(r + 1, c, g);
 		}
 		if (c - 1 >= 0 && !(c - 1 > (g.getSize() - 1))) {
-			if (g.getValue(r, c - 1) >= 1)
+			if (g.getValue(r, c - 1) == 1)
 				percolate(r, c - 1, g);
 		}
-		if (r - 1 >= 0 && !(r + 1 > (g.getSize() - 1))) {
-			if (g.getValue(r - 1, c) >= 1)
+		if (r - 1 >= 0 && !(r - 1 > (g.getSize() - 1))) {
+			if (g.getValue(r - 1, c) == 1)
 				percolate(r - 1, c, g);
 		}
+		
 		return;
 	}
 }
