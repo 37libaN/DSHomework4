@@ -49,11 +49,11 @@ public class Percolate {
 				percolate(r + 1, c, g);
 		}
 		if (c - 1 >= 0 && !(c - 1 > (g.getSize() - 1))) {
-			if (g.getValue(r, c - 1) == 1)
+			if (g.getValue(r, c - 1) == 0)
 				percolate(r, c - 1, g);
 		}
 		if (r - 1 >= 0 && !(r - 1 > (g.getSize() - 1))) {
-			if (g.getValue(r - 1, c) == 1)
+			if (g.getValue(r - 1, c) == 0)
 				percolate(r - 1, c, g);
 		}
 		
