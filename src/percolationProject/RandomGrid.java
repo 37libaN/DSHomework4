@@ -6,38 +6,51 @@
  * TA-BOT:MAILTO [srivishnu.appalaraju@marquette.edu nabil.hussaini@marquette.edu] 
  */
 package percolationProject;
+
 import java.util.*;
+
 public class RandomGrid {
 	private int[][] randomgrid;
 	private int rannum;
+
 	public RandomGrid(int n, double p) {
 		Random random = new Random();
-		if(n<1){
-			//default grid size
-			n=1;
+		if (n < 1) {
+			// default grid size
+			n = 1;
 		}
-		randomgrid = new int[n][n];		
-		for(int r = 0; r < randomgrid.length; r++) {
-			for(int c = 0; c < randomgrid[r].length; c++) {
+		randomgrid = new int[n][n];
+		for (int r = 0; r < randomgrid.length; r++) {
+			for (int c = 0; c < randomgrid[r].length; c++) {
 				rannum = random.nextInt();
-				if(rannum <= p) {
+				if (rannum <= p) {
 					randomgrid[r][c] = 1;
-				}
-				else {
+				} else {
 					randomgrid[r][c] = 0;
 				}
 			}
 		}
 	}
 	
+	public RandomGrid(){
+		randomgrid = new int[3][3];
+		for(int i = 0; i < 3; i++){
+			randomgrid[i][0]=0;
+		}
+		for(int i =0; i<3; i++){
+			for(int j = 1; j<3; j++)
+				randomgrid[i][j]=1;
+		}
+	}
+
 	public int getValue(int row, int col) {
 		return randomgrid[row][col];
 	}
-	
+
 	public void setValue(int row, int col, int value) {
-		if(value>=0)
+		if (value >= 0)
 			randomgrid[row][col] = value;
-		//not changed if given bad data
+		// not changed if given bad data
 	}
 
 	public int getSize() {
@@ -46,16 +59,16 @@ public class RandomGrid {
 
 	public String toString() {
 		String toString = "";
-		for(int i = 0; i<randomgrid.length; i++){
-			for(int j = 0; j<randomgrid[i].length; j++){
-				if(randomgrid[i][j]==0)
-					toString+= "  ";
-				else if(randomgrid[i][j]==1)
-					toString+= "X ";
-				else if(randomgrid[i][j]>=2)
-					toString+= "* ";
+		for (int i = 0; i < randomgrid.length; i++) {
+			for (int j = 0; j < randomgrid[i].length; j++) {
+				if (randomgrid[i][j] == 0)
+					toString += "  ";
+				else if (randomgrid[i][j] == 1)
+					toString += "X ";
+				else if (randomgrid[i][j] >= 2)
+					toString += "* ";
 			}
-			toString+="\n";
+			toString += "\n";
 		}
 		return toString;
 	}
@@ -68,6 +81,8 @@ public class RandomGrid {
 		double p = input.nextDouble();
 		RandomGrid grid = new RandomGrid(n, p);
 		System.out.println(grid.toString());
+		RandomGrid grid2 = new RandomGrid();
+		System.out.println(grid2.toString());
 	}
 
 }
