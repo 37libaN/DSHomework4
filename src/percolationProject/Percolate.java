@@ -55,8 +55,7 @@ public class Percolate {
 		if (r - 1 >= 0 && !(r - 1 > (g.getSize() - 1))) {
 			if (g.getValue(r - 1, c) == 0)
 				percolate(r - 1, c, g);
-		}
-		
+		}	
 		return;
 	}
 }

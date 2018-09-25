@@ -52,7 +52,7 @@ public class RandomGrid {
 					toString+= "  ";
 				else if(randomgrid[i][j]==1)
 					toString+= "X ";
-				else if(randomgrid[i][j]>=2)
+				else if(randomgrid[i][j] != 1 && randomgrid[i][j] != 0)
 					toString+= "* ";
 			}
 			toString+="\n";
