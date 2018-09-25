@@ -12,9 +12,6 @@ public class RandomGrid {
 	private double rannum;
 	public RandomGrid(int n, double p) { //constructs randomgrid objects
 		Random random = new Random();
-		if(n<1){
-			n=1;
-		}
 		randomgrid = new int[n][n];		
 		for(int r = 0; r < randomgrid.length; r++) {
 			for(int c = 0; c < randomgrid[r].length; c++) {
@@ -50,7 +47,7 @@ public class RandomGrid {
 					toString+= "  ";
 				else if(randomgrid[i][j]==1)
 					toString+= "X ";
-				else if(randomgrid[i][j] != 1 && randomgrid[i][j] != 0)
+				else
 					toString+= "* ";
 			}
 			toString+="\n";
@@ -65,10 +62,10 @@ public class RandomGrid {
 			System.out.println("ERROR: n must be positive.");
 			System.exit(0);
 		}
-		if(n == 0) {
+		/*if(n == 0) {
 			System.out.println();
 			System.exit(0);
-		}
+		}*/
 		double p = input.nextDouble();
 		if(p < 0 || p > 1) {
 			System.out.println("ERROR: p must be between 0 and 1 inclusive.");

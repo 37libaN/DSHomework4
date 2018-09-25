@@ -42,8 +42,9 @@ public class Percolate {
 		int lastRow = rg.getSize() - 1;
 		boolean percolated = false;
 			for (int i = 0; i < rg.getSize(); i++) {
-				if (rg.getValue(lastRow, i) > 1) {
+				if (rg.getValue(lastRow, i) != 0 && rg.getValue(lastRow, i) != 1) {
 					percolated = true;
+					break;
 				}
 			}
 		
@@ -56,19 +57,19 @@ public class Percolate {
 			g.setValue(r, c, 2);
 		}
 		
-		if (c + 1 >= 0 && !(c + 1 > (g.getSize() - 1))) {
+		if (!(c + 1 > (g.getSize() - 1))) {
 			if (g.getValue(r, c + 1) == 0)
 				percolate(r, c + 1, g);
 		}
-		if (r + 1 >= 0 && !(r + 1 > (g.getSize() - 1))) {
+		if (!(r + 1 > (g.getSize() - 1))) {
 			if (g.getValue(r + 1, c) == 0)
 				percolate(r + 1, c, g);
 		}
-		if (c - 1 >= 0 && !(c - 1 > (g.getSize() - 1))) {
+		if (c - 1 >= 0) {
 			if (g.getValue(r, c - 1) == 0)
 				percolate(r, c - 1, g);
 		}
-		if (r - 1 >= 0 && !(r - 1 > (g.getSize() - 1))) {
+		if (r - 1 >= 0) {
 			if (g.getValue(r - 1, c) == 0)
 				percolate(r - 1, c, g);
 		}	
