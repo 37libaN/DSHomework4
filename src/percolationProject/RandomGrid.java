@@ -19,7 +19,7 @@ public class RandomGrid {
 		randomgrid = new int[n][n];		
 		for(int r = 0; r < randomgrid.length; r++) {
 			for(int c = 0; c < randomgrid[r].length; c++) {
-				rannum = random.nextInt();
+				rannum = random.nextDouble();
 				if(rannum <= p) {
 					randomgrid[r][c] = 1;
 				}
@@ -62,10 +62,20 @@ public class RandomGrid {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.println("Number of rows?");
 		int n = input.nextInt();
-		System.out.println("Threshold?");
+		if(n < 0) {
+			System.out.println("ERROR: n must be positive.");
+			System.exit(0);
+		}
+		if(n == 0) {
+			System.out.println();
+			System.exit(0);
+		}
 		double p = input.nextDouble();
+		if(p < 0 || p > 1) {
+			System.out.println("ERROR: p must be between 0 and 1 inclusive.");
+			System.exit(0);
+		}
 		RandomGrid grid = new RandomGrid(n, p);
 		System.out.println(grid.toString());
 	}
