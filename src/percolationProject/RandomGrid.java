@@ -10,10 +10,9 @@ import java.util.*;
 public class RandomGrid {
 	private int[][] randomgrid;
 	private double rannum;
-	public RandomGrid(int n, double p) {
+	public RandomGrid(int n, double p) { //constructs randomgrid objects
 		Random random = new Random();
 		if(n<1){
-			//default grid size
 			n=1;
 		}
 		randomgrid = new int[n][n];		
@@ -30,21 +29,20 @@ public class RandomGrid {
 		}
 	}
 	
-	public int getValue(int row, int col) {
+	public int getValue(int row, int col) { //gets value at a specific location
 		return randomgrid[row][col];
 	}
 	
-	public void setValue(int row, int col, int value) {
+	public void setValue(int row, int col, int value) { //sets value at a specific location
 		if(value>=0)
 			randomgrid[row][col] = value;
-		//not changed if given bad data
 	}
 
-	public int getSize() {
+	public int getSize() { //gets size of array
 		return randomgrid.length;
 	}
 
-	public String toString() {
+	public String toString() { //outputs array
 		String toString = "";
 		for(int i = 0; i<randomgrid.length; i++){
 			for(int j = 0; j<randomgrid[i].length; j++){
@@ -60,7 +58,7 @@ public class RandomGrid {
 		return toString;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { //main method to test RandomGrid
 		Scanner input = new Scanner(System.in);
 		int n = input.nextInt();
 		if(n < 0) {
