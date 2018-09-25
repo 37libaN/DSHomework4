@@ -18,19 +18,23 @@ public class Percolate {
 		String valueP = theinput.substring(theinput.indexOf(" ") + 1);
 		double p = Double.parseDouble(valueP);
 		RandomGrid rg = new RandomGrid(n, p);
+		
 		for(int j = 0; j < rg.getSize(); j++){ 
-			if(rg.getValue(0, j)==0) 
+			if(rg.getValue(0, j)==0){
+				
+
 				percolate(0, j, rg); 
-		} 
+				
+			}
+			} 		
 		int lastRow = rg.getSize() - 1;
 		boolean percolated = false;
-		while (!percolated) {
 			for (int i = 0; i < rg.getSize(); i++) {
 				if (rg.getValue(lastRow, i) > 1) {
 					percolated = true;
 				}
 			}
-		}
+		
 		System.out.println(rg.toString());
 		System.out.println("Percolated = " + percolated);
 	}
