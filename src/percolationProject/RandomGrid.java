@@ -9,7 +9,7 @@ package percolationProject;
 import java.util.*;
 public class RandomGrid {
 	private int[][] randomgrid;
-	private int rannum;
+	private double rannum;
 	public RandomGrid(int n, double p) {
 		Random random = new Random();
 		if(n<1){
