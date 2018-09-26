@@ -12,11 +12,8 @@ import java.util.*;
 public class Percolate {
 	public static void main(String[] args) { //takes in input and assigns values appropriately
 		Scanner input = new Scanner(System.in);
-		String theinput = input.nextLine();
-		String valueN = theinput.substring(0, theinput.indexOf(" "));
-		int n = Integer.parseInt(valueN);
-		String valueP = theinput.substring(theinput.indexOf(" ") + 1);
-		double p = Double.parseDouble(valueP);
+		int n = input.nextInt();
+		double p = input.nextDouble();
 		if(n < 0) { // error checks values
 			System.out.println("ERROR: n must be positive.");
 			System.exit(0);
@@ -49,7 +46,7 @@ public class Percolate {
 			}
 		
 		System.out.println(rg.toString()); //displays array
-		System.out.println("Percolated = " + percolated); //displays percolated state
+		System.out.println("Percolation = " + percolated); //displays percolated state
 	}
 
 	public static void percolate(int r, int c, RandomGrid g) { //percolates through array
