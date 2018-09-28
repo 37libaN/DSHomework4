@@ -20,45 +20,7 @@ public class Percolate2 {
 		
 	}
 	
-	public static void main(String[] args) { //takes in input and assigns values appropriately
-		Scanner input = new Scanner(System.in);
-		int n = input.nextInt();
-		double p = input.nextDouble();
-		if(n < 0) { // error checks values
-			System.out.println("ERROR: n must be positive.");
-			System.exit(0);
-		}
-		if(p < 0 || p > 1) {
-			System.out.println("ERROR: p must be between 0 and 1 inclusive.");
-			System.exit(0);
-		}
-		if(n == 0) {
-			System.out.println();
-			System.exit(0);
-		}
-		RandomGrid rg = new RandomGrid(n, p);
-		
-		for(int j = 0; j < rg.getSize(); j++){ //begins to percolate through array 
-			if(rg.getValue(0, j)==0){
-				
-
-				percolate(0, j, rg); 
-				
-			}
-			} 		
-		int lastRow = rg.getSize() - 1;
-		boolean percolated = false;
-			for (int i = 0; i < rg.getSize(); i++) {
-				if (rg.getValue(lastRow, i) != 0 && rg.getValue(lastRow, i) != 1) {
-					percolated = true;
-					break;
-				}
-			}
-		
-		System.out.println(rg.toString()); //displays array
-		System.out.println("Percolation = " + percolated); //displays percolated state
-	}
-
+	
 	public static void percolate(int r, int c, RandomGrid g) { //percolates through array
 		if (g.getValue(r, c) == 0) {
 			g.setValue(r, c, 2);
