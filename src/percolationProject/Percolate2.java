@@ -10,6 +10,16 @@ package percolationProject;
 import java.util.*;
 
 public class Percolate2 {
+	public void percolateFluidType1(){
+		
+	}
+	public void percolateFluidType2(){
+		
+	}
+	public void percolateFluidType3(){
+		
+	}
+	
 	public static void main(String[] args) { //takes in input and assigns values appropriately
 		Scanner input = new Scanner(System.in);
 		int n = input.nextInt();
