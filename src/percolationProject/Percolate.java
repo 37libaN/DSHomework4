@@ -48,6 +48,7 @@ public class Percolate {
 		System.out.println(rg.toString()); //displays array
 		System.out.println("Percolation = " + percolated); //displays percolated state
 	}
+	
 
 	public static void percolate(int r, int c, RandomGrid g) { //percolates through array
 		if (g.getValue(r, c) == 0) {
