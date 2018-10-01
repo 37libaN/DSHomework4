@@ -1,5 +1,5 @@
 /**
- * COSC 2100 - Project 4
+ * COSC 2100 - Project 5
  * Explain briefly the functionality of the class.
  * @author [Vishnu Appalaraju, Nabil Hussaini]
  * Instructor [Dr. Brylow] 
