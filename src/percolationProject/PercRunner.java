@@ -22,27 +22,44 @@ public class PercRunner {
 		int fluidType = input.nextInt();
 		double starttime = System.currentTimeMillis(); //start time
 		double p = 0; //percolation tipping point
+		double percentPassed = 0;
 		//Time timer = new Time((long) 0.0);
 		
 		Percolate2[] runners = new Percolate2[granularity];
-		Thread[] thread = new Thread[granularity];
-		double threshOG = 1.00/granularity; //the first threshold value used based on granularity
-		double threshold = threshOG;
+		Thread[] thread = new Thread[threads];
+		double threshOG = 1.00/(granularity-1); //the first threshold value used based on granularity
+		double threshold = 0;
 		
 		for(int count = 0; count<runners.length; count++){
 			runners[count] = new Percolate2(fluidType, gridSize, threshold);
-			thread[count] = new Thread(runners[count]);
-			threshold = threshold + threshOG; //setting p to its next value
+			if(threshold>1)
+				threshold=1;
+			else 
+				threshold = threshold + threshOG; //setting p to its next value
 		}
+		System.out.println(threshold);
+ 
+		/*
+		for(int count = 0; count < runs; count++){
+			thread[count].start();
+		}
+		
 		for(Thread tr : thread){
-			tr.start();
+				tr.join();
+		}*/
+		
+		for(int count = runners.length-1; count>=0; count--){
+			runners[count].run();
+			percentPassed = (runners[count].getTotalPassed())/runs;
+			if(percentPassed>=0.5){
+				p = runners[count].getP();
+				break;
+			}
 		}
-		for(Thread tr : thread){
-			tr.join();
-		}
+		System.out.println(percentPassed);
 		double endtime = System.currentTimeMillis(); //end time
-		System.out.println("Percolation tipping point p = "+p);
-		System.out.println("Elapsed Time = "+(endtime-starttime)/1000);
+		System.out.println("Percolation tipping point p = " + p);
+		System.out.println("Elapsed Time = " + (endtime - starttime) / 1000);
 	}
 
 }

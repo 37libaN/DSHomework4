@@ -164,9 +164,14 @@ public class Percolate2 implements Runnable{
 		}
 		if(percolated)
 			totalPassed++;
+		System.out.println("waffle");
 	}
 	
 	public synchronized int getTotalPassed(){
 		return totalPassed;
+	}
+	
+	public synchronized double getP(){
+		return p;
 	}
 }
