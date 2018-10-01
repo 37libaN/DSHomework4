@@ -1,5 +1,5 @@
 /**
- * COSC 2100 - Project 4
+ * COSC 2100 - Project 5
  * Explain briefly the functionality of the class.
  * @author [Vishnu Appalaraju, Nabil Hussaini]
  * Instructor [Dr. Brylow] 
@@ -104,35 +104,8 @@ public class Percolate2 implements Runnable{
 		}	
 		return;
 	}
-	/*
-	public static void percolate(int r, int c, RandomGrid g) { // percolates
-																// through array
-		if (g.getValue(r, c) == 0) {
-			g.setValue(r, c, 2);
-		}
-
-		if (!(c + 1 > (g.getSize() - 1))) {
-			if (g.getValue(r, c + 1) == 0)
-				percolate(r, c + 1, g);
-		}
-		if (!(r + 1 > (g.getSize() - 1))) {
-			if (g.getValue(r + 1, c) == 0)
-				percolate(r + 1, c, g);
-		}
-		if (c - 1 >= 0) {
-			if (g.getValue(r, c - 1) == 0)
-				percolate(r, c - 1, g);
-		}
-		if (r - 1 >= 0) {
-			if (g.getValue(r - 1, c) == 0)
-				percolate(r - 1, c, g);
-		}
-		return;
-	}
-	*/
 	@Override
 	public synchronized void run() {
-		// TODO Auto-generated method stub
 		RandomGrid rg = new RandomGrid(gridSize, p);
 		if(fluidType == 1){
 			for(int j = 0; j < rg.getSize(); j++){ //begins to percolate through array if fluid type is 1
