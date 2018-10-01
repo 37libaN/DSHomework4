@@ -1,5 +1,5 @@
 /**
- * COSC 2100 - Project 5
+ * COSC 2100 - Project 4
  * Explain briefly the functionality of the class.
  * @author [Vishnu Appalaraju, Nabil Hussaini]
  * Instructor [Dr. Brylow] 
@@ -12,7 +12,7 @@ import java.util.*;
 
 public class Percolate2 implements Runnable{
 
-	private int fluidType, gridSize;
+	private int fluidType, gridSize, totalPassed;
 	private double p;
 	
 	public Percolate2(int fluidType, int gridSize, double p){
@@ -21,7 +21,7 @@ public class Percolate2 implements Runnable{
 		this.p = p;
 	}
 	
-	public void percolateFluidType1(int r, int c, RandomGrid g) { // percolates vertically
+	public synchronized void percolateFluidType1(int r, int c, RandomGrid g) { // percolates vertically
 																	
 		if (g.getValue(r, c) == 0) {
 			g.setValue(r, c, 2);
@@ -37,7 +37,7 @@ public class Percolate2 implements Runnable{
 		return;
 	}
 
-	public void percolateFluidType2(int r, int c, RandomGrid g) { // percolates horizontally and vertically																	
+	public synchronized void percolateFluidType2(int r, int c, RandomGrid g) { // percolates horizontally and vertically																	
 		
 		if (g.getValue(r, c) == 0) {
 			g.setValue(r, c, 2);
@@ -62,7 +62,7 @@ public class Percolate2 implements Runnable{
 		return;
 	}
 
-	public void percolateFluidType3(int r, int c, RandomGrid g) { //percolates vertically, horizontally, and diagonally																
+	public synchronized void percolateFluidType3(int r, int c, RandomGrid g) { //percolates vertically, horizontally, and diagonally																
 		
 		if (g.getValue(r, c) == 0) {
 			g.setValue(r, c, 2);
@@ -131,7 +131,7 @@ public class Percolate2 implements Runnable{
 	}
 	*/
 	@Override
-	public void run() {
+	public synchronized void run() {
 		// TODO Auto-generated method stub
 		RandomGrid rg = new RandomGrid(gridSize, p);
 		if(fluidType == 1){
@@ -155,6 +155,18 @@ public class Percolate2 implements Runnable{
 				}
 			}
 		}
-		System.out.println(rg);
+		boolean percolated = false;
+		for (int i = 0; i < rg.getSize(); i++) {
+			if (rg.getValue(rg.getSize()-1, i) != 0 && rg.getValue(rg.getSize()-1, i) != 1) {
+				percolated = true;
+				break;
+			}
+		}
+		if(percolated)
+			totalPassed++;
+	}
+	
+	public synchronized int getTotalPassed(){
+		return totalPassed;
 	}
 }
