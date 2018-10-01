@@ -9,33 +9,18 @@ package percolationProject;
 
 import java.util.*;
 
-public class Percolate2 {
 
-	public void runPercolate(int fluidType, int gridSize, double p){
-		RandomGrid rg = new RandomGrid(gridSize, p);
-		if(fluidType == 1){
-			for(int j = 0; j < rg.getSize(); j++){ //begins to percolate through array if fluid type is 1
-				if(rg.getValue(0, j)==0){
-					percolateFluidType1(0, j, rg); 		
-				}
-			}
-		}
-		else if(fluidType == 2){
-			for(int j = 0; j < rg.getSize(); j++){ //begins to percolate through array if fluid type is 2
-				if(rg.getValue(0, j)==0){
-					percolateFluidType2(0, j, rg); 		
-				}
-			}
-		}
-		else if(fluidType == 3){
-			for(int j = 0; j < rg.getSize(); j++){ //begins to percolate through array if fluid type is 3
-				if(rg.getValue(0, j)==0){
-					percolateFluidType3(0, j, rg); 		
-				}
-			}
-		}
-		System.out.println(rg);
+public class Percolate2 implements Runnable{
+
+	private int fluidType, gridSize;
+	private double p;
+	
+	public Percolate2(int fluidType, int gridSize, double p){
+		this.fluidType = fluidType;
+		this.gridSize = gridSize;
+		this.p = p;
 	}
+	
 	public void percolateFluidType1(int r, int c, RandomGrid g) { // percolates vertically
 																	
 		if (g.getValue(r, c) == 0) {
@@ -145,4 +130,31 @@ public class Percolate2 {
 		return;
 	}
 	*/
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		RandomGrid rg = new RandomGrid(gridSize, p);
+		if(fluidType == 1){
+			for(int j = 0; j < rg.getSize(); j++){ //begins to percolate through array if fluid type is 1
+				if(rg.getValue(0, j)==0){
+					percolateFluidType1(0, j, rg); 		
+				}
+			}
+		}
+		else if(fluidType == 2){
+			for(int j = 0; j < rg.getSize(); j++){ //begins to percolate through array if fluid type is 2
+				if(rg.getValue(0, j)==0){
+					percolateFluidType2(0, j, rg); 		
+				}
+			}
+		}
+		else if(fluidType == 3){
+			for(int j = 0; j < rg.getSize(); j++){ //begins to percolate through array if fluid type is 3
+				if(rg.getValue(0, j)==0){
+					percolateFluidType3(0, j, rg); 		
+				}
+			}
+		}
+		System.out.println(rg);
+	}
 }
