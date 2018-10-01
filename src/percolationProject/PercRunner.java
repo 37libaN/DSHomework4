@@ -7,7 +7,6 @@
  */
 package percolationProject;
 
-import java.sql.Time;
 import java.util.Scanner;
 
 public class PercRunner {
