@@ -129,7 +129,6 @@ public class Percolate2 implements Runnable{
 				}
 			}
 		}
-		System.out.println(rg);
 		boolean percolated = false;
 		for (int i = 0; i < rg.getSize(); i++) {
 			if (rg.getValue(rg.getSize()-1, i) != 0 && rg.getValue(rg.getSize()-1, i) != 1) {
@@ -140,7 +139,6 @@ public class Percolate2 implements Runnable{
 		if(percolated){
 			totalPassed++;
 		}
-		System.out.println(totalPassed);
 	}
 	
 	public synchronized int getTotalPassed(){
