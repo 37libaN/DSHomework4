@@ -19,6 +19,7 @@ public class Percolate2 implements Runnable{
 		this.fluidType = fluidType;
 		this.gridSize = gridSize;
 		this.p = p;
+		totalPassed = 0;
 	}
 	
 	public synchronized void percolateFluidType1(int r, int c, RandomGrid g) { // percolates vertically
@@ -128,6 +129,7 @@ public class Percolate2 implements Runnable{
 				}
 			}
 		}
+		System.out.println(rg);
 		boolean percolated = false;
 		for (int i = 0; i < rg.getSize(); i++) {
 			if (rg.getValue(rg.getSize()-1, i) != 0 && rg.getValue(rg.getSize()-1, i) != 1) {
@@ -135,9 +137,10 @@ public class Percolate2 implements Runnable{
 				break;
 			}
 		}
-		if(percolated)
+		if(percolated){
 			totalPassed++;
-		System.out.println("waffle");
+		}
+		System.out.println(totalPassed);
 	}
 	
 	public synchronized int getTotalPassed(){

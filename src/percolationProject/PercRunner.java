@@ -30,13 +30,12 @@ public class PercRunner {
 		double threshold = 0;
 		
 		for(int count = 0; count<runners.length; count++){
-			runners[count] = new Percolate2(fluidType, gridSize, threshold);
 			if(threshold>1)
 				threshold=1;
-			else 
-				threshold = threshold + threshOG; //setting p to its next value
+			runners[count] = new Percolate2(fluidType, gridSize, threshold);
+			System.out.println(threshold); 
+			threshold = threshold + threshOG; //setting p to its next value
 		}
-		System.out.println(threshold);
  
 		/*
 		for(int count = 0; count < runs; count++){
@@ -48,13 +47,18 @@ public class PercRunner {
 		}*/
 		
 		for(int count = runners.length-1; count>=0; count--){
-			runners[count].run();
-			percentPassed = (runners[count].getTotalPassed())/runs;
+			for(int count2 = 0; count2<runs; count2++)
+				runners[count].run();
+			percentPassed = ((double)(runners[count].getTotalPassed()))/((double)runs);
+			System.out.println(percentPassed);
+			runners[count].getTotalPassed();
 			if(percentPassed>=0.5){
 				p = runners[count].getP();
+				System.out.println("Waffle");
 				break;
 			}
 		}
+		System.out.println(runners[runs-3].getTotalPassed());
 		System.out.println(percentPassed);
 		double endtime = System.currentTimeMillis(); //end time
 		System.out.println("Percolation tipping point p = " + p);
