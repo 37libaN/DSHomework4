@@ -19,43 +19,59 @@ public class PercRunner {
 		int granularity = input.nextInt();
 		int threads = input.nextInt();
 		int fluidType = input.nextInt();
-		double starttime = System.currentTimeMillis(); //start time
-		double p = 0; //percolation tipping point
+		double starttime = System.currentTimeMillis(); // start time
+		double p = 0; // percolation tipping point
 		double percentPassed = 0;
-		//Time timer = new Time((long) 0.0);
-		
+
 		Percolate2[] runners = new Percolate2[granularity];
 		Thread[] thread = new Thread[threads];
-		double threshOG = 1.00/(granularity-1); //the first threshold value used based on granularity
+		Percolate2[] splitRunners = new Percolate2[(granularity / threads) + 1];
+		double threshOG = 1.00 / (granularity - 1); // the first threshold value
+													// used based on granularity
 		double threshold = 0;
-		
-		for(int count = 0; count<runners.length; count++){
-			if(threshold>1)
-				threshold=1;
+
+		for (int count = 0; count < runners.length; count++) {
+			if (threshold > 1)
+				threshold = 1;
 			runners[count] = new Percolate2(fluidType, gridSize, threshold);
-			threshold = threshold + threshOG; //setting p to its next value
+			System.out.println(threshold);
+			threshold = threshold + threshOG; // setting p to its next value
 		}
- 
-		/*
-		for(int count = 0; count < runs; count++){
-			thread[count].start();
+
+		int count = 0;
+		for (int i = 0; i < thread.length; i++) {
+			for (int j = 0; j < splitRunners.length; j++) {
+				if (count >= runners.length)
+					break;
+				splitRunners[j] = runners[count];
+				count++;
+				if(j==0)
+					System.out.println(splitRunners[j].getP());
+				if(j==2)
+					System.out.println("Hi");
+			}
+			thread[i] = new Thread(new PercolateThreads(splitRunners));
 		}
-		
-		for(Thread tr : thread){
-				tr.join();
-		}*/
-		
-		for(int count = runners.length-1; count>=0; count--){
-			for(int count2 = 0; count2<runs; count2++)
-				runners[count].run();
-			percentPassed = ((double)(runners[count].getTotalPassed()))/((double)runs);
-			runners[count].getTotalPassed();
-			if(percentPassed>=0.5){
+
+		for (int count2 = 0; count2 < thread.length; count2++) {
+			thread[count2].start();
+		}
+
+		for (int count2 = 0; count2 < thread.length; count2++) {
+			thread[count2].join();
+		}
+
+		for (int count2 = runners.length - 1; count2 >= 0; count2--) {
+			System.out.println(runners[count2].getP());
+			System.out.println(runners[count2].getTotalPassed());
+			percentPassed = ((double) (runners[count2].getTotalPassed())) / ((double) runs);
+			if (percentPassed >= 0.5) {
 				p = runners[count].getP();
 				break;
 			}
 		}
-		double endtime = System.currentTimeMillis(); //end time
+
+		double endtime = System.currentTimeMillis(); // end time
 		System.out.println("Percolation tipping point p = " + p);
 		System.out.println("Elapsed Time = " + (endtime - starttime) / 1000);
 	}

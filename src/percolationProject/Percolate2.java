@@ -10,7 +10,7 @@ package percolationProject;
 import java.util.*;
 
 
-public class Percolate2 implements Runnable{
+public class Percolate2{
 
 	private int fluidType, gridSize, totalPassed;
 	private double p;
@@ -105,8 +105,7 @@ public class Percolate2 implements Runnable{
 		}	
 		return;
 	}
-	@Override
-	public synchronized void run() {
+	public synchronized void runPercolate() {
 		RandomGrid rg = new RandomGrid(gridSize, p);
 		if(fluidType == 1){
 			for(int j = 0; j < rg.getSize(); j++){ //begins to percolate through array if fluid type is 1
@@ -115,6 +114,7 @@ public class Percolate2 implements Runnable{
 				}
 			}
 		}
+		
 		else if(fluidType == 2){
 			for(int j = 0; j < rg.getSize(); j++){ //begins to percolate through array if fluid type is 2
 				if(rg.getValue(0, j)==0){
@@ -129,6 +129,8 @@ public class Percolate2 implements Runnable{
 				}
 			}
 		}
+		//System.out.println(rg);
+		//System.out.println(p);
 		boolean percolated = false;
 		for (int i = 0; i < rg.getSize(); i++) {
 			if (rg.getValue(rg.getSize()-1, i) != 0 && rg.getValue(rg.getSize()-1, i) != 1) {
