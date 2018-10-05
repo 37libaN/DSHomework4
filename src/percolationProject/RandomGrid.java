@@ -10,7 +10,7 @@ import java.util.*;
 public class RandomGrid {
 	private int[][] randomgrid;
 	private double rannum;
-	public RandomGrid(int n, double p) { //constructs randomgrid objects
+	public RandomGrid(int n, double p) { //constructs RandomGrid objects
 		Random random = new Random();
 		randomgrid = new int[n][n];		
 		for(int r = 0; r < randomgrid.length; r++) {

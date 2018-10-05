@@ -15,7 +15,7 @@ public class Percolate2{
 	private int fluidType, gridSize, totalPassed;
 	private double p;
 	
-	public Percolate2(int fluidType, int gridSize, double p){
+	public Percolate2(int fluidType, int gridSize, double p){//constructs Percolate2 object
 		this.fluidType = fluidType;
 		this.gridSize = gridSize;
 		this.p = p;
@@ -130,7 +130,7 @@ public class Percolate2{
 			}
 		}
 		boolean percolated = false;
-		for (int i = 0; i < rg.getSize(); i++) {
+		for (int i = 0; i < rg.getSize(); i++) { //checks if hit the bottom
 			if (rg.getValue(rg.getSize()-1, i) != 0 && rg.getValue(rg.getSize()-1, i) != 1) {
 				percolated = true;
 				break;

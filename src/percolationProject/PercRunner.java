@@ -41,7 +41,7 @@ public class PercRunner {
 		int count = 0;
 		for (int i = 0; i < r.length; i++) {
 			Percolate2[] splitRunners = new Percolate2[(granularity / threads) + 1];
-			for (int j = 0; j < splitRunners.length; j++) { //assignign threads
+			for (int j = 0; j < splitRunners.length; j++) { //assigning percolate classes to threads
 				if (count >= runners.length)
 					break;
 				splitRunners[j] = runners[count];
