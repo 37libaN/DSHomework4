@@ -35,7 +35,6 @@ public class PercRunner {
 			if (threshold > 1)
 				threshold = 1;
 			runners[count] = new Percolate2(fluidType, gridSize, threshold);
-			System.out.println(threshold);
 			threshold = threshold + threshOG; // setting p to its next value
 		}
 
@@ -47,10 +46,6 @@ public class PercRunner {
 					break;
 				splitRunners[j] = runners[count];
 				count++;
-				/*
-				 * if(j==0) System.out.println(splitRunners[j].getP()); if(j==2)
-				 * System.out.println("Hi");
-				 */
 			}
 			r[i] = new PercolateThreads(splitRunners, runs);
 		}
@@ -58,8 +53,6 @@ public class PercRunner {
 		for (int i = 0; i < r.length; i++) {
 			thread[i] = new Thread(r[i]);
 		}
-
-		// System.out.println(splitRunners[0].getP());
 
 		for (int count2 = 0; count2 < thread.length; count2++) {
 			thread[count2].start();
@@ -69,8 +62,6 @@ public class PercRunner {
 		}
 
 		for (int count2 = runners.length - 1; count2 >= 0; count2--) {
-			System.out.println(runners[count2].getP());
-			System.out.println(runners[count2].getTotalPassed());
 			percentPassed = ((double) (runners[count2].getTotalPassed())) / ((double) runs);
 			if (percentPassed >= 0.5) {
 				p = runners[count2].getP();

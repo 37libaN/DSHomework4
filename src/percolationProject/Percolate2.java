@@ -129,8 +129,6 @@ public class Percolate2{
 				}
 			}
 		}
-		System.out.println(rg);
-		//System.out.println(p);
 		boolean percolated = false;
 		for (int i = 0; i < rg.getSize(); i++) {
 			if (rg.getValue(rg.getSize()-1, i) != 0 && rg.getValue(rg.getSize()-1, i) != 1) {
@@ -139,7 +137,6 @@ public class Percolate2{
 			}
 		}
 		if(percolated){
-			System.out.println("Passed");
 			totalPassed++;
 		}
 	}
