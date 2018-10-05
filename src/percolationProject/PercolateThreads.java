@@ -22,11 +22,13 @@ public class PercolateThreads implements Runnable {
 	public synchronized void run() {
 		// TODO Auto-generated method stub
 		for(int count = 0; count < percolateTests.length; count++){
-			//if(percolateTests[count] == null){
-				//break;
-			//}
-			//percolateTests[count].runPercolate();
-			System.out.println(percolateTests[count].getP());
+			if(percolateTests[count] == null){
+				System.out.println("hi");
+				break;
+			}
+			System.out.println("bye");
+			percolateTests[count].runPercolate();
+			//System.out.println(percolateTests[count].getP());
 		}
 	}
 
