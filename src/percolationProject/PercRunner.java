@@ -26,7 +26,7 @@ public class PercRunner {
 		Percolate2[] runners = new Percolate2[granularity];
 		Thread[] thread = new Thread[threads];
 		PercolateThreads[] r = new PercolateThreads[threads];
-		
+
 		double threshOG = 1.00 / (granularity - 1); // the first threshold value
 													// used based on granularity
 		double threshold = 0;
@@ -47,24 +47,23 @@ public class PercRunner {
 					break;
 				splitRunners[j] = runners[count];
 				count++;
-				/*if(j==0)
-					System.out.println(splitRunners[j].getP());
-				if(j==2)
-					System.out.println("Hi");*/
+				/*
+				 * if(j==0) System.out.println(splitRunners[j].getP()); if(j==2)
+				 * System.out.println("Hi");
+				 */
 			}
-			r[i] = new PercolateThreads(splitRunners);
+			r[i] = new PercolateThreads(splitRunners, runs);
 		}
-		
+
 		for (int i = 0; i < r.length; i++) {
 			thread[i] = new Thread(r[i]);
 		}
-		
-		//System.out.println(splitRunners[0].getP());
+
+		// System.out.println(splitRunners[0].getP());
 
 		for (int count2 = 0; count2 < thread.length; count2++) {
 			thread[count2].start();
 		}
-
 		for (int count2 = 0; count2 < thread.length; count2++) {
 			thread[count2].join();
 		}
@@ -74,7 +73,7 @@ public class PercRunner {
 			System.out.println(runners[count2].getTotalPassed());
 			percentPassed = ((double) (runners[count2].getTotalPassed())) / ((double) runs);
 			if (percentPassed >= 0.5) {
-				p = runners[count].getP();
+				p = runners[count2].getP();
 				break;
 			}
 		}
