@@ -141,11 +141,11 @@ public class Percolate2{
 		}
 	}
 	
-	public synchronized int getTotalPassed(){
+	public synchronized int getTotalPassed(){ // returning total passed tests
 		return totalPassed;
 	}
 	
-	public synchronized double getP(){
+	public synchronized double getP(){ //returning threshold
 		return p;
 	}
 }

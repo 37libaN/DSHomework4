@@ -13,7 +13,7 @@ public class PercRunner {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-		Scanner input = new Scanner(System.in);
+		Scanner input = new Scanner(System.in); //taking in the inputs
 		int gridSize = input.nextInt();
 		int runs = input.nextInt();
 		int granularity = input.nextInt();
@@ -23,7 +23,7 @@ public class PercRunner {
 		double p = 0; // percolation tipping point
 		double percentPassed = 0;
 
-		Percolate2[] runners = new Percolate2[granularity];
+		Percolate2[] runners = new Percolate2[granularity]; // creating the threads
 		Thread[] thread = new Thread[threads];
 		PercolateThreads[] r = new PercolateThreads[threads];
 
@@ -41,7 +41,7 @@ public class PercRunner {
 		int count = 0;
 		for (int i = 0; i < r.length; i++) {
 			Percolate2[] splitRunners = new Percolate2[(granularity / threads) + 1];
-			for (int j = 0; j < splitRunners.length; j++) {
+			for (int j = 0; j < splitRunners.length; j++) { //assignign threads
 				if (count >= runners.length)
 					break;
 				splitRunners[j] = runners[count];
