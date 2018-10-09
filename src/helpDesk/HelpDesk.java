@@ -19,13 +19,13 @@ public class HelpDesk<T> {
 	    }
 
 	    public void step() { //students in the queues are marked as finished
-	        if (students.isEmpty() == false && students.top().w > 0) {
-	            Student stud2 = new Student(students.top().n, students.top().c, students.top().w - 1);
+	        if (students.isEmpty() == false && students.front.getData().w > 0) {
+	            Student stud2 = new Student(students.front.getData().n, students.front.getData().c, students.front.getData().w - 1);
 	            students.dequeue();
 	            students.enqueue(stud2);
 	        }
-	        if (students.isEmpty() == false && students.top().w == 0) {
-	            log.push("Time " + (simtime + 1) + "," + " Finished helping " + students.top().n + " from COSC"+ students.top().c);
+	        if (students.isEmpty() == false && students.front.getData().w == 0) {
+	            log.enqueue("Time " + (simtime + 1) + "," + " Finished helping " + students.front.getData().n + " from COSC"+ students.front.getData().c);
 	            students.dequeue();
 	        }
 	        simtime++;
@@ -35,12 +35,12 @@ public class HelpDesk<T> {
 	        Student stud = new Student(name, course, workload);
 	        if (students.isEmpty()) {
 	            students.enqueue(stud);
-	            log.push("Time " + simtime + "," + " Started helping " + students.top().n + " from COSC" + students.top().c);
+	            log.enqueue("Time " + simtime + "," + " Started helping " + students.front.getData().n + " from COSC" + students.front.getData().c);
 	        }
-	        if (!students.isEmpty() && course < students.top().c) {
+	        if (!students.isEmpty() && course < students.front.getData().c) {
 	            students.enqueue(stud);
-	            log.push("Time " + simtime + "," + " Started helping " + students.top().n + " from COSC" + students.top().c);
-	        } else if (stud.c > students.top().c) {
+	            log.enqueue("Time " + simtime + "," + " Started helping " + students.front.getData().n + " from COSC" + students.front.getData().c);
+	        } else if (stud.c > students.front.getData().c) {
 	            log.enqueue("Time " + (simtime) + "," + " Turned away " + stud.n + " from COSC" + stud.c);
 	        }
 	    }
@@ -53,14 +53,14 @@ public class HelpDesk<T> {
 	        if (students.isEmpty()) {
 	            return "Time " + simtime + ", IDLE";
 	        } else {
-	            return "Time " + simtime + ", Helping " + students.top().n + " from COSC" + students.top().c;
+	            return "Time " + simtime + ", Helping " + students.front.getData().n + " from COSC" + students.front.getData().c;
 	        }
 	    }
 
 	    public String getLog() { //the log is returned as a String
 	        String logOut = "";
 	        while (!log.isEmpty()) {
-	            logOut += log.top() + "\n";
+	            logOut += log.front.getData() + "\n";
 	            log.dequeue();
 	        }
 	        return logOut;
