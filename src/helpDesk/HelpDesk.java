@@ -41,7 +41,7 @@ public class HelpDesk<T> {
 	            students.enqueue(stud);
 	            log.enqueue("Time " + simtime + "," + " Started helping " + students.front.getData().n + " from COSC" + students.front.getData().c);
 	        } else if (stud.c > students.front.getData().c) {
-	            log.enqueue("Time " + (simtime) + "," + " Turned away " + stud.n + " from COSC" + stud.c);
+	            log.enqueue("Time " + (simtime) + "," + " Queued " + stud.n + " from COSC" + stud.c);
 	        }
 	    }
 
