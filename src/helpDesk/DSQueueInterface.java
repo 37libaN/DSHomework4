@@ -1,6 +1,6 @@
 package helpDesk;
 
-public class DSQueueInterface<T>
+public interface DSQueueInterface<T>
 {
 	  void enqueue(T element) throws DSQueueOverflowException;
 	  // Adds an element to the end of the queue.
@@ -15,4 +15,4 @@ public class DSQueueInterface<T>
 	  int size();
 	  // Returns number of elements currently stored in the queue.
 
-	}
+	}	
