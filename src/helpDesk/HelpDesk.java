@@ -44,62 +44,64 @@ public class HelpDesk<T> {
 		}
 		if (students.isEmpty()) {
 			Student stud3 = null;
-			if(!waiting1020.isEmpty()){
+			if (!waiting1020.isEmpty()) {
 				stud3 = waiting1020.dequeue();
-			}
-			else if(!waiting2010.isEmpty()){
+			} else if (!waiting2010.isEmpty()) {
 				stud3 = waiting2010.dequeue();
-			}
-			else if(!waiting3100.isEmpty()){
+			} else if (!waiting3100.isEmpty()) {
 				stud3 = waiting3100.dequeue();
-			}
-			else if(!waiting4300.isEmpty()){
+			} else if (!waiting4300.isEmpty()) {
 				stud3 = waiting4300.dequeue();
 			}
-			if(stud3!=null){
+			if (stud3 != null) {
 				students.enqueue(stud3);
-				log.enqueue("Time " + simtime + "," + " Started helping " + students.front.getData().n + " from COSC" + students.front.getData().c);
+				log.enqueue("Time " + simtime + "," + " Started helping " + students.front.getData().n + " from COSC"
+						+ students.front.getData().c);
 			}
 		}
 		simtime++;
 	}
 
-	public void addStudent(String name, int course, int workload) { //students are added to the queue based on course and are helped or sent to the waiting room
-	        Student stud = new Student(name, course, workload);
-	        if (students.isEmpty()) {
-	            students.enqueue(stud);
-	            log.enqueue("Time " + simtime + "," + " Started helping " + students.front.getData().n + " from COSC" + students.front.getData().c);
-	        }
-	        else if (!students.isEmpty()){
-	        	if(stud.c < students.front.getData().c) {
-	        		students.enqueue(stud);
-	            	log.enqueue("Time " + simtime + "," + " Started helping " + students.front.getData().n + " from COSC" + students.front.getData().c);
-	        	} 
-	        	else if (stud.c >= students.front.getData().c) {
-	        		boolean enqueued = false;
-	        		if(stud.c == 1020 && waiting1020.size()<MAXWAITING){
-	        			waiting1020.enqueue(stud);
-	        			enqueued = true;
-	        		}
-	        		else if(stud.c <= 2010 && waiting2010.size()<MAXWAITING){
-	        			waiting2010.enqueue(stud);
-	        			enqueued = true;
-	        		}
-	        		else if(stud.c <= 3100 && waiting3100.size()<MAXWAITING){
-	        			waiting3100.enqueue(stud);
-	        			enqueued = true;
-	        		}
-	        		else if(stud.c <= 4300 && waiting4300.size()<MAXWAITING){
-	        			waiting4300.enqueue(stud);
-	        			enqueued = true;
-	        		}
-	        		if(enqueued)
-	        			log.enqueue("Time " + (simtime) + "," + " Queued " + stud.n + " from COSC" + stud.c);
-	        		else
-	        			log.enqueue("Time " + (simtime) + "," + " Turned away " + stud.n + " from COSC" + stud.c);
-	        	}
-	        }        		
+	public void addStudent(String name, int course, int workload) { // students
+																	// are added
+																	// to the
+																	// queue
+																	// based on
+																	// course
+																	// and are
+																	// helped or
+																	// sent to
+																	// the
+																	// waiting
+																	// room
+		Student stud = new Student(name, course, workload);
+		if (students.isEmpty()) {
+			students.enqueue(stud);
+			log.enqueue("Time " + simtime + "," + " Started helping " + students.front.getData().n + " from COSC"
+					+ students.front.getData().c);
+		} else if (!students.isEmpty()) {
+			boolean enqueued = false;
+			if (stud.c == 1020 && waiting1020.size() < MAXWAITING) {
+				waiting1020.enqueue(stud);
+				enqueued = true;
+			} else if (stud.c <= 2010 && waiting2010.size() < MAXWAITING) {
+				waiting2010.enqueue(stud);
+				enqueued = true;
+			} else if (stud.c <= 3100 && waiting3100.size() < MAXWAITING) {
+				waiting3100.enqueue(stud);
+				enqueued = true;
+			} else if (stud.c <= 4300 && waiting4300.size() < MAXWAITING) {
+				waiting4300.enqueue(stud);
+				enqueued = true;
+			}
+			if (enqueued)
+				log.enqueue("Time " + (simtime) + "," + " Queued " + stud.n + " from COSC" + stud.c);
+			else
+				log.enqueue("Time " + (simtime) + "," + " Turned away " + stud.n + " from COSC" + stud.c);
+		}
+
 	}
+
 	public int getTime() { // simulation time is returned
 		return simtime;
 	}
