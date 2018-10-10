@@ -75,21 +75,21 @@ public class HelpDesk<T> {
 	        		students.enqueue(stud);
 	            	log.enqueue("Time " + simtime + "," + " Started helping " + students.front.getData().n + " from COSC" + students.front.getData().c);
 	        	} 
-	        	else if (stud.c > students.front.getData().c) {
+	        	else if (stud.c >= students.front.getData().c) {
 	        		boolean enqueued = false;
-	        		if(stud.c == 1020 && waiting1020.size()<=MAXWAITING){
+	        		if(stud.c == 1020 && waiting1020.size()<MAXWAITING){
 	        			waiting1020.enqueue(stud);
 	        			enqueued = true;
 	        		}
-	        		else if(stud.c <= 2010 && waiting2010.size()<=MAXWAITING){
+	        		else if(stud.c <= 2010 && waiting2010.size()<MAXWAITING){
 	        			waiting2010.enqueue(stud);
 	        			enqueued = true;
 	        		}
-	        		else if(stud.c <= 3100 && waiting3100.size()<=MAXWAITING){
+	        		else if(stud.c <= 3100 && waiting3100.size()<MAXWAITING){
 	        			waiting3100.enqueue(stud);
 	        			enqueued = true;
 	        		}
-	        		else if(stud.c <= 4300 && waiting4300.size()<=MAXWAITING){
+	        		else if(stud.c <= 4300 && waiting4300.size()<MAXWAITING){
 	        			waiting4300.enqueue(stud);
 	        			enqueued = true;
 	        		}
