@@ -1,4 +1,3 @@
-package helpDesk;
 
 public class DSArrayBoundedQueue<T> implements DSQueueInterface<T>
 {

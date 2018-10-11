@@ -1,4 +1,3 @@
-package helpDesk;
 
 public interface DSQueueInterface<T>
 {
