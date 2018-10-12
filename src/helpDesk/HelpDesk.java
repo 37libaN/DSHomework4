@@ -13,12 +13,12 @@ public class HelpDesk<T> {
 	protected int simtime; // simulation time is declared
 	protected DSLinkedQueue log; // the two queues are declared, one for the log
 									// and one for students
-	protected DSLinkedQueue<Student> students;
+	protected DSLinkedQueue<Student> students;//students being helped and are not in waiting room
 	protected DSLinkedQueue<Student> waiting1020;
 	protected DSLinkedQueue<Student> waiting2010;
 	protected DSLinkedQueue<Student> waiting3100;
 	protected DSLinkedQueue<Student> waiting4300;
-	protected final int MAXWAITING = 3;
+	protected final int MAXWAITING = 3;//maximum number in a waiting list
 
 	public HelpDesk() {
 		log = new DSLinkedQueue(); // queues and simulation time are initialized
@@ -31,18 +31,18 @@ public class HelpDesk<T> {
 	}
 
 	public void step() { // students in the queues are marked as finished
-		if (students.isEmpty() == false && students.front.getData().w > 0) {
+		if (students.isEmpty() == false && students.front.getData().w > 0) {//if a student is still being helped
 			Student stud2 = new Student(students.front.getData().n, students.front.getData().c,
 					students.front.getData().w - 1);
 			students.dequeue();
 			students.enqueue(stud2);
 		}
-		if (students.isEmpty() == false && students.front.getData().w == 0) {
+		if (students.isEmpty() == false && students.front.getData().w == 0) {//if a student is finished being helped
 			log.enqueue("Time " + (simtime + 1) + "," + " Finished helping " + students.front.getData().n + " from COSC"
 					+ students.front.getData().c);
 			students.dequeue();
 		}
-		if (students.isEmpty()) {
+		if (students.isEmpty()) {//if no students are left to be helped the waiting queues are checked
 			Student stud3 = null;
 			if (!waiting1020.isEmpty()) {
 				stud3 = waiting1020.dequeue();
@@ -79,8 +79,8 @@ public class HelpDesk<T> {
 			students.enqueue(stud);
 			log.enqueue("Time " + simtime + "," + " Started helping " + students.front.getData().n + " from COSC"
 					+ students.front.getData().c);
-		} else if (!students.isEmpty()) {
-			boolean enqueued = false;
+		} else if (!students.isEmpty()) {//if empty the student is added to one of the waiting queues
+			boolean enqueued = false;//variable to check if student is enqueued
 			if (stud.c == 1020 && waiting1020.size() < MAXWAITING) {
 				waiting1020.enqueue(stud);
 				enqueued = true;
