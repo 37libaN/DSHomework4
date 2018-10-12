@@ -14,19 +14,19 @@ public class HelpDesk<T> {
 	protected DSLinkedQueue log; // the two queues are declared, one for the log
 									// and one for students
 	protected DSLinkedQueue<Student> students;//students being helped and are not in waiting room
-	protected DSLinkedQueue<Student> waiting1020;
-	protected DSLinkedQueue<Student> waiting2010;
-	protected DSLinkedQueue<Student> waiting3100;
-	protected DSLinkedQueue<Student> waiting4300;
+	protected DSLinkedQueue<Student> waiting1000s;
+	protected DSLinkedQueue<Student> waiting2000s;
+	protected DSLinkedQueue<Student> waiting3000s;
+	protected DSLinkedQueue<Student> waiting4000s;
 	protected final int MAXWAITING = 3;//maximum number in a waiting list
 
 	public HelpDesk() {
 		log = new DSLinkedQueue(); // queues and simulation time are initialized
 		students = new DSLinkedQueue();
-		waiting1020 = new DSLinkedQueue();
-		waiting2010 = new DSLinkedQueue();
-		waiting3100 = new DSLinkedQueue();
-		waiting4300 = new DSLinkedQueue();
+		waiting1000s = new DSLinkedQueue();
+		waiting2000s = new DSLinkedQueue();
+		waiting3000s = new DSLinkedQueue();
+		waiting4000s = new DSLinkedQueue();
 		simtime = 0;
 	}
 
@@ -44,14 +44,14 @@ public class HelpDesk<T> {
 		}
 		if (students.isEmpty()) {//if no students are left to be helped the waiting queues are checked
 			Student stud3 = null;
-			if (!waiting1020.isEmpty()) {
-				stud3 = waiting1020.dequeue();
-			} else if (!waiting2010.isEmpty()) {
-				stud3 = waiting2010.dequeue();
-			} else if (!waiting3100.isEmpty()) {
-				stud3 = waiting3100.dequeue();
-			} else if (!waiting4300.isEmpty()) {
-				stud3 = waiting4300.dequeue();
+			if (!waiting1000s.isEmpty()) {
+				stud3 = waiting1000s.dequeue();
+			} else if (!waiting2000s.isEmpty()) {
+				stud3 = waiting2000s.dequeue();
+			} else if (!waiting3000s.isEmpty()) {
+				stud3 = waiting3000s.dequeue();
+			} else if (!waiting4000s.isEmpty()) {
+				stud3 = waiting4000s.dequeue();
 			}
 			if (stud3 != null) {
 				students.enqueue(stud3);
@@ -81,17 +81,17 @@ public class HelpDesk<T> {
 					+ students.front.getData().c);
 		} else if (!students.isEmpty()) {//if empty the student is added to one of the waiting queues
 			boolean enqueued = false;//variable to check if student is enqueued
-			if (stud.c == 1020 && waiting1020.size() < MAXWAITING) {
-				waiting1020.enqueue(stud);
+			if (stud.c < 2000 && waiting1000s.size() < MAXWAITING) {
+				waiting1000s.enqueue(stud);
 				enqueued = true;
-			} else if (stud.c <= 2010 && waiting2010.size() < MAXWAITING) {
-				waiting2010.enqueue(stud);
+			} else if (stud.c < 3000 && waiting2000s.size() < MAXWAITING) {
+				waiting2000s.enqueue(stud);
 				enqueued = true;
-			} else if (stud.c <= 3100 && waiting3100.size() < MAXWAITING) {
-				waiting3100.enqueue(stud);
+			} else if (stud.c < 4000 && waiting3000s.size() < MAXWAITING) {
+				waiting3000s.enqueue(stud);
 				enqueued = true;
-			} else if (stud.c <= 4300 && waiting4300.size() < MAXWAITING) {
-				waiting4300.enqueue(stud);
+			} else if (stud.c < 5000 && waiting4000s.size() < MAXWAITING) {
+				waiting4000s.enqueue(stud);
 				enqueued = true;
 			}
 			if (enqueued)
