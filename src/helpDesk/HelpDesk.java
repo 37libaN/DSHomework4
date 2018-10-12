@@ -55,7 +55,7 @@ public class HelpDesk<T> {
 			}
 			if (stud3 != null) {
 				students.enqueue(stud3);
-				log.enqueue("Time " + simtime + "," + " Started helping " + students.front.getData().n + " from COSC"
+				log.enqueue("Time " + (simtime + 1) + "," + " Started helping " + students.front.getData().n + " from COSC"
 						+ students.front.getData().c);
 			}
 		}
