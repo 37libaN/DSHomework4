@@ -5,6 +5,7 @@
 	 * Instructor [Dr. Brylow] 
 	 * TA-BOT:MAILTO [srivishnu.appalaraju@marquette.edu nabil.hussaini@marquette.edu] 
 	 */
+package helpDesk;
 public class DSLinkedQueue<T> implements DSQueueInterface<T> 
 {
 	  protected DSLLNode<T> front;

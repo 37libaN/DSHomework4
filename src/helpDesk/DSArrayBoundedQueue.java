@@ -5,7 +5,6 @@
 	 * Instructor [Dr. Brylow] 
 	 * TA-BOT:MAILTO [srivishnu.appalaraju@marquette.edu nabil.hussaini@marquette.edu] 
 	 */
-
 public class DSArrayBoundedQueue<T> implements DSQueueInterface<T>
 {
 	  protected final int DEFCAP = 100;
