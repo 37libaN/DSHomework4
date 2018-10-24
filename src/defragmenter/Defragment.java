@@ -2,7 +2,7 @@ package defragmenter;
 
 public class Defragment {
 
-class Fragment{
+class Fragment{ //class to store info for each fragment
 	private int packetID;
 	private int fragmentOffset;
 	private int fragmentLength;
