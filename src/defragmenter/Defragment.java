@@ -1,8 +1,31 @@
 package defragmenter;
-
+import java.util.*;
 public class Defragment {
-
-class Fragment{ //class to store info for each fragment
+	private SortedLinkedList<SortedLinkedList<Fragment>> list;
+	public Defragment(){
+		list = new SortedLinkedList<SortedLinkedList<Fragment>>();
+	}
+	public void addFrag(int id, int froff, int length, boolean morefrag) {
+		SortedLinkedList<Fragment> listFrag = new SortedLinkedList<Fragment>();
+		Fragment toAdd = new Fragment(id, froff, length, morefrag);
+		if(list.find(toAdd)){
+			list.getFoundNode().getInfo();	
+			listFrag.add(toAdd);
+		}
+		else{
+			listFrag.add(toAdd);
+			list.add(listFrag);
+		}
+	}
+	public String toString() {
+		
+	}
+	
+	static void main(String[] args) {
+		
+	}
+}
+class Fragment implements Comparable{ //class to store info for each fragment
 	private int packetID;
 	private int fragmentOffset;
 	private int fragmentLength;
@@ -13,18 +36,19 @@ class Fragment{ //class to store info for each fragment
 		fragmentLength = length;
 		moreFragmentsBit = morefrag;
 	}
-}
-	public Defragment(){
-		
+	public int getID(){
+		return packetID;
 	}
-	public void addFrag(int id, int froff, int length, boolean morefrag) {
-		
+	public void toString(){
+		System.out.println(packetID);
 	}
-	public String toString() {
-		
-	}
-	
-	static void main(String[] args) {
-		
+	@Override
+	public int compareTo(Object objCompare){
+		if(fragmentOffset < ((Fragment)objCompare).fragmentOffset)
+			return -1;
+		else if(fragmentOffset == ((Fragment)objCompare).fragmentOffset)
+			return 0;
+		else 
+			return 1;
 	}
 }

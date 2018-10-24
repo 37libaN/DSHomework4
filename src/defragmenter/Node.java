@@ -9,6 +9,7 @@ public class Node<T> {
 	}
 	public Node(T element){
 		info = element;
+		link = null;
 	}
 	public void setLink(Node<T> node){
 		link = node;

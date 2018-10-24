@@ -1,10 +1,12 @@
 package defragmenter;
 
-public class SortedLinkedList<T> {
+
+public class SortedLinkedList<T> implements Comparable{
 	private int numElements; //number of elements in list
 	private Node<T> list; //1st node in list
 	private Node<T> loc; //where you are in list when going through it
 	private Node<T> prev; //one node before loc, null if loc is first element
+	private Node<T> foundNode; //node that is found by find
 	public SortedLinkedList(){
 		numElements = 0;
 		list = null;
@@ -51,4 +53,35 @@ public class SortedLinkedList<T> {
 		loc = list;
 		prev = null;
 	}
+	public Node<T> getFoundNode(){
+		return foundNode;
+	}
+	public boolean find(Fragment toFind){
+		reset();
+		while(loc!=null){
+			if(((Fragment)((Node<T>)((SortedLinkedList<T>) this.list.getInfo()).list).getInfo()).getID()==toFind.getID()){
+				foundNode = loc;
+				return true;
+			}
+		}
+		return false;
+	}
+	@Override
+	public int compareTo(Object listCompare){
+		if(((Fragment) list.getInfo()).getID() < ((Fragment) ((Node<T>) listCompare).getInfo()).getID())
+			return -1;
+		else if(((Fragment) list.getInfo()).getID() == ((Fragment) ((Node<T>) listCompare).getInfo()).getID())
+			return 0;
+		else 
+			return 1;
+	}
+	/*
+	public String toString(){
+		String toString = "";
+		reset();
+		while(loc!=null){
+			toString += 
+		}
+	}
+	*/
 }
