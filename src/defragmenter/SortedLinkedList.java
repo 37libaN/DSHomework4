@@ -75,13 +75,4 @@ public class SortedLinkedList<T> implements Comparable{
 		else 
 			return 1;
 	}
-	/*
-	public String toString(){
-		String toString = "";
-		reset();
-		while(loc!=null){
-			toString += 
-		}
-	}
-	*/
 }

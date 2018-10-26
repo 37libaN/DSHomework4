@@ -18,7 +18,13 @@ public class Defragment {
 		}
 	}
 	public String toString() {
-		
+		String toString = "";
+		list.reset();
+		while(list.getNode()!=null){
+			toString = toString + "Packet " + list.getNode().getInfo().getID() + ", " + list.getNode().getInfo().fragmentLength + " bytes";
+			list.step();
+		}
+		return toString;
 	}
 	
 	static void main(String[] args) {
