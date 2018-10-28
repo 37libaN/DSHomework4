@@ -44,8 +44,10 @@ public class Defragment {
 			bytes = 0;
 			list.step();
 		}
+		/*
 		System.out.println("hi2");
 		System.out.println(toString);
+		*/
 		return toString;
 	}
 }
