@@ -14,15 +14,17 @@ public class Defragment {
 	}
 
 	public void addFrag(int id, int froff, int length, boolean morefrag) {
+		System.out.println("nabil");
 		SortedLinkedList<Fragment> listFrag = new SortedLinkedList<Fragment>();
 		Fragment toAdd = new Fragment(id, froff, length, morefrag);
 		if (list.find(toAdd)) {
-			list.getFoundNode().getInfo();
+			listFrag = list.getFoundNode().getInfo();
 			listFrag.add(toAdd);
-		} else {
+		} else { System.out.println("halal");
 			listFrag.add(toAdd);
 			list.add(listFrag);
 		}
+		System.out.println("lit");
 	}
 
 	public String toString() {
@@ -49,6 +51,10 @@ public class Defragment {
 		System.out.println(toString);
 		*/
 		return toString;
+	}
+	
+	public boolean completePacket(SortedLinkedList<Fragment> x) {
+		return true;
 	}
 }
 
