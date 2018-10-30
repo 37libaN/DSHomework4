@@ -14,11 +14,11 @@ public class Defragment {
 		SortedLinkedList<Fragment> listFrag = new SortedLinkedList<Fragment>();
 		Fragment toAdd = new Fragment(id, froff, length, morefrag);
 		if (list.find(toAdd)) {
-			System.out.println("haram");
+			//System.out.println("haram");
 			listFrag = list.getFoundNode().getInfo();
 			listFrag.add(toAdd);
 		} else { 
-			System.out.println("halal");
+			//System.out.println("halal");
 			listFrag.add(toAdd);
 			list.add(listFrag);
 		}
