@@ -17,25 +17,30 @@ public class Defragment {
 	}
 
 	public boolean completePacket(SortedLinkedList<Fragment> packet) {
-		if (packet.isEmpty()) {
+		System.out.println("Complete");
+		if (!packet.isEmpty()) {
+			System.out.println("here");
 			if (packet.getList().getInfo().getFragmentOffset() == 0) { // check
 																		// if
 																		// packet
 																		// starts
 																		// properly
+				System.out.println("here2");
 				packet.reset();
 				boolean checkContinue = true; // true if the packet does not
 												// have any gaps
+				packet.step();
 				while (packet.getNode() != null) {
-					packet.step();
 					Fragment pastNode = packet.getPrev().getInfo();
 					if (!(pastNode.getFragmentLength() == packet.getNode().getInfo().getFragmentOffset())) {
 						checkContinue = false;
+						
 					}
 				}
-				if(checkContinue){
-					if(!(packet.getPrev().getInfo().getMoreFragmentsBit()))
-							return true;
+				if (checkContinue) {
+					System.out.println("here3");
+					if (!(packet.getPrev().getInfo().getMoreFragmentsBit()))
+						return true;
 				}
 			}
 		}
@@ -43,11 +48,12 @@ public class Defragment {
 	}
 
 	public void addFrag(int id, int froff, int length, boolean morefrag) {
-		// System.out.println("nabil");
+		System.out.println("nabil");
 		SortedLinkedList<Fragment> listFrag = new SortedLinkedList<Fragment>();
 		Fragment toAdd = new Fragment(id, froff, length, morefrag);
 		if (list.find(toAdd)) {
 			// System.out.println("haram");
+
 			listFrag = list.getFoundNode().getInfo();
 			listFrag.add(toAdd);
 		} else {
@@ -55,7 +61,7 @@ public class Defragment {
 			listFrag.add(toAdd);
 			list.add(listFrag);
 		}
-		// System.out.println("lit");
+		System.out.println("lit");
 	}
 
 	public String toString() {
@@ -66,15 +72,17 @@ public class Defragment {
 		list.reset();
 		while (list.getNode() != null) {
 			thisList = list.getNode().getInfo();
-			thisList.reset();
-			while (thisList.getNode() != null) {
-				bytes += thisList.getNode().getInfo().getFragmentLength();
-				thisList.step();
+			if (completePacket(thisList)) {
+				thisList.reset();
+				while (thisList.getNode() != null) {
+					bytes += thisList.getNode().getInfo().getFragmentLength();
+					thisList.step();
+				}
+				thisList.reset();
+				toString = toString + "Packet " + thisList.getNode().getInfo().getID() + ", " + bytes + " bytes\n";
+				thisList = null;
+				bytes = 0;
 			}
-			thisList.reset();
-			toString = toString + "Packet " + thisList.getNode().getInfo().getID() + ", " + bytes + " bytes\n";
-			thisList = null;
-			bytes = 0;
 			list.step();
 		}
 		/*
@@ -97,9 +105,10 @@ class Fragment implements Comparable { // class to store info for each fragment
 		moreFragmentsBit = morefrag;
 	}
 
-	public boolean getMoreFragmentsBit(){
+	public boolean getMoreFragmentsBit() {
 		return moreFragmentsBit;
 	}
+
 	public int getFragmentOffset() {
 		return fragmentOffset;
 	}
