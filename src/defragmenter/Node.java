@@ -1,3 +1,10 @@
+/**
+	 * COSC 2100 - Project 7
+	 * 
+	 * @author [Vishnu Appalaraju, Nabil Hussaini]
+	 * Instructor [Dr. Brylow] 
+	 * TA-BOT:MAILTO [srivishnu.appalaraju@marquette.edu nabil.hussaini@marquette.edu] 
+	 */
 package defragmenter;
 
 public class Node<T> {
