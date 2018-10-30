@@ -8,23 +8,21 @@ public class Defragment {
 	public Defragment() {
 		list = new SortedLinkedList<SortedLinkedList<Fragment>>();
 	}
-
-	public boolean goodPacket(SortedLinkedList<Fragment> thisList) {
-		return true;
-	}
-
+	
 	public void addFrag(int id, int froff, int length, boolean morefrag) {
-		System.out.println("nabil");
+		//System.out.println("nabil");
 		SortedLinkedList<Fragment> listFrag = new SortedLinkedList<Fragment>();
 		Fragment toAdd = new Fragment(id, froff, length, morefrag);
 		if (list.find(toAdd)) {
+			System.out.println("haram");
 			listFrag = list.getFoundNode().getInfo();
 			listFrag.add(toAdd);
-		} else { System.out.println("halal");
+		} else { 
+			System.out.println("halal");
 			listFrag.add(toAdd);
 			list.add(listFrag);
 		}
-		System.out.println("lit");
+		//System.out.println("lit");
 	}
 
 	public String toString() {
