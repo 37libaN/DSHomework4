@@ -15,21 +15,47 @@ public class Defragment {
 	public Defragment() {
 		list = new SortedLinkedList<SortedLinkedList<Fragment>>();
 	}
-	
+
+	public boolean completePacket(SortedLinkedList<Fragment> packet) {
+		if (packet.isEmpty()) {
+			if (packet.getList().getInfo().getFragmentOffset() == 0) { // check
+																		// if
+																		// packet
+																		// starts
+																		// properly
+				packet.reset();
+				boolean checkContinue = true; // true if the packet does not
+												// have any gaps
+				while (packet.getNode() != null) {
+					packet.step();
+					Fragment pastNode = packet.getPrev().getInfo();
+					if (!(pastNode.getFragmentLength() == packet.getNode().getInfo().getFragmentOffset())) {
+						checkContinue = false;
+					}
+				}
+				if(checkContinue){
+					if(!(packet.getPrev().getInfo().getMoreFragmentsBit()))
+							return true;
+				}
+			}
+		}
+		return false;
+	}
+
 	public void addFrag(int id, int froff, int length, boolean morefrag) {
-		//System.out.println("nabil");
+		// System.out.println("nabil");
 		SortedLinkedList<Fragment> listFrag = new SortedLinkedList<Fragment>();
 		Fragment toAdd = new Fragment(id, froff, length, morefrag);
 		if (list.find(toAdd)) {
-			//System.out.println("haram");
+			// System.out.println("haram");
 			listFrag = list.getFoundNode().getInfo();
 			listFrag.add(toAdd);
-		} else { 
-			//System.out.println("halal");
+		} else {
+			// System.out.println("halal");
 			listFrag.add(toAdd);
 			list.add(listFrag);
 		}
-		//System.out.println("lit");
+		// System.out.println("lit");
 	}
 
 	public String toString() {
@@ -52,14 +78,9 @@ public class Defragment {
 			list.step();
 		}
 		/*
-		System.out.println("hi2");
-		System.out.println(toString);
-		*/
+		 * System.out.println("hi2"); System.out.println(toString);
+		 */
 		return toString;
-	}
-	
-	public boolean completePacket(SortedLinkedList<Fragment> x) {
-		return true;
 	}
 }
 
@@ -74,6 +95,13 @@ class Fragment implements Comparable { // class to store info for each fragment
 		fragmentOffset = froff;
 		fragmentLength = length;
 		moreFragmentsBit = morefrag;
+	}
+
+	public boolean getMoreFragmentsBit(){
+		return moreFragmentsBit;
+	}
+	public int getFragmentOffset() {
+		return fragmentOffset;
 	}
 
 	public int getID() {

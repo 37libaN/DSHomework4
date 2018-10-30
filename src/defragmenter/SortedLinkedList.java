@@ -87,6 +87,10 @@ public class SortedLinkedList<T> implements Comparable {
 		return list;
 	}
 	
+	public Node<T> getPrev(){
+		return prev;
+	}
+	
 	@Override
 	public int compareTo(Object listCompare) {
 		if (((Fragment) getList().getInfo()).getID() < ((Fragment) ((SortedLinkedList<T>) listCompare).getList().getInfo()).getID())
