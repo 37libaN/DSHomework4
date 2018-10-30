@@ -49,6 +49,7 @@ public class SortedLinkedList<T> implements Comparable {
 			toAdd.setLink(loc);
 			prev.setLink(toAdd);
 		}
+		numElements++;
 	}
 
 	public Node<T> getNode() { // returns loc

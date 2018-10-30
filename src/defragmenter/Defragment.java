@@ -17,28 +17,30 @@ public class Defragment {
 	}
 
 	public boolean completePacket(SortedLinkedList<Fragment> packet) {
-		System.out.println("Complete");
+		//System.out.println("Complete");
 		if (!packet.isEmpty()) {
-			System.out.println("here");
+			//System.out.println("here");
 			if (packet.getList().getInfo().getFragmentOffset() == 0) { // check
 																		// if
 																		// packet
 																		// starts
 																		// properly
-				System.out.println("here2");
+				//System.out.println("here2");
 				packet.reset();
 				boolean checkContinue = true; // true if the packet does not
 												// have any gaps
 				packet.step();
+				int totalBytes = 0;
 				while (packet.getNode() != null) {
 					Fragment pastNode = packet.getPrev().getInfo();
-					if (!(pastNode.getFragmentLength() == packet.getNode().getInfo().getFragmentOffset())) {
+					totalBytes += pastNode.getFragmentLength();
+					if (!(totalBytes == packet.getNode().getInfo().getFragmentOffset())) {
 						checkContinue = false;
-						
 					}
+					packet.step();
 				}
 				if (checkContinue) {
-					System.out.println("here3");
+					//System.out.println("here3");
 					if (!(packet.getPrev().getInfo().getMoreFragmentsBit()))
 						return true;
 				}
@@ -80,9 +82,9 @@ public class Defragment {
 				}
 				thisList.reset();
 				toString = toString + "Packet " + thisList.getNode().getInfo().getID() + ", " + bytes + " bytes\n";
-				thisList = null;
-				bytes = 0;
-			}
+			}	
+			thisList = null;
+			bytes = 0;
 			list.step();
 		}
 		/*
