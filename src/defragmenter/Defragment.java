@@ -55,8 +55,17 @@ public class Defragment {
 		Fragment toAdd = new Fragment(id, froff, length, morefrag);
 		if (list.find(toAdd)) {
 			// System.out.println("haram");
-
 			listFrag = list.getFoundNode().getInfo();
+			int totalBytes = 0;
+			listFrag.reset();
+			while (listFrag.getNode() != null) {
+				totalBytes += listFrag.getNode().getInfo().getFragmentLength();
+				listFrag.step();
+			}
+			if(toAdd.getFragmentOffset() <= totalBytes){
+				
+			}
+				
 			listFrag.add(toAdd);
 		} else {
 			// System.out.println("halal");
