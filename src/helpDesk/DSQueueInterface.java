@@ -5,6 +5,7 @@
 	 * Instructor [Dr. Brylow] 
 	 * TA-BOT:MAILTO [srivishnu.appalaraju@marquette.edu nabil.hussaini@marquette.edu] 
 	 */
+package helpDesk;
 public interface DSQueueInterface<T>
 {
 	  void enqueue(T element) throws DSQueueOverflowException;

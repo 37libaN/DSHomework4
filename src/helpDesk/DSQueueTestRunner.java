@@ -5,6 +5,7 @@
 	 * Instructor [Dr. Brylow] 
 	 * TA-BOT:MAILTO [srivishnu.appalaraju@marquette.edu nabil.hussaini@marquette.edu] 
 	 */
+package helpDesk;
 import static org.junit.Assert.*;
 
 import org.junit.AfterClass;
