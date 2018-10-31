@@ -30,7 +30,6 @@ public class SortedLinkedList<T> implements Comparable {
 
 	public void add(T element) { // adds an element into its sorted position in
 									// list, sorted by ascending
-		//System.out.println("listAdd");
 		reset();
 		T currElement; // current element used for comparisons
 		while (loc != null) {
@@ -92,7 +91,7 @@ public class SortedLinkedList<T> implements Comparable {
 	}
 	
 	@Override
-	public int compareTo(Object listCompare) {
+	public int compareTo(Object listCompare) {//compare list by packet id
 		if (((Fragment) getList().getInfo()).getID() < ((Fragment) ((SortedLinkedList<T>) listCompare).getList().getInfo()).getID())
 			return -1;
 		else if (((Fragment) getList().getInfo()).getID() == ((Fragment) ((SortedLinkedList<T>) listCompare).getList().getInfo()).getID())
