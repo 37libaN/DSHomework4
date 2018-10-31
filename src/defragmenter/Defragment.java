@@ -25,7 +25,7 @@ public class Defragment {
 																		// packet
 																		// starts
 																		// properly
-				//System.out.println("here2");
+				System.out.println("here2");
 				packet.reset();
 				boolean checkContinue = true; // true if the packet does not
 												// have any gaps
@@ -56,23 +56,53 @@ public class Defragment {
 		if (list.find(toAdd)) {
 			// System.out.println("haram");
 			listFrag = list.getFoundNode().getInfo();
-			int totalBytes = 0;
+			int nextOffset = 0; //keep track of next highest offset in case they're out of order
+			int nextBytes = 0; 
+			int totalBytes = 0; //total bytes already in listFrag
+			int toAddBytes = 0; //total bytes toAdd should have
+			boolean gapToFill = false; //if overlap fills gap in packet
 			listFrag.reset();
+			totalBytes += listFrag.getNode().getInfo().getFragmentLength();
+			nextBytes = listFrag.getNode().getInfo().getFragmentLength();
+			nextOffset = listFrag.getNode().getInfo().getFragmentOffset();
+			listFrag.step();			
 			while (listFrag.getNode() != null) {
 				totalBytes += listFrag.getNode().getInfo().getFragmentLength();
+				nextBytes = listFrag.getNode().getInfo().getFragmentLength();
+				nextOffset = listFrag.getNode().getInfo().getFragmentOffset();
+				if(listFrag.getPrev().getInfo().getFragmentOffset() + 
+						listFrag.getPrev().getInfo().getFragmentLength() < 
+						nextOffset){
+					if(toAdd.getFragmentOffset() > listFrag.getPrev().getInfo().getFragmentOffset() + 
+						listFrag.getPrev().getInfo().getFragmentLength() &&
+						toAdd.getFragmentOffset() < nextOffset){
+						gapToFill = true;
+						break;
+					}
+				}
 				listFrag.step();
 			}
-			if(toAdd.getFragmentOffset() <= totalBytes){
-				
+			if(gapToFill){
+				toAddBytes = toAdd.getFragmentOffset() + toAdd.getFragmentLength();
+				if(toAddBytes > nextOffset + nextBytes){
+					toAdd.setFragmentLength(toAddBytes-(nextOffset + nextBytes));
+				}		
 			}
-				
+			if(toAdd.getFragmentOffset() < totalBytes && listFrag.getNode() == null){
+				toAddBytes = toAdd.getFragmentOffset() + toAdd.getFragmentLength();
+				if(toAddBytes > totalBytes){
+					toAdd.setFragmentOffset(totalBytes);
+					toAdd.setFragmentLength(toAddBytes-totalBytes);
+				}			
+			}	
+			
 			listFrag.add(toAdd);
 		} else {
 			// System.out.println("halal");
 			listFrag.add(toAdd);
 			list.add(listFrag);
 		}
-		System.out.println("lit");
+		//System.out.println("lit");
 	}
 
 	public String toString() {
@@ -116,6 +146,14 @@ class Fragment implements Comparable { // class to store info for each fragment
 		moreFragmentsBit = morefrag;
 	}
 
+	public void setFragmentLength(int fragmentLength){
+		this.fragmentLength = fragmentLength;
+	}
+	
+	public void setFragmentOffset(int fragmentOffset){
+		this.fragmentOffset = fragmentOffset;
+	}
+	
 	public boolean getMoreFragmentsBit() {
 		return moreFragmentsBit;
 	}
@@ -134,9 +172,9 @@ class Fragment implements Comparable { // class to store info for each fragment
 
 	@Override
 	public int compareTo(Object objCompare) {
-		if (fragmentOffset < ((Fragment) objCompare).fragmentOffset)
+		if (this.getFragmentOffset() < ((Fragment) objCompare).getFragmentOffset())
 			return -1;
-		else if (fragmentOffset == ((Fragment) objCompare).fragmentOffset)
+		else if (this.getFragmentOffset() == ((Fragment) objCompare).getFragmentOffset())
 			return 0;
 		else
 			return 1;
