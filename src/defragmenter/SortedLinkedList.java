@@ -1,12 +1,12 @@
 /**
 	 * COSC 2100 - Project 7
-	 * 
+	 * This program simulates the fragmentation of packets of information sent over the internet.
 	 * @author [Vishnu Appalaraju, Nabil Hussaini]
 	 * Instructor [Dr. Brylow] 
 	 * TA-BOT:MAILTO [srivishnu.appalaraju@marquette.edu nabil.hussaini@marquette.edu] 
 	 */
-package defragmenter;
 
+package defragmenter;
 public class SortedLinkedList<T> implements Comparable {
 	private int numElements; // number of elements in list
 	private Node<T> list; // 1st node in list

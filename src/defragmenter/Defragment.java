@@ -1,34 +1,25 @@
 /**
 	 * COSC 2100 - Project 7
-	 * 
+	 * This program simulates the fragmentation of packets of information sent over the internet.
 	 * @author [Vishnu Appalaraju, Nabil Hussaini]
 	 * Instructor [Dr. Brylow] 
 	 * TA-BOT:MAILTO [srivishnu.appalaraju@marquette.edu nabil.hussaini@marquette.edu] 
 	 */
-package defragmenter;
 
+package defragmenter;
 import java.util.*;
 
 public class Defragment {
-	private SortedLinkedList<SortedLinkedList<Fragment>> list;
-
+	private SortedLinkedList<SortedLinkedList<Fragment>> list; // linked list is declared
 	public Defragment() {
 		list = new SortedLinkedList<SortedLinkedList<Fragment>>();
 	}
 
-	public boolean completePacket(SortedLinkedList<Fragment> packet) {
-		//System.out.println("Complete");
+	public boolean completePacket(SortedLinkedList<Fragment> packet) { // checks to see if packet is complete
 		if (!packet.isEmpty()) {
-			//System.out.println("here");
-			if (packet.getList().getInfo().getFragmentOffset() == 0) { // check
-																		// if
-																		// packet
-																		// starts
-																		// properly
-				System.out.println("here2");
+			if (packet.getList().getInfo().getFragmentOffset() == 0) { // check if packet starts properly		
 				packet.reset();
-				boolean checkContinue = true; // true if the packet does not
-												// have any gaps
+				boolean checkContinue = true; // true if the packet does not have any gaps
 				packet.step();
 				int totalBytes = 0;
 				while (packet.getNode() != null) {
@@ -40,7 +31,6 @@ public class Defragment {
 					packet.step();
 				}
 				if (checkContinue) {
-					//System.out.println("here3");
 					if (!(packet.getPrev().getInfo().getMoreFragmentsBit()))
 						return true;
 				}
@@ -49,12 +39,11 @@ public class Defragment {
 		return false;
 	}
 
-	public void addFrag(int id, int froff, int length, boolean morefrag) {
+	public void addFrag(int id, int froff, int length, boolean morefrag) { // fragments are added to the list
 		System.out.println("nabil");
 		SortedLinkedList<Fragment> listFrag = new SortedLinkedList<Fragment>();
 		Fragment toAdd = new Fragment(id, froff, length, morefrag);
 		if (list.find(toAdd)) {
-			// System.out.println("haram");
 			listFrag = list.getFoundNode().getInfo();
 			int nextOffset = 0; //keep track of next highest offset in case they're out of order
 			int nextBytes = 0; 
@@ -99,17 +88,14 @@ public class Defragment {
 				
 			listFrag.add(toAdd);
 		} else {
-			// System.out.println("halal");
 			listFrag.add(toAdd);
 			list.add(listFrag);
 		}
-		//System.out.println("lit");
 	}
 
-	public String toString() {
+	public String toString() { // checks to see if packet is complete, gets appropriate info, then outputs
 		String toString = "";
-		SortedLinkedList<Fragment> thisList; // the packet that is being dealt
-												// with
+		SortedLinkedList<Fragment> thisList; // the packet that is being dealt with
 		int bytes = 0;
 		list.reset();
 		while (list.getNode() != null) {
@@ -127,9 +113,6 @@ public class Defragment {
 			bytes = 0;
 			list.step();
 		}
-		/*
-		 * System.out.println("hi2"); System.out.println(toString);
-		 */
 		return toString;
 	}
 }

@@ -1,12 +1,12 @@
 /**
 	 * COSC 2100 - Project 7
-	 * 
+	 * This program simulates the fragmentation of packets of information sent over the internet.
 	 * @author [Vishnu Appalaraju, Nabil Hussaini]
 	 * Instructor [Dr. Brylow] 
 	 * TA-BOT:MAILTO [srivishnu.appalaraju@marquette.edu nabil.hussaini@marquette.edu] 
 	 */
-package defragmenter;
 
+package defragmenter;
 import java.util.Scanner;
 
 public class DefragmentRunner
