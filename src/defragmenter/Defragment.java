@@ -82,20 +82,17 @@ public class Defragment {
 				}
 				listFrag.step();
 			}
+			toAddBytes = toAdd.getFragmentOffset() + toAdd.getFragmentLength();
 			if(gapToFill){
-				toAddBytes = toAdd.getFragmentOffset() + toAdd.getFragmentLength();
-				if(toAddBytes > nextOffset + nextBytes){
+				if(toAddBytes > (nextOffset + nextBytes)){
 					toAdd.setFragmentLength(toAddBytes-(nextOffset + nextBytes));
 				}		
 			}
-			if(toAdd.getFragmentOffset() < totalBytes && listFrag.getNode() == null){
-				toAddBytes = toAdd.getFragmentOffset() + toAdd.getFragmentLength();
-				if(toAddBytes > totalBytes){
-					toAdd.setFragmentOffset(totalBytes);
-					toAdd.setFragmentLength(toAddBytes-totalBytes);
-				}			
+			else if(toAddBytes > (nextOffset + nextBytes)){
+				toAdd.setFragmentOffset(nextOffset + nextBytes);
+				toAdd.setFragmentLength(toAddBytes-(nextOffset + nextBytes));							
 			}	
-			
+				
 			listFrag.add(toAdd);
 		} else {
 			// System.out.println("halal");
