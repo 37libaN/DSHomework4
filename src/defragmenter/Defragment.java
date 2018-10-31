@@ -58,16 +58,20 @@ public class Defragment {
 			listFrag = list.getFoundNode().getInfo();
 			int nextOffset = 0; //keep track of next highest offset in case they're out of order
 			int nextBytes = 0; 
-			int totalBytes = 0; //total bytes already in listFrag
+			//int totalBytes = 0; //total bytes already in listFrag
 			int toAddBytes = 0; //total bytes toAdd should have
 			boolean gapToFill = false; //if overlap fills gap in packet
 			listFrag.reset();
-			totalBytes += listFrag.getNode().getInfo().getFragmentLength();
+			//totalBytes += listFrag.getNode().getInfo().getFragmentLength();
+			if(listFrag.getNode().getInfo().equals(toAdd))
+				return;
 			nextBytes = listFrag.getNode().getInfo().getFragmentLength();
 			nextOffset = listFrag.getNode().getInfo().getFragmentOffset();
 			listFrag.step();			
 			while (listFrag.getNode() != null) {
-				totalBytes += listFrag.getNode().getInfo().getFragmentLength();
+				//totalBytes += listFrag.getNode().getInfo().getFragmentLength();
+				if(listFrag.getNode().getInfo().equals(toAdd))
+					return;
 				nextBytes = listFrag.getNode().getInfo().getFragmentLength();
 				nextOffset = listFrag.getNode().getInfo().getFragmentOffset();
 				if(listFrag.getPrev().getInfo().getFragmentOffset() + 
@@ -167,6 +171,13 @@ class Fragment implements Comparable { // class to store info for each fragment
 		return fragmentLength;
 	}
 
+	public boolean equals(Fragment fragCompare){
+		if(this.getFragmentOffset() == fragCompare.getFragmentOffset() && 
+				this.getFragmentLength() == fragCompare.getFragmentLength())
+			return true;
+		else
+			return false;
+	}
 	@Override
 	public int compareTo(Object objCompare) {
 		if (this.getFragmentOffset() < ((Fragment) objCompare).getFragmentOffset())
