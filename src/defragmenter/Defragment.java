@@ -40,7 +40,6 @@ public class Defragment {
 	}
 
 	public void addFrag(int id, int froff, int length, boolean morefrag) { // fragments are added to the list
-		System.out.println("nabil");
 		SortedLinkedList<Fragment> listFrag = new SortedLinkedList<Fragment>();
 		Fragment toAdd = new Fragment(id, froff, length, morefrag);
 		if (list.find(toAdd)) {

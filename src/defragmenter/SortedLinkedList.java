@@ -73,7 +73,6 @@ public class SortedLinkedList<T> implements Comparable {
 	public boolean find(Fragment toFind) {
 		foundNode = null;
 		reset();
-		//System.out.println("finding");
 		while (loc != null) {
 			if (((Fragment) ((Node<T>) ((SortedLinkedList<T>) loc.getInfo()).getList()).getInfo()).getID() == toFind.getID()) {
 				foundNode = loc;

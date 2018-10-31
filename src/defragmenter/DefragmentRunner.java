@@ -33,7 +33,6 @@ public class DefragmentRunner
 
 			defrag.addFrag(id, froff, length, morefrag);
 		}
-		System.out.println("hi");
 		System.out.println(defrag);
 	}
 }
