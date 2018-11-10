@@ -20,17 +20,12 @@ public class HelloWorld extends Application{
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HelloWorld.fxml"));
         Parent root = loader.load();
+         
+        StackPane rt = new StackPane();
+        
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
-        Button btn = new Button();
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
-        
     }
     /*public void start(Stage primaryStage) {
         primaryStage.setTitle("Hello World!");
