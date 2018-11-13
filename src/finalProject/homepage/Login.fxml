@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="835.0" prefWidth="1323.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93c786" height="842.0" layoutX="-7.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="1331.0" />
+      <TextField layoutX="550.0" layoutY="335.0" />
+      <TextField layoutX="550.0" layoutY="398.0" />
+      <Text fill="WHITE" layoutX="423.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+         <font>
+            <Font name="Lucida Bright" size="23.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="426.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+         <font>
+            <Font name="Lucida Bright" size="23.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
