@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="856.0" prefWidth="1324.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalProject.homepage.HomeController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93c786" height="89.0" stroke="BLACK" strokeType="INSIDE" width="1324.0" />
@@ -18,7 +17,7 @@
             <Font name="Lucida Handwriting Italic" size="46.0" />
          </font>
       </Text>
-      <Button layoutX="940.0" layoutY="17.0" mnemonicParsing="false" text="Log In" textFill="WHITE">
+      <Button layoutX="940.0" layoutY="17.0" mnemonicParsing="false" text="Log Out" textFill="WHITE">
          <font>
             <Font name="Lucida Bright" size="30.0" />
          </font>
