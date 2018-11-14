@@ -42,7 +42,7 @@
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
-      <Text layoutX="593.0" layoutY="721.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price Range: " wrappingWidth="329.205078125">
+      <Text layoutX="593.0" layoutY="721.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price Range: $3.95 - $45.95" wrappingWidth="329.205078125">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
