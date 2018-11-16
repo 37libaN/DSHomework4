@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="856.0" prefWidth="1324.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalProject.homepage.AllRestaurantsController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93c786" height="89.0" stroke="BLACK" strokeType="INSIDE" width="1324.0" />
+      <Text fill="WHITE" layoutX="14.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RestaurantAdvisor" wrappingWidth="608.205078125">
+         <font>
+            <Font name="Lucida Handwriting Italic" size="46.0" />
+         </font>
+      </Text>
+      <Button layoutX="993.0" layoutY="18.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" text="Log In" textFill="WHITE">
+         <font>
+            <Font name="Lucida Bright Regular" size="30.0" />
+         </font>
+      </Button>
+      <Button layoutX="1158.0" layoutY="18.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" text="Cart" textFill="WHITE">
+         <font>
+            <Font name="Lucida Bright Regular" size="30.0" />
+         </font>
+      </Button>
+      <TableView layoutX="41.0" layoutY="122.0" prefHeight="697.0" prefWidth="1242.0">
+        <columns>
+          <TableColumn prefWidth="246.0" text="Restaurant" />
+          <TableColumn minWidth="0.0" prefWidth="150.0" text="Cuisine" />
+            <TableColumn prefWidth="150.0" text="Dining Type" />
+            <TableColumn prefWidth="150.0" text="Price Range" />
+            <TableColumn prefWidth="200.0" text="Phone Number" />
+            <TableColumn prefWidth="200.0" text="Address" />
+            <TableColumn prefWidth="159.0" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
