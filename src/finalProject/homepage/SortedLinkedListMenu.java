@@ -1,7 +1,6 @@
 package finalProject.homepage; 
  
 public class SortedLinkedListMenu<T> { 
-	private int numElements; //number of elements in list 
 	private Node<T> list; //1st node in list 
 	private Node<T> loc; //where you are in list when going through it 
 	private Node<T> prev; //one node before loc, null if loc is first element 
