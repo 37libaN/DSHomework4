@@ -1,12 +1,12 @@
 package finalProject.homepage; 
  
-public class SortedLinkedList<T> { 
+public class SortedLinkedListMenu<T> { 
 	private int numElements; //number of elements in list 
 	private Node<T> list; //1st node in list 
 	private Node<T> loc; //where you are in list when going through it 
 	private Node<T> prev; //one node before loc, null if loc is first element 
 	private Node<T> foundNode; //node that is found by find 
-	public SortedLinkedList(){ 
+	public SortedLinkedListMenu(){ 
 		list = null; 
 		loc = null; 
 		prev = null; 
@@ -53,7 +53,7 @@ public class SortedLinkedList<T> {
 	public Node<T> getFoundNode(){ 
 		return foundNode; 
 	} 
-	public boolean find(obj toFind){ 
+	public boolean find(Object toFind){ 
 		reset(); 
 		while(loc!=null){ 
 			/*if(((Fragment)((Node<T>)((SortedLinkedList<T>) this.list.getInfo()).list).getInfo()).getID()==toFind.getID()){ 
