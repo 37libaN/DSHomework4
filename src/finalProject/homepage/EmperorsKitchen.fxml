@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="856.0" prefWidth="1324.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalProject.homepage.EmperorsKitchenController">
+   <children>
+      <ImageView fitHeight="223.0" fitWidth="300.0" layoutX="119.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@EmperorsKitchenPic.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="236.0" layoutY="617.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="164.0" text="Add Review" textFill="WHITE">
+         <font>
+            <Font name="Lucida Bright Regular" size="22.0" />
+         </font>
+      </Button>
+      <Text layoutX="52.0" layoutY="655.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reviews" wrappingWidth="329.205078125">
+         <font>
+            <Font name="Lucida Bright Regular" size="28.0" />
+         </font>
+      </Text>
+      <Text layoutX="606.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Friday - Saturday: 11:00 am - 10:00 pm" wrappingWidth="367.0">
+         <font>
+            <Font name="Lucida Bright Regular" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="584.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuisine: Asian" wrappingWidth="329.205078125">
+         <font>
+            <Font name="Lucida Bright Regular" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="606.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday - Thursday: 11:00 am - 9:00 pm" wrappingWidth="379.205078125">
+         <font>
+            <Font name="Lucida Bright Regular" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="584.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hours of Operation:" wrappingWidth="329.205078125">
+         <font>
+            <Font name="Lucida Bright Regular" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="584.0" layoutY="623.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rating: 0 Stars" wrappingWidth="329.205078125">
+         <font>
+            <Font name="Lucida Bright Regular" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="584.0" layoutY="561.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price Range: $1.95 - $9.50" wrappingWidth="329.205078125">
+         <font>
+            <Font name="Lucida Bright Regular" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="584.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone No: (262) 784-1617" wrappingWidth="329.205078125">
+         <font>
+            <Font name="Lucida Bright Regular" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="584.0" layoutY="499.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dining Type: Casual Dining" wrappingWidth="329.205078125">
+         <font>
+            <Font name="Lucida Bright Regular" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="584.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address: 18900 W Bluemound Rd, Brookfield, WI 53045" wrappingWidth="608.205078125">
+         <font>
+            <Font name="Lucida Bright Regular" size="22.0" />
+         </font>
+      </Text>
+      <Button layoutX="52.0" layoutY="445.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" text="View Menu" textFill="WHITE">
+         <font>
+            <Font name="Lucida Bright Regular" size="22.0" />
+         </font>
+      </Button>
+      <Text layoutX="52.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Emperor's Kitchen" wrappingWidth="348.205078125">
+         <font>
+            <Font name="Lucida Bright Regular" size="38.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93c786" height="89.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="1324.0" />
+      <Button layoutX="993.0" layoutY="12.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" text="Log In" textFill="WHITE">
+         <font>
+            <Font name="Lucida Bright Regular" size="30.0" />
+         </font>
+      </Button>
+      <Button layoutX="1158.0" layoutY="12.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" text="Cart" textFill="WHITE">
+         <font>
+            <Font name="Lucida Bright Regular" size="30.0" />
+         </font>
+      </Button>
+      <Text fill="WHITE" layoutX="14.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RestaurantAdvisor" wrappingWidth="608.205078125">
+         <font>
+            <Font name="Lucida Handwriting Italic" size="46.0" />
+         </font>
+      </Text>
+      <Text layoutX="606.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunday: 4:00 pm - 9:00 pm" wrappingWidth="367.0">
+         <font>
+            <Font name="Lucida Bright Regular" size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
