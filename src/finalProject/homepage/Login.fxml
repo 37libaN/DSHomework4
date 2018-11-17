@@ -32,11 +32,11 @@
             <Font name="Lucida Bright" size="41.0" />
          </font>
       </Text>
+      <PasswordField fx:id="password" layoutX="550.0" layoutY="397.0" />
       <Button fx:id="login" layoutX="613.0" layoutY="467.0" mnemonicParsing="false" onAction="#login" text="Log In" textFill="WHITE">
          <font>
             <Font size="22.0" />
          </font>
       </Button>
-      <PasswordField fx:id="password" layoutX="550.0" layoutY="397.0" />
    </children>
 </AnchorPane>
