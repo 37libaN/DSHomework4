@@ -28,22 +28,7 @@ public class LoginController implements Initializable {
 	   @Override
 	   public void initialize(URL location, ResourceBundle resources) {
 	   }
-	   public void login(ActionEvent event, Stage primaryStage) throws IOException {
-		   BinSearchTreeLogin<LoginInfo> loginDatabase = new BinSearchTreeLogin<LoginInfo>();
-		   File loginFile = new File("C:/Users/liban/Desktop/Nabil/Comp Sci/EclipseWorkspace/DSHomework4/src/FinalProject/homepage/loginData.txt");
-		   Scanner inputFile = new Scanner(loginFile);
-		   while(inputFile.hasNextLine()) {
-			   LoginInfo currLogin = new LoginInfo();
-			   currLogin.setUsername(inputFile.nextLine());
-			   currLogin.setPassword(inputFile.nextLine());
-			   loginDatabase.add(currLogin);
-		   }
-		   LoginInfo toCheck = new LoginInfo(username.toString(), password.toString());
-		   if(loginDatabase.contains(toCheck)) {
-			   Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-	           primaryStage.setTitle("Login");
-	           primaryStage.setScene(new Scene(root));
-	           primaryStage.show();
-		   }
+	   public void login(ActionEvent event) throws IOException {
+		   Login.getInstance().loginUser(username.toString(), password.toString());
 	   }
 }

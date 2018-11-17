@@ -33,7 +33,7 @@
             <Font name="Lucida Bright" size="41.0" />
          </font>
       </Text>
-      <Button layoutX="613.0" layoutY="467.0" mnemonicParsing="false" text="Log In" textFill="WHITE">
+      <Button fx:id="login" layoutX="613.0" layoutY="467.0" mnemonicParsing="false" onAction="#login" text="Log In" textFill="WHITE">
          <font>
             <Font size="22.0" />
          </font>
