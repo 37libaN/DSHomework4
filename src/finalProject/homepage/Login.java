@@ -2,16 +2,19 @@ package finalProject.homepage;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Login extends Application {
 	public static Login instance;
+	private Stage stage;
 	
 	public Login() {
 		instance = this;
@@ -20,15 +23,19 @@ public class Login extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			// Read file fxml and draw interface.
 			Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
 			primaryStage.setTitle("Login");
 			primaryStage.setScene(new Scene(root));
 			primaryStage.show();
-
-		} catch (Exception e) {
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+	}
+
+	private void toLogin() throws Exception {
+            replaceSceneContent("Login.fxml");
 	}
 
 	public static void main(String[] args) {
@@ -40,7 +47,7 @@ public class Login extends Application {
 	public void loginUser(String username, String password) throws FileNotFoundException {
 		System.out.println("hi");
 		BinSearchTreeLogin<LoginInfo> loginDatabase = new BinSearchTreeLogin<LoginInfo>();
-		File loginFile = new File("loginData1.txt");
+		File loginFile = new File("C:/Users/vishn/Desktop/loginData.txt");
 		Scanner inputFile = new Scanner(loginFile);
 		while (inputFile.hasNextLine()) {
 			LoginInfo currLogin = new LoginInfo();
@@ -50,12 +57,24 @@ public class Login extends Application {
 		}
 		LoginInfo toCheck = new LoginInfo(username, password);
 		if (loginDatabase.contains(toCheck)) {
-			replaceSceneContent("Home.fxml");
+			try {
+				toHome();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 
-	private void replaceSceneContent(String string) {
-		// TODO Auto-generated method stub
-
+	private void toHome() throws Exception {
+		replaceSceneContent("Home.fxml");
 	}
+
+	private Parent replaceSceneContent(String fxmlFile) throws Exception {
+		Parent page = FXMLLoader.load(getClass().getResource(fxmlFile));
+        Scene scene = stage.getScene();
+        stage.getScene().setRoot(page);
+        stage.sizeToScene();
+        return page;
+    }
 }
