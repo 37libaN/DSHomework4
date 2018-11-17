@@ -40,8 +40,7 @@ public class Login extends Application {
 	public void loginUser(String username, String password) throws FileNotFoundException {
 		System.out.println("hi");
 		BinSearchTreeLogin<LoginInfo> loginDatabase = new BinSearchTreeLogin<LoginInfo>();
-		File loginFile = new File(
-				"loginData");
+		File loginFile = new File("loginData1.txt");
 		Scanner inputFile = new Scanner(loginFile);
 		while (inputFile.hasNextLine()) {
 			LoginInfo currLogin = new LoginInfo();
