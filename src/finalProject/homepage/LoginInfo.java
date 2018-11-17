@@ -33,17 +33,17 @@ public class LoginInfo implements Comparable {
 	@Override
 	public int compareTo(Object o) {
 		// TODO Auto-generated method stub
-		if (this.username.compareTo(((LoginInfo) o).getUsername()) == -1) {
+		if (this.username.compareTo(((LoginInfo) o).getUsername()) < 0) {
 			return -1;
 		}
-		if (this.username.compareTo(((LoginInfo) o).getUsername()) == 1) {
+		if (this.username.compareTo(((LoginInfo) o).getUsername()) > 0) {
 			return 1;
 		}
 		if (this.username.compareTo(((LoginInfo) o).getUsername()) == 0) {
-			if (this.password.compareTo(((LoginInfo) o).getPassword()) == -1) {
+			if (this.password.compareTo(((LoginInfo) o).getPassword()) < 0) {
 				return -1;
 			}
-			if (this.password.compareTo(((LoginInfo) o).getPassword()) == 1) {
+			if (this.password.compareTo(((LoginInfo) o).getPassword()) > 0) {
 				return 1;
 			}
 		}

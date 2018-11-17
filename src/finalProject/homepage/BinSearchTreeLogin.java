@@ -13,14 +13,17 @@ public class BinSearchTreeLogin<T> {
 		return found;
 	}
 	private void recContains(T element, BSTNode root2) {
-		if(root2 == null)
+		if(root2 == null) {
 			found = false;
+			return;
+		}
 		else if(((Comparable) element).compareTo(root2.getInfo()) < 0)
-			recContains(element, root2);
+			recContains(element, root2.getLeft());
 		else if(((Comparable) element).compareTo(root2.getInfo()) > 0)
-			recContains(element, root2);
+			recContains(element, root2.getRight());
 		else {
 			found = true;
+			return;
 		}
 	}
 	public boolean remove(T element) {
@@ -73,5 +76,10 @@ public class BinSearchTreeLogin<T> {
 			root2.setRight(recAdd(element, root2.getRight()));
 		return root2;	
 	}
-	
+	public static void main(String args[]) {
+		BinSearchTreeLogin<LoginInfo> l = new BinSearchTreeLogin<LoginInfo>();
+		LoginInfo test = new LoginInfo("hi", "you");
+		l.add(test);
+		System.out.println(l.contains(new LoginInfo("hi", "you")));
+	}
 }
