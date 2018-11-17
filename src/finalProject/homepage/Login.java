@@ -41,7 +41,7 @@ public class Login extends Application {
 		System.out.println("hi");
 		BinSearchTreeLogin<LoginInfo> loginDatabase = new BinSearchTreeLogin<LoginInfo>();
 		File loginFile = new File(
-				"C:/Users/liban/Desktop/Nabil/Comp Sci/EclipseWorkspace/DSHomework4/src/FinalProject/homepage/loginData.txt");
+				"loginData");
 		Scanner inputFile = new Scanner(loginFile);
 		while (inputFile.hasNextLine()) {
 			LoginInfo currLogin = new LoginInfo();

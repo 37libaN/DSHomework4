@@ -29,6 +29,7 @@ public class LoginController implements Initializable {
 	   public void initialize(URL location, ResourceBundle resources) {
 	   }
 	   public void login(ActionEvent event) throws IOException {
-		   Login.getInstance().loginUser(username.toString(), password.toString());
+		   System.out.println(username.getText());
+		   Login.getInstance().loginUser(username.getText(), password.getText());
 	   }
 }
