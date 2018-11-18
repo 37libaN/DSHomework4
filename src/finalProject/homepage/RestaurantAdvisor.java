@@ -16,6 +16,7 @@ public class RestaurantAdvisor extends Application {
 	public static RestaurantAdvisor instance;
 	private Stage stage;
 	
+	
 	public RestaurantAdvisor() {
 		instance = this;
 	}
@@ -97,4 +98,25 @@ public class RestaurantAdvisor extends Application {
 			e.printStackTrace();
 		}
     }
+
+	public static RestaurantInfo getRestaurantInfo() throws FileNotFoundException {
+		File loginFile = new File("C:/Users/liban/Desktop/restaurantData.txt");
+		Scanner inputFile = new Scanner(loginFile);
+		while(inputFile.hasNextLine()) {
+			String name = inputFile.nextLine();
+			String address = inputFile.nextLine();
+			String phoneNo = inputFile.nextLine();
+			String email = inputFile.nextLine();
+			String[] hours = new String[7];
+			for(String h : hours) {
+				h = inputFile.nextLine();
+			}
+			String cuisine = inputFile.nextLine();
+			String diningType = inputFile.nextLine();
+			String priceRange = inputFile.nextLine();
+			int avgRating = inputFile.nextInt();
+			return new RestaurantInfo(name, address, phoneNo, email, cuisine, diningType, priceRange, null, hours, avgRating, null);
+		}
+		return null;
+	}
 }

@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="881.0" prefWidth="1324.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalProject.homepage.TasteofIndiaController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93c786" height="89.0" stroke="BLACK" strokeType="INSIDE" width="1324.0" />
@@ -17,67 +16,67 @@
             <Font name="Lucida Bright Regular" size="28.0" />
          </font>
       </Text>
-      <Text layoutX="615.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tuesday - 11:30 AM-3 PM, 5-10 PM" wrappingWidth="367.0">
+      <Text fx:id="tuesday" layoutX="616.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tuesday - 11:30 AM-3 PM, 5-10 PM" wrappingWidth="367.0">
          <font>
             <Font name="Lucida Bright Regular" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="593.0" layoutY="598.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuisine: Indian" wrappingWidth="329.205078125">
+      <Text fx:id="cuisine" layoutX="594.0" layoutY="615.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuisine: Indian" wrappingWidth="329.205078125">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
-      <Text layoutX="616.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday - Closed" wrappingWidth="329.205078125">
+      <Text layoutX="617.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday - Closed" wrappingWidth="329.205078125">
          <font>
             <Font name="Lucida Bright Regular" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="594.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hours of Operation:" wrappingWidth="329.205078125">
+      <Text fx:id="monday" layoutX="595.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hours of Operation:" wrappingWidth="329.205078125">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
-      <Text layoutX="593.0" layoutY="783.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rating: 0 Stars" wrappingWidth="329.205078125">
+      <Text fx:id="rating" layoutX="594.0" layoutY="800.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rating: 0 Stars" wrappingWidth="329.205078125">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
-      <Text layoutX="593.0" layoutY="721.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price Range: $3.95 - $45.95" wrappingWidth="329.205078125">
+      <Text fx:id="priceRange" layoutX="594.0" layoutY="738.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price Range: $3.95 - $45.95" wrappingWidth="329.205078125">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
-      <Text layoutX="594.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone No: (262) 796 8200" wrappingWidth="329.205078125">
+      <Text fx:id="phoneNo" layoutX="595.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone No: (262) 796 8200" wrappingWidth="329.205078125">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
-      <Text layoutX="593.0" layoutY="659.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dining Type: Casual Dining" wrappingWidth="329.205078125">
+      <Text fx:id="diningType" layoutX="594.0" layoutY="676.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dining Type: Casual Dining" wrappingWidth="329.205078125">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
-      <Text layoutX="595.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address: 17115 W Bluemound Rd d1, Brookfield, WI 53005" wrappingWidth="640.452392578125">
+      <Text fx:id="address" layoutX="595.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address: 17115 W Bluemound Rd d1, Brookfield, WI 53005" wrappingWidth="640.452392578125">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
-      <Button layoutX="62.0" layoutY="455.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" text="View Menu" textFill="WHITE">
+      <Button fx:id="viewMenu" layoutX="62.0" layoutY="455.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" text="View Menu" textFill="WHITE">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Button>
-      <Text layoutX="62.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Taste Of India" wrappingWidth="329.205078125">
+      <Text fx:id="name" layoutX="62.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Taste Of India" wrappingWidth="329.205078125">
          <font>
             <Font name="Lucida Bright Regular" size="38.0" />
          </font>
       </Text>
-      <Button layoutX="983.0" layoutY="22.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" text="Log In" textFill="WHITE">
+      <Button fx:id="logout" layoutX="971.0" layoutY="22.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="164.0" text="Log Out" textFill="WHITE">
          <font>
             <Font name="Lucida Bright Regular" size="30.0" />
          </font>
       </Button>
-      <Button layoutX="1150.0" layoutY="22.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" text="Cart" textFill="WHITE">
+      <Button fx:id="cart" layoutX="1150.0" layoutY="22.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" text="Cart" textFill="WHITE">
          <font>
             <Font name="Lucida Bright Regular" size="30.0" />
          </font>
@@ -97,29 +96,34 @@
             <Image url="@TasteofIndia.png" />
          </image>
       </ImageView>
-      <Text layoutX="615.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wednesday - 11:30 AM-3 PM, 5-10 PM" wrappingWidth="367.0">
+      <Text fx:id="wednesday" layoutX="616.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wednesday - 11:30 AM-3 PM, 5-10 PM" wrappingWidth="367.0">
          <font>
             <Font name="Lucida Bright Regular" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="615.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thursday - 11:30 AM-3 PM, 5-10 PM" wrappingWidth="367.0">
+      <Text fx:id="thursday" layoutX="616.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thursday - 11:30 AM-3 PM, 5-10 PM" wrappingWidth="367.0">
          <font>
             <Font name="Lucida Bright Regular" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="616.0" layoutY="479.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Friday - 11:30 AM-3 PM, 5-10:30 PM" wrappingWidth="367.0">
+      <Text fx:id="friday" layoutX="617.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Friday - 11:30 AM-3 PM, 5-10:30 PM" wrappingWidth="367.0">
          <font>
             <Font name="Lucida Bright Regular" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="618.0" layoutY="517.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saturday - 11:30 AM-3:30 PM, 5-10:30 PM" wrappingWidth="387.0086669921875">
+      <Text fx:id="saturday" layoutX="619.0" layoutY="534.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saturday - 11:30 AM-3:30 PM, 5-10:30 PM" wrappingWidth="387.0086669921875">
          <font>
             <Font name="Lucida Bright Regular" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="616.0" layoutY="559.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunday - 11:30 AM-3:30 PM, 5-10 PM" wrappingWidth="367.0">
+      <Text fx:id="sunday" layoutX="617.0" layoutY="576.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunday - 11:30 AM-3:30 PM, 5-10 PM" wrappingWidth="367.0">
          <font>
             <Font name="Lucida Bright Regular" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="email" layoutX="594.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email: N/A" wrappingWidth="329.205078125">
+         <font>
+            <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
    </children>
