@@ -4,11 +4,11 @@ public class RestaurantInfo {
 	private String name, address, phoneNo, email, cuisine, dineType, priceRange;
 	private String[] hours;
 	private LLStackReview reviews;
-	private int avgRating;
+	private String avgRating;
 	private RestaurantMenu menu;
 
 	public RestaurantInfo(String name, String address, String phoneNo, String email, String cuisine, String dineType,
-			String priceRange, LLStackReview reviews, String[] hours, int rating, RestaurantMenu menu) {
+			String priceRange, LLStackReview reviews, String[] hours, String rating, RestaurantMenu menu) {
 		this.setName(name);
 		this.setAddress(address);
 		this.setPhoneNo(phoneNo);
@@ -93,11 +93,11 @@ public class RestaurantInfo {
 		this.reviews = reviews;
 	}
 
-	public int getAvgRating() {
+	public String getAvgRating() {
 		return avgRating;
 	}
 
-	public void setAvgRating(int avgRating) {
+	public void setAvgRating(String avgRating) {
 		this.avgRating = avgRating;
 	}
 

@@ -113,7 +113,7 @@ public class RestaurantAdvisor extends Application {
 			String cuisine = inputFile.nextLine();
 			String diningType = inputFile.nextLine();
 			String priceRange = inputFile.nextLine();
-			int avgRating = inputFile.nextInt();
+			String avgRating = inputFile.nextLine();
 			return new RestaurantInfo(name, address, phoneNo, email, cuisine, diningType, priceRange, null, hours, avgRating, null);
 	}
 }
