@@ -31,6 +31,6 @@ public class LoginController implements Initializable {
 	   public void login(ActionEvent event) throws IOException {
 		   System.out.println(username.getText());
 		   System.out.println(password.getText());
-		   Login.getInstance().loginUser(username.getText(), password.getText());
+		   RestaurantAdvisor.getInstance().loginUser(username.getText(), password.getText());
 	   }
 }
