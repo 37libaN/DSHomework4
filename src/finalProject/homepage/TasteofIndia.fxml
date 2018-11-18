@@ -26,12 +26,12 @@
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
-      <Text layoutX="617.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday - Closed" wrappingWidth="329.205078125">
+      <Text fx:id="monday" layoutX="617.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday - Closed" wrappingWidth="329.205078125">
          <font>
             <Font name="Lucida Bright Regular" size="18.0" />
          </font>
       </Text>
-      <Text fx:id="monday" layoutX="595.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hours of Operation:" wrappingWidth="329.205078125">
+      <Text layoutX="595.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hours of Operation:" wrappingWidth="329.205078125">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>

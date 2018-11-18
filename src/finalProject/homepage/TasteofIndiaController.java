@@ -71,9 +71,7 @@ public class TasteofIndiaController implements Initializable {
 		cuisine.setText(restaurantInfo.getCuisine());
 		diningType.setText(restaurantInfo.getDineType());
 		priceRange.setText(restaurantInfo.getPriceRange());
-		String ratingNumber = restaurantInfo.getAvgRating();
-		String ratingStuff = ratingNumber;
-		rating.setText(ratingStuff);
+		rating.setText(restaurantInfo.getAvgRating());
 	}
 	
 }
