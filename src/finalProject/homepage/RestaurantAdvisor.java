@@ -12,11 +12,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Login extends Application {
-	public static Login instance;
+public class RestaurantAdvisor extends Application {
+	public static RestaurantAdvisor instance;
 	private Stage stage;
 	
-	public Login() {
+	public RestaurantAdvisor() {
 		instance = this;
 	}
 	
@@ -41,7 +41,7 @@ public class Login extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
-	public static Login getInstance() {
+	public static RestaurantAdvisor getInstance() {
 		return instance;
 	}
 	public void loginUser(String username, String password) throws FileNotFoundException {
@@ -70,11 +70,21 @@ public class Login extends Application {
 		replaceSceneContent("Home.fxml");
 	}
 
-	private Parent replaceSceneContent(String fxmlFile) throws Exception {
-		Parent page = FXMLLoader.load(getClass().getResource(fxmlFile));
+	private void replaceSceneContent(String fxmlFile) throws Exception {
+		/*Parent page = FXMLLoader.load(getClass().getResource(fxmlFile));
         Scene scene = stage.getScene();
         stage.getScene().setRoot(page);
         stage.sizeToScene();
-        return page;
+        return page;*/
+		Stage primaryStage = new Stage();
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
+			primaryStage.setScene(new Scene(root));
+			primaryStage.sizeToScene();
+			primaryStage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 }
