@@ -57,20 +57,23 @@ public class TasteofIndiaController implements Initializable {
 			e.printStackTrace();
 		}
 		name.setText(restaurantInfo.getName());
-		address.setText(restaurantInfo.getName());
-		phoneNo.setText(restaurantInfo.getName());
-		email.setText(restaurantInfo.getName());
-		monday.setText(restaurantInfo.getName());
-		tuesday.setText(restaurantInfo.getName());
-		wednesday.setText(restaurantInfo.getName());
-		thursday.setText(restaurantInfo.getName());
-		friday.setText(restaurantInfo.getName());
-		saturday.setText(restaurantInfo.getName());
-		sunday.setText(restaurantInfo.getName());
-		cuisine.setText(restaurantInfo.getName());
-		diningType.setText(restaurantInfo.getName());
-		priceRange.setText(restaurantInfo.getName());
-		rating.setText(restaurantInfo.getName());
+		address.setText(restaurantInfo.getAddress());
+		phoneNo.setText(restaurantInfo.getPhoneNo());
+		email.setText(restaurantInfo.getEmail());
+		String[] hours = restaurantInfo.getHours();
+		monday.setText(hours[0]);
+		tuesday.setText(hours[1]);
+		wednesday.setText(hours[2]);
+		thursday.setText(hours[3]);
+		friday.setText(hours[4]);
+		saturday.setText(hours[5]);
+		sunday.setText(hours[6]);
+		cuisine.setText(restaurantInfo.getCuisine());
+		diningType.setText(restaurantInfo.getDineType());
+		priceRange.setText(restaurantInfo.getPriceRange());
+		int ratingNumber = restaurantInfo.getAvgRating();
+		String ratingStuff = Integer.toString(ratingNumber);
+		rating.setText(ratingStuff);
 	}
 	
 }
