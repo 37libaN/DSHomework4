@@ -70,11 +70,8 @@ public class Login extends Application {
 		replaceSceneContent("Home.fxml");
 	}
 
-	private Parent replaceSceneContent(String fxmlFile) throws Exception {
+	private void replaceSceneContent(String fxmlFile) throws Exception {
 		Parent page = FXMLLoader.load(getClass().getResource(fxmlFile));
-        Scene scene = stage.getScene();
-        stage.getScene().setRoot(page);
-        stage.sizeToScene();
-        return page;
+        stage.setScene(new Scene(page));
     }
 }
