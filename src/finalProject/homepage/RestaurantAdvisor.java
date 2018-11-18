@@ -34,7 +34,7 @@ public class RestaurantAdvisor extends Application {
 		
 	}
 
-	private void toLogin() throws Exception {
+	public void toLogin() throws Exception {
             replaceSceneContent("Login.fxml");
 	}
 
@@ -45,7 +45,6 @@ public class RestaurantAdvisor extends Application {
 		return instance;
 	}
 	public void loginUser(String username, String password) throws FileNotFoundException {
-		System.out.println("hi");
 		BinSearchTreeLogin<LoginInfo> loginDatabase = new BinSearchTreeLogin<LoginInfo>();
 		File loginFile = new File("C:/Users/vishn/Desktop/loginData.txt");
 		Scanner inputFile = new Scanner(loginFile);
@@ -66,16 +65,27 @@ public class RestaurantAdvisor extends Application {
 		}
 	}
 
-	private void toHome() throws Exception {
+	public void toHome() throws Exception {
 		replaceSceneContent("Home.fxml");
 	}
+	
+	public void toCart() throws Exception {
+		replaceSceneContent("Cart.fxml");
+	}
+	public void tovrTOI() throws Exception {
+		replaceSceneContent("TasteofIndia.fxml");
+	}
+	public void tovrMias() throws Exception {
+		replaceSceneContent("TasteofIndia.fxml");
+	}
+	public void tovrPanda() throws Exception {
+		replaceSceneContent("TasteofIndia.fxml");
+	}
+	public void toshowAllRest() throws Exception {
+		replaceSceneContent("AllRestaurants.fxml");
+	}
 
-	private void replaceSceneContent(String fxmlFile) throws Exception {
-		/*Parent page = FXMLLoader.load(getClass().getResource(fxmlFile));
-        Scene scene = stage.getScene();
-        stage.getScene().setRoot(page);
-        stage.sizeToScene();
-        return page;*/
+	public void replaceSceneContent(String fxmlFile) throws Exception {
 		Stage primaryStage = new Stage();
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));

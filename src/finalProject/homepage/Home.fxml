@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
@@ -17,7 +18,7 @@
             <Font name="Lucida Handwriting Italic" size="46.0" />
          </font>
       </Text>
-      <Button layoutX="940.0" layoutY="17.0" mnemonicParsing="false" text="Log Out" textFill="WHITE">
+      <Button fx:id="logout" layoutX="940.0" layoutY="17.0" mnemonicParsing="false" onAction="#logout" text="Log Out" textFill="WHITE">
          <font>
             <Font name="Lucida Bright" size="30.0" />
          </font>
@@ -25,7 +26,7 @@
             <Insets />
          </opaqueInsets>
       </Button>
-      <Button layoutX="1159.0" layoutY="17.0" mnemonicParsing="false" text="Cart" textFill="WHITE">
+      <Button fx:id="cart" layoutX="1159.0" layoutY="17.0" mnemonicParsing="false" onAction="#cart" text="Cart" textFill="WHITE">
          <font>
             <Font name="Lucida Bright" size="30.0" />
          </font>
@@ -39,20 +40,17 @@
          </font>
       </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93c786" height="583.0" layoutX="28.0" layoutY="259.0" stroke="BLACK" strokeType="INSIDE" width="1265.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="73.0" layoutY="392.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="970.0" layoutY="392.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="535.0" layoutY="392.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <Text fill="WHITE" layoutX="73.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mario's Pizza">
+      <Text fill="WHITE" layoutX="73.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Taste of India">
          <font>
             <Font name="Lucida Bright Demibold" size="38.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="535.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Burgers Central">
+      <Text fill="WHITE" layoutX="535.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mia's">
          <font>
             <Font name="Lucida Bright Demibold" size="38.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="961.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chinese Express">
+      <Text fill="WHITE" layoutX="961.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Panda Express">
          <font>
             <Font name="Lucida Bright Demibold" size="38.0" />
          </font>
@@ -82,12 +80,12 @@
             <Font name="Lucida Bright Demibold" size="33.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="970.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Milwaukee, WI">
+      <Text fill="WHITE" layoutX="970.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Brookfield, WI">
          <font>
             <Font name="Lucida Bright Demibold" size="33.0" />
          </font>
       </Text>
-      <Button layoutX="1012.0" layoutY="789.0" mnemonicParsing="false" text="Show All Restaurants" textFill="WHITE">
+      <Button fx:id="showAllRest" layoutX="1012.0" layoutY="789.0" mnemonicParsing="false" onAction="#showAllRest" text="Show All Restaurants" textFill="WHITE">
          <font>
             <Font name="Lucida Bright" size="23.0" />
          </font>
@@ -95,7 +93,7 @@
             <Insets />
          </opaqueInsets>
       </Button>
-      <Button layoutX="966.0" layoutY="721.0" mnemonicParsing="false" text="View Restaurant" textFill="WHITE">
+      <Button fx:id="vrPanda" layoutX="966.0" layoutY="721.0" mnemonicParsing="false" onAction="#vrPanda" text="View Restaurant" textFill="WHITE">
          <font>
             <Font name="Lucida Bright" size="25.0" />
          </font>
@@ -103,7 +101,7 @@
             <Insets />
          </opaqueInsets>
       </Button>
-      <Button layoutX="531.0" layoutY="721.0" mnemonicParsing="false" text="View Restaurant" textFill="WHITE">
+      <Button fx:id="vrMias" layoutX="531.0" layoutY="721.0" mnemonicParsing="false" onAction="#vrMias" text="View Restaurant" textFill="WHITE">
          <font>
             <Font name="Lucida Bright" size="25.0" />
          </font>
@@ -111,7 +109,7 @@
             <Insets />
          </opaqueInsets>
       </Button>
-      <Button layoutX="73.0" layoutY="721.0" mnemonicParsing="false" text="View Restaurant" textFill="WHITE">
+      <Button fx:id="vrTOI" layoutX="73.0" layoutY="721.0" mnemonicParsing="false" onAction="#vrTOI" text="View Restaurant" textFill="WHITE">
          <font>
             <Font name="Lucida Bright" size="25.0" />
          </font>
@@ -119,5 +117,20 @@
             <Insets />
          </opaqueInsets>
       </Button>
+      <ImageView fitHeight="253.0" fitWidth="360.0" layoutX="961.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@panda-express-logo1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="174.0" fitWidth="344.0" layoutX="531.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mia's.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="187.0" fitWidth="315.0" layoutX="73.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@TasteofIndia.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
