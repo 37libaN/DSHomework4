@@ -100,23 +100,20 @@ public class RestaurantAdvisor extends Application {
     }
 
 	public static RestaurantInfo getRestaurantInfo() throws FileNotFoundException {
-		File loginFile = new File("C:/Users/liban/Desktop/restaurantData.txt");
+		File loginFile = new File("C:/Users/vishn/Desktop/restaurantData.txt");
 		Scanner inputFile = new Scanner(loginFile);
-		while(inputFile.hasNextLine()) {
 			String name = inputFile.nextLine();
 			String address = inputFile.nextLine();
 			String phoneNo = inputFile.nextLine();
 			String email = inputFile.nextLine();
 			String[] hours = new String[7];
-			for(String h : hours) {
-				h = inputFile.nextLine();
+			for(int i = 0; i < hours.length; i++) {
+				hours[i] = inputFile.nextLine();
 			}
 			String cuisine = inputFile.nextLine();
 			String diningType = inputFile.nextLine();
 			String priceRange = inputFile.nextLine();
 			int avgRating = inputFile.nextInt();
 			return new RestaurantInfo(name, address, phoneNo, email, cuisine, diningType, priceRange, null, hours, avgRating, null);
-		}
-		return null;
 	}
 }
