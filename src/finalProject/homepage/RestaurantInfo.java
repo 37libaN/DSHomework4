@@ -108,4 +108,20 @@ public class RestaurantInfo {
 	public void setMenu(RestaurantMenu menu) {
 		this.menu = menu;
 	}
+	
+	public String toString() {
+		String toString = "";
+		toString+=name+"\n";
+		toString+=address+"\n";
+		toString+=phoneNo+"\n";
+		toString+=email+"\n";
+		for(String h : hours) {
+			toString += h;
+		}
+		toString+=cuisine+"\n";
+		toString+=dineType+"\n";
+		toString+=priceRange+"\n";
+		toString+=avgRating+"\n";
+		return toString();
+	}
 }
