@@ -8,8 +8,10 @@ import java.util.Scanner;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class RestaurantAdvisor extends Application {
@@ -28,6 +30,7 @@ public class RestaurantAdvisor extends Application {
 			primaryStage.setTitle("Login");
 			primaryStage.setScene(new Scene(root));
 			primaryStage.show();
+			Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
