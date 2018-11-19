@@ -50,7 +50,9 @@ public class RestaurantAdvisor extends Application {
 	}
 	public void loginUser(String username, String password) throws FileNotFoundException {
 		BinSearchTreeLogin<LoginInfo> loginDatabase = new BinSearchTreeLogin<LoginInfo>();
-		File loginFile = new File("C:/Users/vishn/Desktop/loginData.txt");
+		//C:/Users/liban/Desktop/loginData.txt
+		//User: 123hibob password: jshihi
+		File loginFile = new File("loginData.txt");
 		Scanner inputFile = new Scanner(loginFile);
 		while (inputFile.hasNextLine()) {
 			LoginInfo currLogin = new LoginInfo();
@@ -103,7 +105,8 @@ public class RestaurantAdvisor extends Application {
     }
 
 	public static RestaurantInfo getRestaurantInfo() throws FileNotFoundException {
-		File loginFile = new File("C:/Users/vishn/Desktop/restaurantData.txt");
+		//C:/Users/liban/Desktop/restaurantData.txt
+		File loginFile = new File("restaurantData.txt");
 		Scanner inputFile = new Scanner(loginFile);
 			String name = inputFile.nextLine();
 			String address = inputFile.nextLine();
