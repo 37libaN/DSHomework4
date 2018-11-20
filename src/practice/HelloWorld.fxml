@@ -5,9 +5,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="practice.HelloWorldController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="856.0" prefWidth="1324.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="practice.HelloWorldController">
    <children>
       <Button fx:id="myButton" layoutX="261.0" layoutY="79.0" mnemonicParsing="false" onAction="#printHW" text="Button" />
       <TextField fx:id="myTextField" layoutX="188.0" layoutY="181.0" />
+      <Button layoutX="37.0" layoutY="-5.0" mnemonicParsing="false" prefHeight="177.0" prefWidth="190.0" text="Button" />
+      <Button layoutX="469.0" layoutY="-5.0" mnemonicParsing="false" prefHeight="137.0" prefWidth="351.0" text="Button" />
    </children>
 </AnchorPane>

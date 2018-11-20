@@ -52,7 +52,7 @@ public class RestaurantAdvisor extends Application {
 		BinSearchTreeLogin<LoginInfo> loginDatabase = new BinSearchTreeLogin<LoginInfo>();
 		//C:/Users/liban/Desktop/loginData.txt
 		//User: 123hibob password: jshihi
-		File loginFile = new File("loginData.txt");
+		File loginFile = new File("C:/Users/vishn/Desktop/loginData.txt");
 		Scanner inputFile = new Scanner(loginFile);
 		while (inputFile.hasNextLine()) {
 			LoginInfo currLogin = new LoginInfo();
@@ -96,7 +96,7 @@ public class RestaurantAdvisor extends Application {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
 			primaryStage.setScene(new Scene(root));
-			primaryStage.sizeToScene();
+			//primaryStage.sizeToScene();
 			primaryStage.show();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
