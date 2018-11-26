@@ -19,6 +19,7 @@ public class RestaurantInfo {
 		this.setReviews(reviews);
 		this.setHours(hours);
 		this.setMenu(menu);
+		this.setAvgRating(rating);
 	}
 
 	public String getName() {
@@ -122,6 +123,6 @@ public class RestaurantInfo {
 		toString+=dineType+"\n";
 		toString+=priceRange+"\n";
 		toString+=avgRating+"\n";
-		return toString();
+		return toString;
 	}
 }
