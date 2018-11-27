@@ -4,12 +4,13 @@ import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 
-public class TasteofIndiaController implements Initializable {
+public class RestaurantController implements Initializable {
 	private RestaurantInfo restaurantInfo;
 	@FXML
 	private Text name;
@@ -74,5 +75,13 @@ public class TasteofIndiaController implements Initializable {
 		rating.setText(restaurantInfo.getAvgRating());
 		//System.out.print(restaurantInfo.toString());
 	}
-	
+	public void logout(ActionEvent event) throws Exception {
+		RestaurantAdvisor.getInstance().toLogin();
+	}
+	public void cart(ActionEvent event) throws Exception {
+		RestaurantAdvisor.getInstance().toCart();
+	}
+	public void menu(ActionEvent event) throws Exception {
+		RestaurantAdvisor.getInstance().toMenu();
+	}
 }

@@ -53,7 +53,7 @@ public class RestaurantAdvisor extends Application {
 		BinSearchTreeLogin<LoginInfo> loginDatabase = new BinSearchTreeLogin<LoginInfo>();
 		// C:/Users/liban/Desktop/loginData.txt
 		// User: 123hibob password: jshihi
-		File loginFile = new File("C:/Users/vishn/Desktop/loginData.txt");
+		File loginFile = new File("C:/Users/liban/Desktop/loginData.txt");
 		Scanner inputFile = new Scanner(loginFile);
 		while (inputFile.hasNextLine()) {
 			LoginInfo currLogin = new LoginInfo();
@@ -62,7 +62,7 @@ public class RestaurantAdvisor extends Application {
 			loginDatabase.add(currLogin);
 		}
 		inputFile.close();
-		System.out.println(getRestaurantInfo().toString());
+		//System.out.println(getRestaurantInfo().toString());
 		LoginInfo toCheck = new LoginInfo(username, password);
 		if (loginDatabase.contains(toCheck)) {
 			try {
@@ -81,7 +81,11 @@ public class RestaurantAdvisor extends Application {
 	public void toCart() throws Exception {
 		replaceSceneContent("Cart.fxml");
 	}
-
+	
+	public void toMenu() throws Exception {
+		replaceSceneContent("TasteofIndiaMenu.fxml");
+	}
+	
 	public void tovrTOI() throws Exception {
 		replaceSceneContent("TasteofIndia.fxml");
 	}
@@ -113,7 +117,7 @@ public class RestaurantAdvisor extends Application {
 
 	public static RestaurantInfo getRestaurantInfo() throws FileNotFoundException {
 		// C:/Users/vishn/Desktop/restaurantData.txt
-		File loginFile = new File("C:/Users/vishn/Desktop/restaurantData.txt");
+		File loginFile = new File("C:/Users/liban/Desktop/restaurantData.txt");
 		Scanner inputFile = new Scanner(loginFile);
 		String name = inputFile.nextLine();
 		String address = inputFile.nextLine();
