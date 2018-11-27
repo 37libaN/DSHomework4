@@ -1,6 +1,6 @@
 package finalProject.homepage;
 
-public class RestaurantInfo {
+public class RestaurantInfo implements Comparable{
 	private String name, address, phoneNo, email, cuisine, dineType, priceRange;
 	private String[] hours;
 	private LLStackReview reviews;
@@ -124,5 +124,17 @@ public class RestaurantInfo {
 		toString+=priceRange+"\n";
 		toString+=avgRating+"\n";
 		return toString;
+	}
+
+	
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		if (this.name.compareTo(((RestaurantInfo) o).getName()) < 0) {
+			return -1;
+		}
+		if (this.name.compareTo(((RestaurantInfo) o).getName()) > 0) {
+			return 1;
+		}
+		return 0;
 	}
 }
