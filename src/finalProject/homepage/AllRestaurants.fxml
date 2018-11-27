@@ -25,16 +25,6 @@
             <Font name="Lucida Bright Regular" size="30.0" />
          </font>
       </Button>
-      <TableView layoutX="41.0" layoutY="122.0" prefHeight="697.0" prefWidth="1242.0">
-        <columns>
-          <TableColumn prefWidth="246.0" text="Restaurant" />
-          <TableColumn minWidth="0.0" prefWidth="150.0" text="Cuisine" />
-            <TableColumn prefWidth="150.0" text="Dining Type" />
-            <TableColumn prefWidth="150.0" text="Price Range" />
-            <TableColumn prefWidth="200.0" text="Phone Number" />
-            <TableColumn prefWidth="200.0" text="Address" />
-            <TableColumn prefWidth="159.0" />
-        </columns>
-      </TableView>
+      <VBox layoutX="72.0" layoutY="121.0" prefHeight="695.0" prefWidth="382.0" />
    </children>
 </AnchorPane>
