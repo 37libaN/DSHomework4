@@ -52,11 +52,12 @@ public class RestaurantController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		try {
-			restaurantInfo = RestaurantAdvisor.getRestaurantInfo();
+			restaurantInfo = RestaurantAdvisor.getRestaurantInfo();//get selected restaurant
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		//set all text fields to the restaurant's info
 		name.setText(restaurantInfo.getName());
 		address.setText(restaurantInfo.getAddress());
 		phoneNo.setText(restaurantInfo.getPhoneNo());
@@ -75,13 +76,13 @@ public class RestaurantController implements Initializable {
 		rating.setText(restaurantInfo.getAvgRating());
 		//System.out.print(restaurantInfo.toString());
 	}
-	public void logout(ActionEvent event) throws Exception {
+	public void logout(ActionEvent event) throws Exception {//go to login page
 		RestaurantAdvisor.getInstance().toLogin();
 	}
-	public void cart(ActionEvent event) throws Exception {
+	public void cart(ActionEvent event) throws Exception {//go to cart page
 		RestaurantAdvisor.getInstance().toCart();
 	}
-	public void menu(ActionEvent event) throws Exception {
+	public void menu(ActionEvent event) throws Exception {//go to menu page
 		RestaurantAdvisor.getInstance().toMenu();
 	}
 }

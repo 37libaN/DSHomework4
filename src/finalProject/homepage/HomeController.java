@@ -23,21 +23,16 @@ public class HomeController implements Initializable{
 	@FXML
 	private Button showAllRest;
 
-	public void logout(ActionEvent event) throws Exception {
+	public void logout(ActionEvent event) throws Exception {//go to login page
 		RestaurantAdvisor.getInstance().toLogin();
 	}
-	public void cart(ActionEvent event) throws Exception {
+	public void cart(ActionEvent event) throws Exception {//go to cart page
 		RestaurantAdvisor.getInstance().toCart();
 	}
-	public void vrTOI(ActionEvent event) throws Exception {
-		RestaurantAdvisor.getInstance().tovrTOI();
+	public void toRestaurant(ActionEvent event) throws Exception {
+		RestaurantAdvisor.getInstance().toRestaurant();
 	}
-	public void vrMias(ActionEvent event) throws Exception {
-		RestaurantAdvisor.getInstance().tovrMias();
-	}
-	public void vrPanda(ActionEvent event) throws Exception {
-		RestaurantAdvisor.getInstance().tovrPanda();
-	}
+	
 	public void showAllRest(ActionEvent event) throws Exception {
 		RestaurantAdvisor.getInstance().toshowAllRest();
 	}

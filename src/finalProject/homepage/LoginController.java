@@ -19,16 +19,18 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
-	   @FXML
-	   private Button login;
-	   @FXML
-	   private TextField username;
-	   @FXML
-	   private PasswordField password;
-	   @Override
-	   public void initialize(URL location, ResourceBundle resources) {
-	   }
-	   public void login(ActionEvent event) throws IOException {
-		   RestaurantAdvisor.getInstance().loginUser(username.getText(), password.getText());
-	   }
+	@FXML
+	private Button login;
+	@FXML
+	private TextField username;
+	@FXML
+	private PasswordField password;
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+	}
+
+	public void login(ActionEvent event) throws IOException {// send main app login info to try to go to homepage
+		RestaurantAdvisor.getInstance().loginUser(username.getText(), password.getText());
+	}
 }

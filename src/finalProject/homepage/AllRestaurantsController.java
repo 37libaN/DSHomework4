@@ -1,5 +1,6 @@
 package finalProject.homepage;
 
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -13,7 +14,13 @@ public class AllRestaurantsController implements Initializable{
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		LLStackReview allRestaurants = RestaurantAdvisor.getInstance().getAllRestaurants();
+		try {
+			LLStackReview allRestaurants = RestaurantAdvisor.getInstance().getAllRestaurants();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 }

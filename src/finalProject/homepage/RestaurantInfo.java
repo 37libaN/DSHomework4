@@ -1,14 +1,17 @@
 package finalProject.homepage;
 
+import java.util.ArrayList;
+
 public class RestaurantInfo implements Comparable{
 	private String name, address, phoneNo, email, cuisine, dineType, priceRange;
 	private String[] hours;
 	private LLStackReview reviews;
 	private String avgRating;
-	private RestaurantMenu menu;
+	//private RestaurantMenu menu;
+	private ArrayList<String> menu;
 
 	public RestaurantInfo(String name, String address, String phoneNo, String email, String cuisine, String dineType,
-			String priceRange, LLStackReview reviews, String[] hours, String rating, RestaurantMenu menu) {
+			String priceRange, LLStackReview reviews, String[] hours, String rating, ArrayList<String> menu) {
 		this.setName(name);
 		this.setAddress(address);
 		this.setPhoneNo(phoneNo);
@@ -102,11 +105,11 @@ public class RestaurantInfo implements Comparable{
 		this.avgRating = avgRating;
 	}
 
-	public RestaurantMenu getMenu() {
+	public ArrayList<String> getMenu() {
 		return menu;
 	}
 
-	public void setMenu(RestaurantMenu menu) {
+	public void setMenu(ArrayList<String> menu) {
 		this.menu = menu;
 	}
 	
