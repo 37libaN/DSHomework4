@@ -15,12 +15,12 @@
             <Font name="Lucida Handwriting Italic" size="46.0" />
          </font>
       </Text>
-      <Button layoutX="993.0" layoutY="18.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" text="Log In" textFill="WHITE">
+      <Button fx:id="logout" layoutX="993.0" layoutY="18.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" text="Log In" textFill="WHITE">
          <font>
             <Font name="Lucida Bright Regular" size="30.0" />
          </font>
       </Button>
-      <Button layoutX="1158.0" layoutY="18.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" text="Cart" textFill="WHITE">
+      <Button fx:id="cart" layoutX="1158.0" layoutY="18.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" text="Cart" textFill="WHITE">
          <font>
             <Font name="Lucida Bright Regular" size="30.0" />
          </font>

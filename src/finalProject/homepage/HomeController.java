@@ -29,11 +29,11 @@ public class HomeController implements Initializable{
 	public void cart(ActionEvent event) throws Exception {//go to cart page
 		RestaurantAdvisor.getInstance().toCart();
 	}
-	public void toRestaurant(ActionEvent event) throws Exception {
+	public void toRestaurant(ActionEvent event) throws Exception {//go to restaurant page
 		RestaurantAdvisor.getInstance().toRestaurant();
 	}
 	
-	public void showAllRest(ActionEvent event) throws Exception {
+	public void showAllRest(ActionEvent event) throws Exception {//go to allrestaurants page
 		RestaurantAdvisor.getInstance().toshowAllRest();
 	}
 	
