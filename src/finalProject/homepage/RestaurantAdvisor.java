@@ -107,10 +107,9 @@ public class RestaurantAdvisor extends Application {
 			e.printStackTrace();
 		}
 	}
-
 	public static RestaurantInfo getRestaurantInfo() throws FileNotFoundException {
 		// C:/Users/vishn/Desktop/restaurantData.txt
-		File loginFile = new File("C:/Users/vishn/Desktop/restaurantData.txt");
+		File loginFile = new File("C:/Users/vishn/Desktop/singleRestaurantData.txt");
 		Scanner inputFile = new Scanner(loginFile);
 		String name = inputFile.nextLine();
 		String address = inputFile.nextLine();
@@ -124,14 +123,21 @@ public class RestaurantAdvisor extends Application {
 		String diningType = inputFile.nextLine();
 		String priceRange = inputFile.nextLine();
 		String avgRating = inputFile.nextLine();
+		ArrayList<String> restMenu = new ArrayList<String>();
+		inputFile.nextLine();
+		String nextString = inputFile.nextLine();
+		while (!nextString.equals("-")) {
+			restMenu.add(nextString);
+			nextString = inputFile.nextLine();
+		}
 		inputFile.close();
 		return new RestaurantInfo(name, address, phoneNo, email, cuisine, diningType, priceRange, null, hours,
-				avgRating, null);
+				avgRating, restMenu);
 	}
 
 	public LLStackReview getAllRestaurants() throws FileNotFoundException {//returns all restaurants
 		LLStackReview<RestaurantInfo> allRestaurants = new LLStackReview<RestaurantInfo>();
-		File loginFile = new File("C:/Users/liban/Desktop/singleRestaurantData.txt");
+		File loginFile = new File("C:/Users/vishn/Desktop/restaurantData.txt");
 		Scanner inputFile = new Scanner(loginFile);
 		while (inputFile.hasNextLine()) {//go through file for restaurant data
 			String name = inputFile.nextLine();

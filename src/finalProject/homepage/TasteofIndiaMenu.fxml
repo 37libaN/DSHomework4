@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="881.0" prefWidth="1324.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalProject.homepage.TasteofIndiaController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="881.0" prefWidth="1324.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalProject.homepage.RestaurantMenuController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93c786" height="89.0" stroke="BLACK" strokeType="INSIDE" width="1324.0" />
       <Text layoutX="62.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Taste Of India" wrappingWidth="329.205078125">
@@ -16,7 +16,7 @@
             <Font name="Lucida Bright Regular" size="38.0" />
          </font>
       </Text>
-      <Button layoutX="950.0" layoutY="22.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="185.0" text="Log Out" textFill="WHITE">
+      <Button fx:id="logout" layoutX="950.0" layoutY="22.0" mnemonicParsing="false" onAction="#logout" prefHeight="56.0" prefWidth="185.0" text="Log Out" textFill="WHITE">
          <font>
             <Font name="Lucida Bright Regular" size="30.0" />
          </font>
@@ -31,6 +31,6 @@
             <Font name="Lucida Handwriting Italic" size="46.0" />
          </font>
       </Text>
-      <TextArea layoutX="62.0" layoutY="217.0" prefHeight="592.0" prefWidth="1193.0" text="Appetizers&#10;   Chicken Chilli    - $7.95&#10;   Chicken Pakora - $5.95&#10;   Chilli Paneer      - $7.95&#10;   Paneer Tikka      - $12.95&#10;   Samosa              - $3.95&#10;&#10;Entrees&#10;   Goat Curry            - $14.95&#10;   Chicken Curry       - $14.95&#10;   Beef Curry             - $14.95&#10;   Tandoori Chicken  - $14.95&#10;   Fish Masala            - $14.95&#10;   Butter Paneer         - $12.95&#10;   Vegetable Curry     -$12.95&#10;   &#10;Breads&#10;   Roti   - $2.00&#10;   Naan - $2.50&#10;   " />
+      <TextArea fx:id="menuText" layoutX="62.0" layoutY="217.0" prefHeight="592.0" prefWidth="1193.0" text="Appetizers&#10;   Chicken Chilli    - $7.95&#10;   Chicken Pakora - $5.95&#10;   Chilli Paneer      - $7.95&#10;   Paneer Tikka      - $12.95&#10;   Samosa              - $3.95&#10;&#10;Entrees&#10;   Goat Curry            - $14.95&#10;   Chicken Curry       - $14.95&#10;   Beef Curry             - $14.95&#10;   Tandoori Chicken  - $14.95&#10;   Fish Masala            - $14.95&#10;   Butter Paneer         - $12.95&#10;   Vegetable Curry     -$12.95&#10;   &#10;Breads&#10;   Roti   - $2.00&#10;   Naan - $2.50&#10;   " />
    </children>
 </AnchorPane>
