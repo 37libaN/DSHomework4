@@ -135,13 +135,13 @@ public class RestaurantAdvisor extends Application {
 				avgRating, restMenu);
 	}
 
-	public LLStackReview getAllRestaurants() throws FileNotFoundException {//returns all restaurants
-		LLStackReview<RestaurantInfo> allRestaurants = new LLStackReview<RestaurantInfo>();
-		File loginFile = new File("C:/Users/vishn/Desktop/restaurantData.txt");
+	public SortedLinkedList<RestaurantInfo> getAllRestaurants() throws FileNotFoundException {//returns all restaurants
+		SortedLinkedList<RestaurantInfo> allRestaurants = new SortedLinkedList<RestaurantInfo>(); 
+		File loginFile = new File("C:/Users/liban/Desktop/restaurantData.txt"); 
 		Scanner inputFile = new Scanner(loginFile);
 		while (inputFile.hasNextLine()) {//go through file for restaurant data
+			System.out.println("hi"); 
 			String name = inputFile.nextLine();
-
 			String address = inputFile.nextLine();
 			String phoneNo = inputFile.nextLine();
 			String email = inputFile.nextLine();
@@ -159,11 +159,13 @@ public class RestaurantAdvisor extends Application {
 			while (!nextString.equals("-")) {
 				restMenu.add(nextString);
 				nextString = inputFile.nextLine();
+				System.out.println("menu"); 
 			}
 			RestaurantInfo restaurant = new RestaurantInfo(name, address, phoneNo, email, cuisine, diningType,
 					priceRange, null, hours, avgRating, restMenu);
-			allRestaurants.Push(restaurant);
+			allRestaurants.add(restaurant);
 			inputFile.nextLine();
+			System.out.println("hi2"); 
 		}
 		return allRestaurants;
 	}

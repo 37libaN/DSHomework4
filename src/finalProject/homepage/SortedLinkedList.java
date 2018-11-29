@@ -1,17 +1,19 @@
 package finalProject.homepage; 
  
-public class SortedLinkedListMenu<T> { 
+public class SortedLinkedList<T> { 
 	private Node<T> list; //1st node in list 
 	private Node<T> loc; //where you are in list when going through it 
 	private Node<T> prev; //one node before loc, null if loc is first element 
 	private Node<T> foundNode; //node that is found by find 
-	public SortedLinkedListMenu(){ 
-		list = null; 
-		loc = null; 
-		prev = null; 
-	} 
-	public boolean isEmpty(){ //returns true if empty, false if not 
-		if (list == null)
+	private int numElements; //number of elements in list 
+	public SortedLinkedList(){  
+		list = null;  
+		loc = null;  
+		prev = null;  
+		numElements = 0; 
+	}  
+	public boolean isEmpty(){ //returns true if empty, false if not  
+		if (numElements == 0) 
 			return true;
 		return false;
 	} 
@@ -37,6 +39,7 @@ public class SortedLinkedListMenu<T> {
 			toAdd.setLink(loc); 
 			prev.setLink(toAdd); 
 		} 
+		numElements++; 
 	} 
 	public Node<T> getNode(){ //returns loc 
 		return loc; 
@@ -64,4 +67,7 @@ public class SortedLinkedListMenu<T> {
 		} 
 		return false; 
 	} 
+	public int size() { 
+		return numElements; 
+	}  
 } 

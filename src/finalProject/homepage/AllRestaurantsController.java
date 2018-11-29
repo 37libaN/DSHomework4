@@ -16,10 +16,44 @@ public class AllRestaurantsController implements Initializable{
 	private Button logout;
 	@FXML
 	private Button cart;
-	@Override
+	private LLQueue<String> firstNames; 
+	private LLQueue<String> secondNames; 
+	private LLQueue<String> thirdNames; 
+	@FXML 
+	private Button button1; 
+	@FXML 
+	private Button button2; 
+	@FXML 
+	private Button button3; 
+	@FXML 
+	private Button button4; 
+	@FXML 
+	private Button button5; 
+	//@FXML 
+	//private Button[] buttons; 
+	private final int VBOXOBJECTS = 5; 
+ 
 	public void initialize(URL location, ResourceBundle resources) {
 		try {
-			LLStackReview allRestaurants = RestaurantAdvisor.getInstance().getAllRestaurants();
+			SortedLinkedList<RestaurantInfo> allRestaurants = RestaurantAdvisor.getInstance().getAllRestaurants(); 
+			allRestaurants.reset(); 
+			allRestaurants.reset(); 
+			int count = 0; 
+			for (count = count; count < allRestaurants.size() || count < VBOXOBJECTS; count++) { 
+				firstNames.enqueue(allRestaurants.getNode().getInfo().getName()); 
+				allRestaurants.step(); 
+			} 
+			for (count = count; count < allRestaurants.size() || count < (VBOXOBJECTS * 2); count++) { 
+				secondNames.enqueue(allRestaurants.getNode().getInfo().getName()); 
+				allRestaurants.step(); 
+			} 
+			for (count = count; count < allRestaurants.size() || count < (VBOXOBJECTS * 3); count++) { 
+				thirdNames.enqueue(allRestaurants.getNode().getInfo().getName()); 
+				allRestaurants.step(); 
+			} 
+			contain = new VBox(); 
+			button1.setText(firstNames.dequeue()); 
+			button2.setText(firstNames.dequeue()); 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
