@@ -54,7 +54,7 @@ public class RestaurantAdvisor extends Application {
 		BinSearchTreeLogin<LoginInfo> loginDatabase = new BinSearchTreeLogin<LoginInfo>();
 		// C:/Users/liban/Desktop/loginData.txt
 		// User: 123hibob password: jshihi
-		File loginFile = new File("C:/Users/vishn/Desktop/loginData.txt");
+		File loginFile = new File("C:/Users/liban/Desktop/loginData.txt");
 		Scanner inputFile = new Scanner(loginFile);
 		while (inputFile.hasNextLine()) {
 			LoginInfo currLogin = new LoginInfo();
@@ -109,7 +109,7 @@ public class RestaurantAdvisor extends Application {
 	}
 	public static RestaurantInfo getRestaurantInfo() throws FileNotFoundException {
 		// C:/Users/vishn/Desktop/restaurantData.txt
-		File loginFile = new File("C:/Users/vishn/Desktop/singleRestaurantData.txt");
+		File loginFile = new File("C:/Users/liban/Desktop/singleRestaurantData.txt");
 		Scanner inputFile = new Scanner(loginFile);
 		String name = inputFile.nextLine();
 		String address = inputFile.nextLine();
@@ -134,13 +134,12 @@ public class RestaurantAdvisor extends Application {
 		return new RestaurantInfo(name, address, phoneNo, email, cuisine, diningType, priceRange, null, hours,
 				avgRating, restMenu);
 	}
-
+	
 	public SortedLinkedList<RestaurantInfo> getAllRestaurants() throws FileNotFoundException {//returns all restaurants
 		SortedLinkedList<RestaurantInfo> allRestaurants = new SortedLinkedList<RestaurantInfo>(); 
 		File loginFile = new File("C:/Users/liban/Desktop/restaurantData.txt"); 
 		Scanner inputFile = new Scanner(loginFile);
 		while (inputFile.hasNextLine()) {//go through file for restaurant data
-			System.out.println("hi"); 
 			String name = inputFile.nextLine();
 			String address = inputFile.nextLine();
 			String phoneNo = inputFile.nextLine();
@@ -159,14 +158,13 @@ public class RestaurantAdvisor extends Application {
 			while (!nextString.equals("-")) {
 				restMenu.add(nextString);
 				nextString = inputFile.nextLine();
-				System.out.println("menu"); 
 			}
 			RestaurantInfo restaurant = new RestaurantInfo(name, address, phoneNo, email, cuisine, diningType,
 					priceRange, null, hours, avgRating, restMenu);
 			allRestaurants.add(restaurant);
 			inputFile.nextLine();
-			System.out.println("hi2"); 
 		}
+		inputFile.close();
 		return allRestaurants;
 	}
 }

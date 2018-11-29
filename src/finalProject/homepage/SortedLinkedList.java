@@ -19,9 +19,7 @@ public class SortedLinkedList<T> {
 	} 
 	public void add(T element){ //adds an element into its sorted position in list, sorted by ascending 
 		reset(); 
-		T currElement; //current element used for comparisons 
-		if(loc == null) 
-			return; 
+		T currElement; //current element used for comparisons  
 		while(loc!=null){ 
 			currElement = loc.getInfo(); 
 			if(!(((Comparable) element).compareTo(currElement)<0)){  
@@ -58,16 +56,24 @@ public class SortedLinkedList<T> {
 	public boolean find(Object toFind){ 
 		reset(); 
 		while(loc!=null){ 
-			/*if(((Fragment)((Node<T>)((SortedLinkedList<T>) this.list.getInfo()).list).getInfo()).getID()==toFind.getID()){ 
+			if(((RestaurantInfo) list.getInfo()).getName().equals(toFind)){ 
 				foundNode = loc; 
 				return true; 
 			} 
-			*/
 			step();
 		} 
 		return false; 
 	} 
 	public int size() { 
 		return numElements; 
-	}  
+	} 
+	public String toString() {
+		String toString = "";
+		reset();
+		while(loc!=null) {
+			toString+=((RestaurantInfo) loc.getInfo()).getName();
+			step();
+		}
+		return toString;
+	}
 } 

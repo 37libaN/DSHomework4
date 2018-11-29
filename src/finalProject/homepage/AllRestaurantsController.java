@@ -37,25 +37,26 @@ public class AllRestaurantsController implements Initializable{
 		try {
 			SortedLinkedList<RestaurantInfo> allRestaurants = RestaurantAdvisor.getInstance().getAllRestaurants(); 
 			allRestaurants.reset(); 
-			allRestaurants.reset(); 
+			firstNames = new LLQueue<String>();
+			secondNames = new LLQueue<String>();
+			thirdNames = new LLQueue<String>();
 			int count = 0; 
-			for (count = count; count < allRestaurants.size() || count < VBOXOBJECTS; count++) { 
+			for (count = count; count < allRestaurants.size() && count < VBOXOBJECTS; count++) { 
 				firstNames.enqueue(allRestaurants.getNode().getInfo().getName()); 
 				allRestaurants.step(); 
 			} 
-			for (count = count; count < allRestaurants.size() || count < (VBOXOBJECTS * 2); count++) { 
+			for (count = count; count < allRestaurants.size() && count < (VBOXOBJECTS * 2); count++) { 
 				secondNames.enqueue(allRestaurants.getNode().getInfo().getName()); 
 				allRestaurants.step(); 
 			} 
-			for (count = count; count < allRestaurants.size() || count < (VBOXOBJECTS * 3); count++) { 
+			for (count = count; count < allRestaurants.size() && count < (VBOXOBJECTS * 3); count++) { 
 				thirdNames.enqueue(allRestaurants.getNode().getInfo().getName()); 
 				allRestaurants.step(); 
-			} 
+			} 			
 			contain = new VBox(); 
 			button1.setText(firstNames.dequeue()); 
 			button2.setText(firstNames.dequeue()); 
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
