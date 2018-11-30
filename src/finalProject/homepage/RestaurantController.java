@@ -48,6 +48,8 @@ public class RestaurantController implements Initializable {
 	private Button cart;
 	@FXML
 	private Button viewMenu;
+	@FXML
+	private Button addReview;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -84,5 +86,8 @@ public class RestaurantController implements Initializable {
 	}
 	public void menu(ActionEvent event) throws Exception {//go to menu page
 		RestaurantAdvisor.getInstance().toMenu();
+	}
+	public void addReview(ActionEvent event) throws Exception {//go to add review page
+		RestaurantAdvisor.getInstance().toAddReview();
 	}
 }

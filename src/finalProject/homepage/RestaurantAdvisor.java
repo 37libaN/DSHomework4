@@ -94,6 +94,9 @@ public class RestaurantAdvisor extends Application {
 	public void toshowAllRest() throws Exception {//go to allRestaurants page
 		replaceSceneContent("AllRestaurants.fxml");
 	}
+	public void toAddReview() throws Exception {//go to add review page
+		replaceSceneContent("Reviews.fxml");
+	}
 
 	public void replaceSceneContent(String fxmlFile) throws Exception {
 		Stage primaryStage = new Stage();
