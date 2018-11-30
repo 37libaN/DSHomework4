@@ -25,86 +25,86 @@
             <Font name="Lucida Bright Regular" size="30.0" />
          </font>
       </Button>
-      <VBox fx:id="contain" layoutX="103.0" layoutY="118.0" prefHeight="712.0" prefWidth="152.0" spacing="108.0">
+      <VBox fx:id="contain" layoutX="43.0" layoutY="118.0" prefHeight="712.0" prefWidth="338.0" spacing="108.0">
          <children>
-            <Button fx:id="button1" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" textFill="WHITE">
+            <Button fx:id="button1" mnemonicParsing="false" onAction="#toRestOne" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="button2" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" textFill="WHITE">
+            <Button fx:id="button2" mnemonicParsing="false" onAction="#toRestTwo" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="button3" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" textFill="WHITE">
+            <Button fx:id="button3" mnemonicParsing="false" onAction="#toRestThree" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="button4" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" textFill="WHITE">
+            <Button fx:id="button4" mnemonicParsing="false" onAction="#toRestFour" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="button5" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" textFill="WHITE">
+            <Button fx:id="button5" mnemonicParsing="false" onAction="#toRestFive" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>
             </Button>
          </children></VBox>
-      <VBox fx:id="contain1" layoutX="586.0" layoutY="118.0" prefHeight="712.0" prefWidth="152.0" spacing="108.0">
+      <VBox fx:id="contain1" layoutX="493.0" layoutY="118.0" prefHeight="712.0" prefWidth="338.0" spacing="108.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" textFill="WHITE">
+            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" textFill="WHITE">
+            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" textFill="WHITE">
+            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" textFill="WHITE">
+            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" textFill="WHITE">
+            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>
             </Button>
          </children>
       </VBox>
-      <VBox fx:id="contain11" layoutX="1082.0" layoutY="118.0" prefHeight="712.0" prefWidth="152.0" spacing="108.0">
+      <VBox fx:id="contain11" layoutX="935.0" layoutY="118.0" prefHeight="712.0" prefWidth="338.0" spacing="108.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" textFill="WHITE">
+            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" textFill="WHITE">
+            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" textFill="WHITE">
+            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" textFill="WHITE">
+            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" textFill="WHITE">
+            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>

@@ -53,10 +53,10 @@ public class SortedLinkedList<T> {
 	public Node<T> getFoundNode(){ 
 		return foundNode; 
 	} 
-	public boolean find(Object toFind){ 
+	public boolean find(String toFindName){ 
 		reset(); 
 		while(loc!=null){ 
-			if(((RestaurantInfo) list.getInfo()).getName().equals(toFind)){ 
+			if(((RestaurantInfo) loc.getInfo()).getName().equals(toFindName)){ 
 				foundNode = loc; 
 				return true; 
 			} 
