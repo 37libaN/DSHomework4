@@ -14,6 +14,8 @@ public class ReviewsController implements Initializable{
 	@FXML
 	private Button back;
 	@FXML
+	private Button cart;
+	@FXML
 	private Button addReview;
 	@FXML
 	private TextArea review;

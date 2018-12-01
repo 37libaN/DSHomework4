@@ -55,7 +55,7 @@ public class RestaurantAdvisor extends Application {
 		BinSearchTreeLogin<LoginInfo> loginDatabase = new BinSearchTreeLogin<LoginInfo>();
 		// C:/Users/liban/Desktop/loginData.txt
 		// User: 123hibob password: jshihi
-		File loginFile = new File("C:/Users/vishn/Desktop/loginData.txt");
+		File loginFile = new File("C:/Users/liban/Desktop/loginData.txt");
 		Scanner inputFile = new Scanner(loginFile);
 		while (inputFile.hasNextLine()) {
 			LoginInfo currLogin = new LoginInfo();
@@ -115,7 +115,7 @@ public class RestaurantAdvisor extends Application {
 
 	public static RestaurantInfo getRestaurantInfo() throws FileNotFoundException {
 		// C:/Users/vishn/Desktop/restaurantData.txt
-		File loginFile = new File("C:/Users/vishn/Desktop/singleRestaurantData.txt");
+		File loginFile = new File("C:/Users/liban/Desktop/singleRestaurantData.txt");
 		Scanner inputFile = new Scanner(loginFile);
 		String name = inputFile.nextLine();
 		String address = inputFile.nextLine();
@@ -141,48 +141,49 @@ public class RestaurantAdvisor extends Application {
 				avgRating, restMenu);
 	}
 
-	public SortedLinkedList<RestaurantReviews> getAllReviews() throws FileNotFoundException {// returns all reviews
-		SortedLinkedList<RestaurantReviews> allReviews = new SortedLinkedList<RestaurantReviews>();
-		File loginFile = new File("C:/Users/liban/Desktop/reviewData.txt");
-		Scanner inputFile = new Scanner(loginFile);
-		String check = "";
-		String check2 = "";
-		String name = "";
-		String review = "";
-		String rating = "";
-		if (inputFile.hasNextLine()) {
-			check = inputFile.nextLine();
-		}
-		while (check.equals("-----")) {
-			name = inputFile.nextLine();
-			LLStackReview<Reviews> reviews = new LLStackReview<Reviews>();
-			if (inputFile.hasNextLine()) {
-				check2 = inputFile.nextLine();
-			}
-			else
-				check2 = "";
-			while (check2.equals("---")) {				
-				review = inputFile.nextLine();
-				inputFile.nextLine();
-				rating = inputFile.nextLine();
-				inputFile.nextLine();	
-				reviews.Push(new Reviews(review, rating));
-				if (inputFile.hasNextLine()) {
-					check2 = inputFile.nextLine();
-				}
-				else
-					check2 = "";
-			}
-			RestaurantReviews thisRestaurantReviews = new RestaurantReviews(name, reviews);
-			allReviews.add(thisRestaurantReviews);
-			if (inputFile.hasNextLine()) {
-				check = inputFile.nextLine();
-			}
-			else
-				check = "";
-		}		
-		inputFile.close();
-		return allReviews;
+	public SortedLinkedList<RestaurantReviews> getAllReviews() throws FileNotFoundException {// returns all reviews 
+		SortedLinkedList<RestaurantReviews> allReviews = new SortedLinkedList<RestaurantReviews>(); 
+		File loginFile = new File("C:/Users/liban/Desktop/reviewData.txt"); 
+		Scanner inputFile = new Scanner(loginFile); 
+		String check = ""; 
+		String check2 = ""; 
+		String name = ""; 
+		String review = ""; 
+		String rating = ""; 
+		if (inputFile.hasNextLine()) { 
+			check = inputFile.nextLine(); 
+		} 
+		while (check.equals("-----")) { 
+			name = inputFile.nextLine(); 
+			LLStackReview<Reviews> reviews = new LLStackReview<Reviews>(); 
+			if (inputFile.hasNextLine()) { 
+				check2 = inputFile.nextLine(); 
+			} 
+			else 
+				check2 = ""; 
+			while (check2.equals("---")) {				 
+				review = inputFile.nextLine(); 
+				inputFile.nextLine(); 
+				rating = inputFile.nextLine(); 
+				inputFile.nextLine();	 
+				reviews.Push(new Reviews(review, rating)); 
+				if (inputFile.hasNextLine()) { 
+					check2 = inputFile.nextLine(); 
+				} 
+				else 
+					check2 = ""; 
+			} 
+			RestaurantReviews thisRestaurantReviews = new RestaurantReviews(name, reviews); 
+			allReviews.add(thisRestaurantReviews); 
+			if (inputFile.hasNextLine()) { 
+				check = check2; 
+			} 
+			else 
+				check = ""; 
+			System.out.println("hi");
+		}		 
+		inputFile.close(); 
+		return allReviews; 
 	}
 
 	public SortedLinkedList<RestaurantInfo> getAllRestaurants() throws FileNotFoundException {// returns all restaurants
