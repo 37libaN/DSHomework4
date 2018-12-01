@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="856.0" prefWidth="1324.0" scaleX="0.7" scaleY="0.7" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalProject.homepage.HomeController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93c786" height="89.0" stroke="BLACK" strokeType="INSIDE" width="1324.0" />
@@ -19,15 +18,7 @@
             <Font name="Lucida Handwriting Italic" size="46.0" />
          </font>
       </Text>
-      <Button fx:id="logout" layoutX="940.0" layoutY="17.0" mnemonicParsing="false" onAction="#logout" text="Log Out" textFill="WHITE">
-         <font>
-            <Font name="Lucida Bright" size="30.0" />
-         </font>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </Button>
-      <Button fx:id="cart" layoutX="1159.0" layoutY="17.0" mnemonicParsing="false" onAction="#cart" text="Cart" textFill="WHITE">
+      <Button fx:id="logout" layoutX="1139.0" layoutY="17.0" mnemonicParsing="false" onAction="#logout" text="Log Out" textFill="WHITE">
          <font>
             <Font name="Lucida Bright" size="30.0" />
          </font>
@@ -61,22 +52,7 @@
             <Font name="Lucida Bright Demibold" size="33.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="73.0" layoutY="700.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5 Stars">
-         <font>
-            <Font name="Lucida Bright Demibold" size="33.0" />
-         </font>
-      </Text>
-      <Text fill="WHITE" layoutX="535.0" layoutY="700.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5 Stars">
-         <font>
-            <Font name="Lucida Bright Demibold" size="33.0" />
-         </font>
-      </Text>
       <Text fill="WHITE" layoutX="535.0" layoutY="646.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Waukesha, WI">
-         <font>
-            <Font name="Lucida Bright Demibold" size="33.0" />
-         </font>
-      </Text>
-      <Text fill="WHITE" layoutX="970.0" layoutY="700.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5 Stars">
          <font>
             <Font name="Lucida Bright Demibold" size="33.0" />
          </font>
@@ -86,33 +62,9 @@
             <Font name="Lucida Bright Demibold" size="33.0" />
          </font>
       </Text>
-      <Button fx:id="showAllRest" layoutX="1012.0" layoutY="789.0" mnemonicParsing="false" onAction="#showAllRest" text="Show All Restaurants" textFill="WHITE">
+      <Button fx:id="showAllRest" layoutX="911.0" layoutY="717.0" mnemonicParsing="false" onAction="#showAllRest" prefHeight="115.0" prefWidth="371.0" text="Show All Restaurants" textFill="WHITE">
          <font>
             <Font name="Lucida Bright" size="23.0" />
-         </font>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </Button>
-      <Button fx:id="vrPanda" layoutX="966.0" layoutY="721.0" mnemonicParsing="false" onAction="#toRestaurant" text="View Restaurant" textFill="WHITE">
-         <font>
-            <Font name="Lucida Bright" size="25.0" />
-         </font>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </Button>
-      <Button fx:id="vrMias" layoutX="531.0" layoutY="721.0" mnemonicParsing="false" onAction="#toRestaurant" text="View Restaurant" textFill="WHITE">
-         <font>
-            <Font name="Lucida Bright" size="25.0" />
-         </font>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </Button>
-      <Button fx:id="vrTOI" layoutX="73.0" layoutY="721.0" mnemonicParsing="false" onAction="#toRestaurant" text="View Restaurant" textFill="WHITE">
-         <font>
-            <Font name="Lucida Bright" size="25.0" />
          </font>
          <opaqueInsets>
             <Insets />

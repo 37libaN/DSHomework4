@@ -12,6 +12,8 @@ public class ReviewsController implements Initializable{
 	@FXML
 	private Button logout;
 	@FXML
+	private Button back;
+	@FXML
 	private Button addReview;
 	@FXML
 	private TextArea review;
@@ -28,4 +30,8 @@ public class ReviewsController implements Initializable{
 		Writer.writeReview(review.getText(), rating.getText());
 		RestaurantAdvisor.getInstance().toRestaurant();
 	}
+	public void back(ActionEvent event) throws Exception {//go to login page
+		RestaurantAdvisor.getInstance().toRestaurant();
+	}
+
 }

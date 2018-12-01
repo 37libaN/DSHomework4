@@ -82,7 +82,7 @@ public class RestaurantController implements Initializable {
 		RestaurantAdvisor.getInstance().toLogin();
 	}
 	public void cart(ActionEvent event) throws Exception {//go to cart page
-		RestaurantAdvisor.getInstance().toCart();
+		RestaurantAdvisor.getInstance().toshowAllRest();
 	}
 	public void menu(ActionEvent event) throws Exception {//go to menu page
 		RestaurantAdvisor.getInstance().toMenu();

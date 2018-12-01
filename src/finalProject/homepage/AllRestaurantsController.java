@@ -84,4 +84,10 @@ public class AllRestaurantsController implements Initializable {
 			RestaurantAdvisor.getInstance().toRestaurant();
 		}
 	}
+	public void logout(ActionEvent event) throws Exception {//go to login page
+		RestaurantAdvisor.getInstance().toLogin();
+	}
+	public void cart(ActionEvent event) throws Exception {//go to cart page
+		RestaurantAdvisor.getInstance().toHome();
+	}
 }

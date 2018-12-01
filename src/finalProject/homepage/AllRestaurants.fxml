@@ -20,7 +20,7 @@
             <Font name="Lucida Bright Regular" size="30.0" />
          </font>
       </Button>
-      <Button fx:id="cart" layoutX="1158.0" layoutY="18.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" text="Cart" textFill="WHITE">
+      <Button fx:id="cart" layoutX="1158.0" layoutY="18.0" mnemonicParsing="false" onAction="#cart" prefHeight="56.0" prefWidth="152.0" text="Home" textFill="WHITE">
          <font>
             <Font name="Lucida Bright Regular" size="30.0" />
          </font>

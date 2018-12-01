@@ -17,6 +17,8 @@ public class RestaurantMenuController implements Initializable {
 	@FXML
 	private Button logout;
 	@FXML
+	private Button back;
+	@FXML
 	private TextArea menuText;
 	@FXML
 	private TextField name;
@@ -43,5 +45,8 @@ public class RestaurantMenuController implements Initializable {
 	public void logout(ActionEvent event) throws Exception {// go to login page
 		RestaurantAdvisor.getInstance().toLogin();
 	}
-
+	public void back(ActionEvent event) throws Exception {//go to login page
+		RestaurantAdvisor.getInstance().toRestaurant();
+	}
+	
 }
