@@ -55,7 +55,7 @@ public class RestaurantAdvisor extends Application {
 		BinSearchTreeLogin<LoginInfo> loginDatabase = new BinSearchTreeLogin<LoginInfo>();
 		// C:/Users/liban/Desktop/loginData.txt
 		// User: 123hibob password: jshihi
-		File loginFile = new File("C:/Users/liban/Desktop/loginData.txt");
+		File loginFile = new File("C:/Users/vishn/Desktop/loginData.txt");
 		Scanner inputFile = new Scanner(loginFile);
 		while (inputFile.hasNextLine()) {
 			LoginInfo currLogin = new LoginInfo();
@@ -115,7 +115,7 @@ public class RestaurantAdvisor extends Application {
 
 	public static RestaurantInfo getRestaurantInfo() throws FileNotFoundException {
 		// C:/Users/vishn/Desktop/restaurantData.txt
-		File loginFile = new File("C:/Users/liban/Desktop/singleRestaurantData.txt");
+		File loginFile = new File("C:/Users/vishn/Desktop/singleRestaurantData.txt");
 		Scanner inputFile = new Scanner(loginFile);
 		String name = inputFile.nextLine();
 		String address = inputFile.nextLine();
