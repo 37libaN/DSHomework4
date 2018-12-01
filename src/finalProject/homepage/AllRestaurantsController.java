@@ -79,7 +79,7 @@ public class AllRestaurantsController implements Initializable {
 		toRestaurants(button5.getText());
 	}
 	public void toRestaurants(String name) throws Exception {
-		if(allRestaurants.find(name)) {
+		if(allRestaurants.findRestaurant(name)) {
 			Writer.writeRestaurant(allRestaurants.getFoundNode().getInfo());
 			RestaurantAdvisor.getInstance().toRestaurant();
 		}

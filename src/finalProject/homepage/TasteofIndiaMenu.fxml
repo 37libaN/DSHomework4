@@ -11,7 +11,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="881.0" prefWidth="1324.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalProject.homepage.RestaurantMenuController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93c786" height="89.0" stroke="BLACK" strokeType="INSIDE" width="1324.0" />
-      <Text layoutX="62.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Taste Of India" wrappingWidth="329.205078125">
+      <Text fx:id="name" layoutX="62.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Taste Of India" wrappingWidth="329.205078125">
          <font>
             <Font name="Lucida Bright Regular" size="38.0" />
          </font>

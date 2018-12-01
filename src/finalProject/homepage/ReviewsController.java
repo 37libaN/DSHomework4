@@ -20,11 +20,12 @@ public class ReviewsController implements Initializable{
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-		
 	}
 	public void logout(ActionEvent event) throws Exception {//go to login page
 		RestaurantAdvisor.getInstance().toLogin();
 	}
-
+	public void addReview(ActionEvent event) throws Exception {
+		Writer.writeReview(review.getText(), rating.getText());
+		RestaurantAdvisor.getInstance().toRestaurant();
+	}
 }

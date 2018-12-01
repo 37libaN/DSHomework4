@@ -53,7 +53,10 @@ public class SortedLinkedList<T> {
 	public Node<T> getFoundNode(){ 
 		return foundNode; 
 	} 
-	public boolean find(String toFindName){ 
+	public void removeFoundNode(){
+		foundNode = foundNode.getLink();
+	}
+	public boolean findRestaurant(String toFindName){ 
 		reset(); 
 		while(loc!=null){ 
 			if(((RestaurantInfo) loc.getInfo()).getName().equals(toFindName)){ 
@@ -64,14 +67,35 @@ public class SortedLinkedList<T> {
 		} 
 		return false; 
 	} 
+	public boolean findReview(String toFindName){ 
+		reset(); 
+		while(loc!=null){ 
+			if(((RestaurantReviews) loc.getInfo()).getName().equals(toFindName)){ 
+				foundNode = loc; 
+				System.out.println("found");
+				return true; 
+			} 
+			step();
+		} 
+		return false; 
+	} 
 	public int size() { 
 		return numElements; 
 	} 
-	public String toString() {
+	public String toStringRestaurant() {
 		String toString = "";
 		reset();
 		while(loc!=null) {
 			toString+=((RestaurantInfo) loc.getInfo()).getName();
+			step();
+		}
+		return toString;
+	}
+	public String toStringReview() {
+		String toString = "";
+		reset();
+		while(loc!=null) {
+			toString+=((RestaurantReviews) loc.getInfo()).getName();
 			step();
 		}
 		return toString;

@@ -24,7 +24,7 @@ public class RestaurantAdvisor extends Application {
 	}
 
 	@Override
-	public void start(Stage primaryStage) {//set up for login page
+	public void start(Stage primaryStage) {// set up for login page
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
 			primaryStage.setTitle("Login");
@@ -38,7 +38,7 @@ public class RestaurantAdvisor extends Application {
 
 	}
 
-	public void toLogin() throws Exception {//go to login page
+	public void toLogin() throws Exception {// go to login page
 		replaceSceneContent("Login.fxml");
 	}
 
@@ -46,11 +46,12 @@ public class RestaurantAdvisor extends Application {
 		launch(args);
 	}
 
-	public static RestaurantAdvisor getInstance() {//return this object for controllers' use
+	public static RestaurantAdvisor getInstance() {// return this object for controllers' use
 		return instance;
 	}
 
-	public void loginUser(String username, String password) throws FileNotFoundException {//used by login controller to test login data
+	public void loginUser(String username, String password) throws FileNotFoundException {// used by login controller to
+																							// test login data
 		BinSearchTreeLogin<LoginInfo> loginDatabase = new BinSearchTreeLogin<LoginInfo>();
 		// C:/Users/liban/Desktop/loginData.txt
 		// User: 123hibob password: jshihi
@@ -75,26 +76,27 @@ public class RestaurantAdvisor extends Application {
 		}
 	}
 
-	public void toHome() throws Exception {//go to home page
+	public void toHome() throws Exception {// go to home page
 		replaceSceneContent("Home.fxml");
 	}
 
-	public void toCart() throws Exception {//go to cart page
+	public void toCart() throws Exception {// go to cart page
 		replaceSceneContent("Cart.fxml");
 	}
 
-	public void toMenu() throws Exception {//go to menu page for a restaurant
+	public void toMenu() throws Exception {// go to menu page for a restaurant
 		replaceSceneContent("TasteofIndiaMenu.fxml");
 	}
 
-	public void toRestaurant() throws Exception {//go to restaurant page
+	public void toRestaurant() throws Exception {// go to restaurant page
 		replaceSceneContent("TasteofIndia.fxml");
 	}
 
-	public void toshowAllRest() throws Exception {//go to allRestaurants page
+	public void toshowAllRest() throws Exception {// go to allRestaurants page
 		replaceSceneContent("AllRestaurants.fxml");
 	}
-	public void toAddReview() throws Exception {//go to add review page
+
+	public void toAddReview() throws Exception {// go to add review page
 		replaceSceneContent("Reviews.fxml");
 	}
 
@@ -110,6 +112,7 @@ public class RestaurantAdvisor extends Application {
 			e.printStackTrace();
 		}
 	}
+
 	public static RestaurantInfo getRestaurantInfo() throws FileNotFoundException {
 		// C:/Users/vishn/Desktop/restaurantData.txt
 		File loginFile = new File("C:/Users/liban/Desktop/singleRestaurantData.txt");
@@ -137,12 +140,56 @@ public class RestaurantAdvisor extends Application {
 		return new RestaurantInfo(name, address, phoneNo, email, cuisine, diningType, priceRange, null, hours,
 				avgRating, restMenu);
 	}
-	
-	public SortedLinkedList<RestaurantInfo> getAllRestaurants() throws FileNotFoundException {//returns all restaurants
-		SortedLinkedList<RestaurantInfo> allRestaurants = new SortedLinkedList<RestaurantInfo>(); 
-		File loginFile = new File("C:/Users/liban/Desktop/restaurantData.txt"); 
+
+	public SortedLinkedList<RestaurantReviews> getAllReviews() throws FileNotFoundException {// returns all reviews
+		SortedLinkedList<RestaurantReviews> allReviews = new SortedLinkedList<RestaurantReviews>();
+		File loginFile = new File("C:/Users/liban/Desktop/reviewData.txt");
 		Scanner inputFile = new Scanner(loginFile);
-		while (inputFile.hasNextLine()) {//go through file for restaurant data
+		String check = "";
+		String check2 = "";
+		String name = "";
+		String review = "";
+		String rating = "";
+		if (inputFile.hasNextLine()) {
+			check = inputFile.nextLine();
+		}
+		while (check.equals("-----")) {
+			name = inputFile.nextLine();
+			LLStackReview<Reviews> reviews = new LLStackReview<Reviews>();
+			if (inputFile.hasNextLine()) {
+				check2 = inputFile.nextLine();
+			}
+			else
+				check2 = "";
+			while (check2.equals("---")) {				
+				review = inputFile.nextLine();
+				inputFile.nextLine();
+				rating = inputFile.nextLine();
+				inputFile.nextLine();	
+				reviews.Push(new Reviews(review, rating));
+				if (inputFile.hasNextLine()) {
+					check2 = inputFile.nextLine();
+				}
+				else
+					check2 = "";
+			}
+			RestaurantReviews thisRestaurantReviews = new RestaurantReviews(name, reviews);
+			allReviews.add(thisRestaurantReviews);
+			if (inputFile.hasNextLine()) {
+				check = inputFile.nextLine();
+			}
+			else
+				check = "";
+		}		
+		inputFile.close();
+		return allReviews;
+	}
+
+	public SortedLinkedList<RestaurantInfo> getAllRestaurants() throws FileNotFoundException {// returns all restaurants
+		SortedLinkedList<RestaurantInfo> allRestaurants = new SortedLinkedList<RestaurantInfo>();
+		File loginFile = new File("C:/Users/liban/Desktop/restaurantData.txt");
+		Scanner inputFile = new Scanner(loginFile);
+		while (inputFile.hasNextLine()) {// go through file for restaurant data
 			String name = inputFile.nextLine();
 			String address = inputFile.nextLine();
 			String phoneNo = inputFile.nextLine();

@@ -6,6 +6,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class Writer {
+	private static PrintWriter reviewOutFile;
+
 	public static void writeRestaurant(RestaurantInfo restaurant) throws IOException {
 		PrintWriter outFile = new PrintWriter(new FileWriter("C:/Users/liban/Desktop/singleRestaurantData.txt"));
 		outFile.println(restaurant.getName());
@@ -22,10 +24,46 @@ public class Writer {
 		outFile.println(restaurant.getAvgRating());
 		ArrayList<String> restMenu = restaurant.getMenu();
 		outFile.println("-");
-		for(String r : restMenu) {
+		for (String r : restMenu) {
 			outFile.println(r);
 		}
 		outFile.println("-");
+		outFile.close();
+	}
+
+	public static void writeReview(String review, String rating) throws IOException {
+		System.out.println("add review");
+		SortedLinkedList<RestaurantReviews> allReviews = RestaurantAdvisor.getInstance().getAllReviews();
+		System.out.println(allReviews.toStringReview());
+		PrintWriter outFile = new PrintWriter(new FileWriter("C:/Users/liban/Desktop/reviewData.txt"));
+		RestaurantInfo restaurant = RestaurantAdvisor.getInstance().getRestaurantInfo();
+		if (allReviews.findReview(restaurant.getName())) {
+			RestaurantReviews thisRestaurantReviews = allReviews.getFoundNode().getInfo();
+			LLStackReview<Reviews> theseReviews = thisRestaurantReviews.getReviews();
+			theseReviews.Push(new Reviews(review, rating));
+			allReviews.getFoundNode().getInfo().setReviews(theseReviews);
+		} else {
+			LLStackReview<Reviews> reviews = new LLStackReview<Reviews>();
+			reviews.Push(new Reviews(review, rating));
+			allReviews.add(new RestaurantReviews(restaurant.getName(), reviews));
+		}
+		System.out.println(allReviews.toStringReview());
+		allReviews.reset();
+		while (allReviews.getNode() != null) {
+			RestaurantReviews currReviews = allReviews.getNode().getInfo();
+			LLStackReview<Reviews> reviews = currReviews.getReviews();
+			outFile.println("-----");
+			outFile.println(currReviews.getName());
+			while (!reviews.isEmpty()) {
+				outFile.println("---");
+				outFile.println(reviews.Top().getReview());
+				outFile.println("-");
+				outFile.println(reviews.Top().getRating());
+				outFile.println("-");
+				reviews.Pop();
+			}
+			allReviews.step();
+		}
 		outFile.close();
 	}
 }

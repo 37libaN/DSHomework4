@@ -14,19 +14,17 @@ public class LLStackReview<T> {
 	}
 
 	public void Push(T element) { // adds an element to front of list
-		if (list == null) {
-			list = new Node<T>(element);
-			return;
-		}
-		list.setLink(list);
-		list = new Node<T>(element);
+		Node<T> newNode = new Node<T>(element);
+		newNode.setLink(list);
+		list = newNode;
 	}
 
 	public T Top() {// returns the element at the front of list
 		return list.getInfo();
 	}
 
-	public void Pop() {// deletes the element at the front of list
-		list = list.getLink();
+	public void Pop() {// removes the element at the front of list
+		if (!isEmpty())
+			list = list.getLink();
 	}
 }
