@@ -180,7 +180,6 @@ public class RestaurantAdvisor extends Application {
 			} 
 			else 
 				check = ""; 
-			System.out.println("hi");
 		}		 
 		inputFile.close(); 
 		return allReviews; 

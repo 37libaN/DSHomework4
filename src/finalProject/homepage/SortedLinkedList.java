@@ -72,7 +72,6 @@ public class SortedLinkedList<T> {
 		while(loc!=null){ 
 			if(((RestaurantReviews) loc.getInfo()).getName().equals(toFindName)){ 
 				foundNode = loc; 
-				System.out.println("found");
 				return true; 
 			} 
 			step();

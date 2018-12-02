@@ -11,7 +11,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="881.0" prefWidth="1324.0" scaleX="0.8" scaleY="0.8765" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalProject.homepage.RestaurantController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93c786" height="89.0" stroke="BLACK" strokeType="INSIDE" width="1324.0" />
-      <Text layoutX="63.0" layoutY="665.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reviews" wrappingWidth="121.61283874511719">
+      <Text layoutX="84.0" layoutY="589.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reviews" wrappingWidth="121.61283874511719">
          <font>
             <Font name="Lucida Bright Regular" size="28.0" />
          </font>
@@ -31,17 +31,12 @@
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
-      <Text fx:id="priceRange" layoutX="409.0" layoutY="449.0" scaleZ="0.6" strokeType="OUTSIDE" strokeWidth="0.0" text="\$3.95 - $45.95" wrappingWidth="164.205078125">
+      <Text fx:id="priceRange" layoutX="408.0" layoutY="420.0" scaleZ="0.6" strokeType="OUTSIDE" strokeWidth="0.0" text="\$3.95 - $45.95" wrappingWidth="164.205078125">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
       <Text fx:id="phoneNo" layoutX="595.0" layoutY="160.0" scaleZ="0.6" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone No: (262) 796 8200" wrappingWidth="329.205078125">
-         <font>
-            <Font name="Lucida Bright Regular" size="22.0" />
-         </font>
-      </Text>
-      <Text fx:id="rating" layoutX="572.0" layoutY="662.0" scaleZ="0.6" strokeType="OUTSIDE" strokeWidth="0.0" text="Rating: 0 Stars" wrappingWidth="329.205078125">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
@@ -81,16 +76,11 @@
             <Font name="Lucida Handwriting Italic" size="46.0" />
          </font>
       </Text>
-      <Button fx:id="addReview" layoutX="246.0" layoutY="627.0" mnemonicParsing="false" onAction="#addReview" prefHeight="56.0" prefWidth="164.0" text="Add Review" textFill="WHITE">
+      <Button fx:id="addReview" layoutX="268.0" layoutY="551.0" mnemonicParsing="false" onAction="#addReview" prefHeight="56.0" prefWidth="164.0" text="Add Review" textFill="WHITE">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Button>
-      <ImageView fitHeight="215.0" fitWidth="390.0" layoutX="51.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@TasteofIndia.png" />
-         </image>
-      </ImageView>
       <Text fx:id="wednesday" layoutX="616.0" layoutY="362.0" scaleZ="0.6" strokeType="OUTSIDE" strokeWidth="0.0" text="Wednesday - 11:30 AM-3 PM, 5-10 PM" wrappingWidth="367.0">
          <font>
             <Font name="Lucida Bright Regular" size="18.0" />
@@ -141,12 +131,7 @@
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
-      <Text fx:id="address13" layoutX="458.0" layoutY="663.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rating:" wrappingWidth="97.290283203125">
-         <font>
-            <Font name="Lucida Bright Regular" size="22.0" />
-         </font>
-      </Text>
-      <Text fx:id="address14" layoutX="260.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price Range:" wrappingWidth="142.290283203125">
+      <Text fx:id="address14" layoutX="259.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price Range:" wrappingWidth="142.290283203125">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
@@ -161,5 +146,25 @@
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
+      <Text fx:id="review" layoutX="75.0" layoutY="644.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Review" wrappingWidth="486.56402587890625">
+         <font>
+            <Font name="Lucida Bright Regular" size="22.0" />
+         </font>
+      </Text>
+      <Text fx:id="rating" layoutX="603.0" layoutY="644.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rating" wrappingWidth="97.290283203125">
+         <font>
+            <Font name="Lucida Bright Regular" size="22.0" />
+         </font>
+      </Text>
+      <Text fx:id="address18" layoutX="770.0" layoutY="645.0" strokeType="OUTSIDE" strokeWidth="0.0" text="out of Five Stars" wrappingWidth="188.540283203125">
+         <font>
+            <Font name="Lucida Bright Regular" size="22.0" />
+         </font>
+      </Text>
+      <Button fx:id="nextReview" layoutX="1038.0" layoutY="609.0" mnemonicParsing="false" onAction="#nextReview" prefHeight="56.0" prefWidth="164.0" text="Next Review" textFill="WHITE">
+         <font>
+            <Font name="Lucida Bright Regular" size="22.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

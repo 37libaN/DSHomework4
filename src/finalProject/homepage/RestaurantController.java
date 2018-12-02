@@ -41,8 +41,6 @@ public class RestaurantController implements Initializable {
 	@FXML
 	private Text priceRange;
 	@FXML
-	private Text rating;
-	@FXML
 	private Button logout;
 	@FXML
 	private Button cart;
@@ -50,16 +48,23 @@ public class RestaurantController implements Initializable {
 	private Button viewMenu;
 	@FXML
 	private Button addReview;
-	
+	@FXML
+	private Button nextReview;
+	@FXML
+	private Text review;
+	@FXML
+	private Text rating;
+	private LLStackReview<Reviews> reviews;
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		try {
-			restaurantInfo = RestaurantAdvisor.getRestaurantInfo();//get selected restaurant
+			restaurantInfo = RestaurantAdvisor.getInstance().getRestaurantInfo();// get selected restaurant
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//set all text fields to the restaurant's info
+		// set all text fields to the restaurant's info
 		name.setText(restaurantInfo.getName());
 		address.setText(restaurantInfo.getAddress());
 		phoneNo.setText(restaurantInfo.getPhoneNo());
@@ -75,19 +80,51 @@ public class RestaurantController implements Initializable {
 		cuisine.setText(restaurantInfo.getCuisine());
 		diningType.setText(restaurantInfo.getDineType());
 		priceRange.setText(restaurantInfo.getPriceRange());
-		rating.setText(restaurantInfo.getAvgRating());
-		//System.out.print(restaurantInfo.toString());
+		reviews = new LLStackReview<Reviews>();
+		try {
+			getReviews();
+			if(!reviews.isEmpty()) {
+				review.setText(reviews.Top().getReview());
+				rating.setText(reviews.Top().getRating());
+				reviews.Pop();
+			}
+				
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// System.out.print(restaurantInfo.toString());
 	}
-	public void logout(ActionEvent event) throws Exception {//go to login page
+
+	public void logout(ActionEvent event) throws Exception {// go to login page
 		RestaurantAdvisor.getInstance().toLogin();
 	}
-	public void cart(ActionEvent event) throws Exception {//go to cart page
+
+	public void cart(ActionEvent event) throws Exception {// go to cart page
 		RestaurantAdvisor.getInstance().toshowAllRest();
 	}
-	public void menu(ActionEvent event) throws Exception {//go to menu page
+
+	public void menu(ActionEvent event) throws Exception {// go to menu page
 		RestaurantAdvisor.getInstance().toMenu();
 	}
-	public void addReview(ActionEvent event) throws Exception {//go to add review page
+
+	public void addReview(ActionEvent event) throws Exception {// go to add review page
 		RestaurantAdvisor.getInstance().toAddReview();
+	}
+
+	public void getReviews() throws FileNotFoundException {
+		SortedLinkedList<RestaurantReviews> allReviews = RestaurantAdvisor.getInstance().getAllReviews();
+		if (allReviews.findReview(restaurantInfo.getName())) {
+			reviews = allReviews.getFoundNode().getInfo().getReviews();
+		}
+	}
+	public void nextReview(ActionEvent event) throws Exception {
+		if(reviews.isEmpty())
+			getReviews();
+		if(!reviews.isEmpty()) {
+			review.setText(reviews.Top().getReview());
+			rating.setText(reviews.Top().getRating());
+			reviews.Pop();
+		}
 	}
 }

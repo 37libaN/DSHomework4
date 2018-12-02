@@ -20,7 +20,6 @@ public class AllRestaurantsController implements Initializable {
 	private Button cart;
 	private LLQueue<String> firstNames;
 	private LLQueue<String> secondNames;
-	private LLQueue<String> thirdNames;
 	@FXML
 	private Button button1;
 	@FXML
@@ -31,6 +30,16 @@ public class AllRestaurantsController implements Initializable {
 	private Button button4;
 	@FXML
 	private Button button5;
+	@FXML
+	private Button button6;
+	@FXML
+	private Button button7;
+	@FXML
+	private Button button8;
+	@FXML
+	private Button button9;
+	@FXML
+	private Button button10;
 	// @FXML
 	// private Button[] buttons;
 	private final int VBOXOBJECTS = 5;
@@ -42,7 +51,6 @@ public class AllRestaurantsController implements Initializable {
 			allRestaurants.reset();
 			firstNames = new LLQueue<String>();
 			secondNames = new LLQueue<String>();
-			thirdNames = new LLQueue<String>();
 			int count = 0;
 			for (count = count; count < allRestaurants.size() && count < VBOXOBJECTS; count++) {
 				firstNames.enqueue(allRestaurants.getNode().getInfo().getName());
@@ -52,13 +60,26 @@ public class AllRestaurantsController implements Initializable {
 				secondNames.enqueue(allRestaurants.getNode().getInfo().getName());
 				allRestaurants.step();
 			}
-			for (count = count; count < allRestaurants.size() && count < (VBOXOBJECTS * 3); count++) {
-				thirdNames.enqueue(allRestaurants.getNode().getInfo().getName());
-				allRestaurants.step();
-			}
-			contain = new VBox();
-			button1.setText(firstNames.dequeue());
-			button2.setText(firstNames.dequeue());
+			if(!firstNames.isEmpty())
+				button1.setText(firstNames.dequeue());
+			if(!firstNames.isEmpty())
+				button2.setText(firstNames.dequeue());
+			if(!firstNames.isEmpty())
+				button3.setText(firstNames.dequeue());
+			if(!firstNames.isEmpty())
+				button4.setText(firstNames.dequeue());
+			if(!firstNames.isEmpty())
+				button5.setText(firstNames.dequeue());
+			if(!secondNames.isEmpty())
+				button6.setText(secondNames.dequeue());
+			if(!secondNames.isEmpty())
+				button7.setText(secondNames.dequeue());
+			if(!secondNames.isEmpty())
+				button8.setText(secondNames.dequeue());
+			if(!secondNames.isEmpty())
+				button9.setText(secondNames.dequeue());
+			if(!secondNames.isEmpty())
+				button10.setText(secondNames.dequeue());
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -77,6 +98,21 @@ public class AllRestaurantsController implements Initializable {
 	}
 	public void toRestFive(ActionEvent event) throws Exception {
 		toRestaurants(button5.getText());
+	}
+	public void toRestSix(ActionEvent event) throws Exception {
+		toRestaurants(button6.getText());
+	}
+	public void toRestSeven(ActionEvent event) throws Exception {
+		toRestaurants(button7.getText());
+	}
+	public void toRestEight(ActionEvent event) throws Exception {
+		toRestaurants(button8.getText());
+	}
+	public void toRestNine(ActionEvent event) throws Exception {
+		toRestaurants(button9.getText());
+	}
+	public void toRestTen(ActionEvent event) throws Exception {
+		toRestaurants(button10.getText());
 	}
 	public void toRestaurants(String name) throws Exception {
 		if(allRestaurants.findRestaurant(name)) {

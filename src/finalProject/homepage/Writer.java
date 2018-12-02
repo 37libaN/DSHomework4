@@ -32,9 +32,7 @@ public class Writer {
 	}
 
 	public static void writeReview(String review, String rating) throws IOException {
-		System.out.println("add review");
 		SortedLinkedList<RestaurantReviews> allReviews = RestaurantAdvisor.getInstance().getAllReviews();
-		System.out.println(allReviews.toStringReview());
 		PrintWriter outFile = new PrintWriter(new FileWriter("C:/Users/liban/Desktop/reviewData.txt"));
 		RestaurantInfo restaurant = RestaurantAdvisor.getInstance().getRestaurantInfo();
 		if (allReviews.findReview(restaurant.getName())) {
@@ -47,7 +45,6 @@ public class Writer {
 			reviews.Push(new Reviews(review, rating));
 			allReviews.add(new RestaurantReviews(restaurant.getName(), reviews));
 		}
-		System.out.println(allReviews.toStringReview());
 		allReviews.reset();
 		while (allReviews.getNode() != null) {
 			RestaurantReviews currReviews = allReviews.getNode().getInfo();

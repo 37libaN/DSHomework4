@@ -31,17 +31,17 @@
             <Font name="Lucida Bright" size="60.0" />
          </font>
       </Text>
-      <Button fx:id="addReview" layoutX="207.0" layoutY="690.0" mnemonicParsing="false" onAction="#addReview" prefHeight="56.0" prefWidth="228.0" text="Add Review" textFill="WHITE">
+      <Button fx:id="addReview" layoutX="626.0" layoutY="470.0" mnemonicParsing="false" onAction="#addReview" prefHeight="56.0" prefWidth="228.0" text="Add Review" textFill="WHITE">
          <font>
             <Font name="Lucida Bright Regular" size="30.0" />
          </font>
       </Button>
-      <TextField fx:id="rating" layoutX="209.0" layoutY="621.0" />
-      <Text layoutX="209.0" layoutY="603.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Rating, out of 5 stars">
+      <TextField fx:id="rating" layoutX="223.0" layoutY="480.0" />
+      <Text layoutX="225.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Rating, out of 5 stars">
          <font>
             <Font name="Lucida Bright" size="19.0" />
          </font>
       </Text>
-      <TextArea fx:id="review" layoutX="214.0" layoutY="253.0" prefHeight="291.0" prefWidth="643.0" />
+      <TextArea fx:id="review" layoutX="215.0" layoutY="293.0" prefHeight="39.0" prefWidth="643.0" />
    </children>
 </Pane>
