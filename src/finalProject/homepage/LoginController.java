@@ -16,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
@@ -25,12 +26,14 @@ public class LoginController implements Initializable {
 	private TextField username;
 	@FXML
 	private PasswordField password;
-
+	@FXML
+	private Text errorMessage;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 	}
 
 	public void login(ActionEvent event) throws IOException {// send main app login info to try to go to homepage
-		RestaurantAdvisor.getInstance().loginUser(username.getText(), password.getText());
+		if(!RestaurantAdvisor.getInstance().loginUser(username.getText(), password.getText()));
+			errorMessage.setText("Error: username or password is incorrect.");
 	}
 }

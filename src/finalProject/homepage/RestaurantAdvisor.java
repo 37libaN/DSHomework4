@@ -50,12 +50,12 @@ public class RestaurantAdvisor extends Application {
 		return instance;
 	}
 
-	public void loginUser(String username, String password) throws FileNotFoundException {// used by login controller to
+	public boolean loginUser(String username, String password) throws FileNotFoundException {// used by login controller to
 																							// test login data
 		BinSearchTreeLogin<LoginInfo> loginDatabase = new BinSearchTreeLogin<LoginInfo>();
 		// C:/Users/liban/Desktop/loginData.txt
 		// User: 123hibob password: jshihi
-		File loginFile = new File("C:/Users/vishn/Desktop/loginData.txt");
+		File loginFile = new File("C:/Users/liban/Desktop/loginData.txt");
 		Scanner inputFile = new Scanner(loginFile);
 		while (inputFile.hasNextLine()) {
 			LoginInfo currLogin = new LoginInfo();
@@ -74,6 +74,7 @@ public class RestaurantAdvisor extends Application {
 				e.printStackTrace();
 			}
 		}
+		return false;
 	}
 
 	public void toHome() throws Exception {// go to home page
