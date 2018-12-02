@@ -37,7 +37,7 @@
             <Font name="Lucida Bright Demibold" size="38.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="535.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mia's">
+      <Text fill="WHITE" layoutX="535.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blaze Pizza">
          <font>
             <Font name="Lucida Bright Demibold" size="38.0" />
          </font>
@@ -52,7 +52,7 @@
             <Font name="Lucida Bright Demibold" size="33.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="535.0" layoutY="646.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Waukesha, WI">
+      <Text fill="WHITE" layoutX="535.0" layoutY="646.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Brookfield, WI">
          <font>
             <Font name="Lucida Bright Demibold" size="33.0" />
          </font>
@@ -75,9 +75,9 @@
             <Image url="@panda-express-logo1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="174.0" fitWidth="344.0" layoutX="531.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="160.0" fitWidth="344.0" layoutX="524.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@mia's.png" />
+            <Image url="@BlazePizza.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="187.0" fitWidth="315.0" layoutX="73.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true">

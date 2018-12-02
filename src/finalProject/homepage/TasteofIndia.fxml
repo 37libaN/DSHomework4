@@ -31,7 +31,7 @@
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
-      <Text fx:id="priceRange" layoutX="408.0" layoutY="420.0" scaleZ="0.6" strokeType="OUTSIDE" strokeWidth="0.0" text="\$3.95 - $45.95" wrappingWidth="164.205078125">
+      <Text fx:id="priceRange" layoutX="228.0" layoutY="270.0" scaleZ="0.6" strokeType="OUTSIDE" strokeWidth="0.0" text="\$3.95 - $45.95" wrappingWidth="164.205078125">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
@@ -41,7 +41,7 @@
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
-      <Text fx:id="diningType" layoutX="407.0" layoutY="491.0" scaleZ="0.6" strokeType="OUTSIDE" strokeWidth="0.0" text="Casual Dining" wrappingWidth="155.455078125">
+      <Text fx:id="diningType" layoutX="223.0" layoutY="329.0" scaleZ="0.6" strokeType="OUTSIDE" strokeWidth="0.0" text="Casual Dining" wrappingWidth="155.455078125">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
@@ -111,7 +111,7 @@
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
-      <Text fx:id="cuisine" layoutX="409.0" layoutY="528.0" scaleZ="0.6" strokeType="OUTSIDE" strokeWidth="0.0" text="Indian" wrappingWidth="77.832275390625">
+      <Text fx:id="cuisine" layoutX="224.0" layoutY="392.0" scaleZ="0.6" strokeType="OUTSIDE" strokeWidth="0.0" text="Indian" wrappingWidth="77.832275390625">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
@@ -131,17 +131,17 @@
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
-      <Text fx:id="address14" layoutX="259.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price Range:" wrappingWidth="142.290283203125">
+      <Text fx:id="address14" layoutX="75.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price Range:" wrappingWidth="142.290283203125">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
-      <Text fx:id="address15" layoutX="254.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dining Type:" wrappingWidth="141.040283203125">
+      <Text fx:id="address15" layoutX="45.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dining Type:" wrappingWidth="141.040283203125">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
-      <Text fx:id="address16" layoutX="254.0" layoutY="528.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuisine:" wrappingWidth="97.290283203125">
+      <Text fx:id="address16" layoutX="85.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuisine:" wrappingWidth="97.290283203125">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>

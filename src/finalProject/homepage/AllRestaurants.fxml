@@ -42,16 +42,6 @@
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="button4" mnemonicParsing="false" onAction="#toRestFour" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
-               <font>
-                  <Font name="Lucida Bright Regular" size="30.0" />
-               </font>
-            </Button>
-            <Button fx:id="button5" mnemonicParsing="false" onAction="#toRestFive" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
-               <font>
-                  <Font name="Lucida Bright Regular" size="30.0" />
-               </font>
-            </Button>
          </children></VBox>
       <VBox fx:id="contain1" layoutX="493.0" layoutY="118.0" prefHeight="712.0" prefWidth="338.0" spacing="108.0">
          <children>
@@ -70,17 +60,27 @@
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="button9" mnemonicParsing="false" onAction="#toRestNine" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
-               <font>
-                  <Font name="Lucida Bright Regular" size="30.0" />
-               </font>
-            </Button>
-            <Button fx:id="button10" mnemonicParsing="false" onAction="#toRestTen" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
+            <Button fx:id="button5" mnemonicParsing="false" onAction="#toRestFive" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
                <font>
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>
             </Button>
          </children>
       </VBox>
+      <Button fx:id="button9" layoutX="919.0" layoutY="118.0" mnemonicParsing="false" onAction="#toRestNine" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
+         <font>
+            <Font name="Lucida Bright Regular" size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="button10" layoutX="930.0" layoutY="277.0" mnemonicParsing="false" onAction="#toRestTen" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
+         <font>
+            <Font name="Lucida Bright Regular" size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="button4" layoutX="931.0" layoutY="448.0" mnemonicParsing="false" onAction="#toRestFour" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
+         <font>
+            <Font name="Lucida Bright Regular" size="30.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
