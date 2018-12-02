@@ -26,7 +26,7 @@ public class RestaurantMenuController implements Initializable {
 	private String menuStr;
 
 	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	public void initialize(URL location, ResourceBundle resources) {//set up info at start
 		try {
 			RestaurantInfo restaurant = RestaurantAdvisor.getInstance().getRestaurantInfo();
 			name.setText(restaurant.getName());

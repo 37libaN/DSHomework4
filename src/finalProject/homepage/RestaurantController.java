@@ -57,7 +57,7 @@ public class RestaurantController implements Initializable {
 	private LLStackReview<Reviews> reviews;
 
 	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	public void initialize(URL location, ResourceBundle resources) {//set info and reviews at start
 		try {
 			restaurantInfo = RestaurantAdvisor.getInstance().getRestaurantInfo();// get selected restaurant
 		} catch (FileNotFoundException e) {
@@ -112,13 +112,13 @@ public class RestaurantController implements Initializable {
 		RestaurantAdvisor.getInstance().toAddReview();
 	}
 
-	public void getReviews() throws FileNotFoundException {
+	public void getReviews() throws FileNotFoundException {//put reviews in stack
 		SortedLinkedList<RestaurantReviews> allReviews = RestaurantAdvisor.getInstance().getAllReviews();
 		if (allReviews.findReview(restaurantInfo.getName())) {
 			reviews = allReviews.getFoundNode().getInfo().getReviews();
 		}
 	}
-	public void nextReview(ActionEvent event) throws Exception {
+	public void nextReview(ActionEvent event) throws Exception {//show the next review
 		if(reviews.isEmpty())
 			getReviews();
 		if(!reviews.isEmpty()) {

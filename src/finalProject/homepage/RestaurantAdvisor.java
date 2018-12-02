@@ -113,7 +113,7 @@ public class RestaurantAdvisor extends Application {
 		}
 	}
 
-	public static RestaurantInfo getRestaurantInfo() throws FileNotFoundException {
+	public static RestaurantInfo getRestaurantInfo() throws FileNotFoundException {//get current restaurant's data
 		// C:/Users/vishn/Desktop/restaurantData.txt
 		File loginFile = new File("C:/Users/vishn/Desktop/singleRestaurantData.txt");
 		Scanner inputFile = new Scanner(loginFile);

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Writer {
 	private static PrintWriter reviewOutFile;
 
-	public static void writeRestaurant(RestaurantInfo restaurant) throws IOException {
+	public static void writeRestaurant(RestaurantInfo restaurant) throws IOException {//write current restaurant's info to file
 		PrintWriter outFile = new PrintWriter(new FileWriter("C:/Users/vishn/Desktop/singleRestaurantData.txt"));
 		outFile.println(restaurant.getName());
 		outFile.println(restaurant.getAddress());
@@ -31,7 +31,7 @@ public class Writer {
 		outFile.close();
 	}
 
-	public static void writeReview(String review, String rating) throws IOException {
+	public static void writeReview(String review, String rating) throws IOException {//writes reviews to file
 		SortedLinkedList<RestaurantReviews> allReviews = RestaurantAdvisor.getInstance().getAllReviews();
 		PrintWriter outFile = new PrintWriter(new FileWriter("C:/Users/vishn/Desktop/reviewData.txt"));
 		RestaurantInfo restaurant = RestaurantAdvisor.getInstance().getRestaurantInfo();

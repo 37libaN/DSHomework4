@@ -28,7 +28,7 @@ public class ReviewsController implements Initializable{
 	public void logout(ActionEvent event) throws Exception {//go to login page
 		RestaurantAdvisor.getInstance().toLogin();
 	}
-	public void addReview(ActionEvent event) throws Exception {
+	public void addReview(ActionEvent event) throws Exception {//add a review and go back to allrestaurants
 		Writer.writeReview(review.getText(), rating.getText());
 		RestaurantAdvisor.getInstance().toRestaurant();
 	}

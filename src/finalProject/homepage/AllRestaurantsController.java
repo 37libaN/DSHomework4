@@ -45,7 +45,7 @@ public class AllRestaurantsController implements Initializable {
 	private final int VBOXOBJECTS = 5;
 	private SortedLinkedList<RestaurantInfo> allRestaurants;
 
-	public void initialize(URL location, ResourceBundle resources) {
+	public void initialize(URL location, ResourceBundle resources) {// set restaurants at start
 		try {
 			allRestaurants = RestaurantAdvisor.getInstance().getAllRestaurants();
 			allRestaurants.reset();
@@ -60,70 +60,85 @@ public class AllRestaurantsController implements Initializable {
 				secondNames.enqueue(allRestaurants.getNode().getInfo().getName());
 				allRestaurants.step();
 			}
-			if(!firstNames.isEmpty())
+			if (!firstNames.isEmpty())
 				button1.setText(firstNames.dequeue());
-			if(!firstNames.isEmpty())
+			if (!firstNames.isEmpty())
 				button2.setText(firstNames.dequeue());
-			if(!firstNames.isEmpty())
+			if (!firstNames.isEmpty())
 				button3.setText(firstNames.dequeue());
-			if(!firstNames.isEmpty())
+			if (!firstNames.isEmpty())
 				button4.setText(firstNames.dequeue());
-			if(!firstNames.isEmpty())
+			if (!firstNames.isEmpty())
 				button5.setText(firstNames.dequeue());
-			if(!secondNames.isEmpty())
+			if (!secondNames.isEmpty())
 				button6.setText(secondNames.dequeue());
-			if(!secondNames.isEmpty())
+			if (!secondNames.isEmpty())
 				button7.setText(secondNames.dequeue());
-			if(!secondNames.isEmpty())
+			if (!secondNames.isEmpty())
 				button8.setText(secondNames.dequeue());
-			if(!secondNames.isEmpty())
+			if (!secondNames.isEmpty())
 				button9.setText(secondNames.dequeue());
-			if(!secondNames.isEmpty())
+			if (!secondNames.isEmpty())
 				button10.setText(secondNames.dequeue());
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
+
 	public void toRestOne(ActionEvent event) throws Exception {
 		toRestaurants(button1.getText());
 	}
+
 	public void toRestTwo(ActionEvent event) throws Exception {
 		toRestaurants(button2.getText());
 	}
+
 	public void toRestThree(ActionEvent event) throws Exception {
 		toRestaurants(button3.getText());
 	}
+
 	public void toRestFour(ActionEvent event) throws Exception {
 		toRestaurants(button4.getText());
 	}
+
 	public void toRestFive(ActionEvent event) throws Exception {
 		toRestaurants(button5.getText());
 	}
+
 	public void toRestSix(ActionEvent event) throws Exception {
 		toRestaurants(button6.getText());
 	}
+
 	public void toRestSeven(ActionEvent event) throws Exception {
 		toRestaurants(button7.getText());
 	}
+
 	public void toRestEight(ActionEvent event) throws Exception {
 		toRestaurants(button8.getText());
 	}
+
 	public void toRestNine(ActionEvent event) throws Exception {
 		toRestaurants(button9.getText());
 	}
+
 	public void toRestTen(ActionEvent event) throws Exception {
 		toRestaurants(button10.getText());
 	}
-	public void toRestaurants(String name) throws Exception {
-		if(allRestaurants.findRestaurant(name)) {
+
+	public void toRestaurants(String name) throws Exception {// go to restaurant's page
+																//given current 
+																	//restaurant's name
+		if (allRestaurants.findRestaurant(name)) {
 			Writer.writeRestaurant(allRestaurants.getFoundNode().getInfo());
 			RestaurantAdvisor.getInstance().toRestaurant();
 		}
 	}
-	public void logout(ActionEvent event) throws Exception {//go to login page
+
+	public void logout(ActionEvent event) throws Exception {// go to login page
 		RestaurantAdvisor.getInstance().toLogin();
 	}
-	public void cart(ActionEvent event) throws Exception {//go to cart page
+
+	public void cart(ActionEvent event) throws Exception {// go to cart page
 		RestaurantAdvisor.getInstance().toHome();
 	}
 }
