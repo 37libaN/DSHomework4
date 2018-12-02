@@ -1,0 +1,75 @@
+-----
+Emperor's Kitchen
+---
+good restaurant
+-
+4
+-
+---
+A decent restaurant. Good costumer service.	
+-
+4
+-
+---
+A really good place. You know.
+-
+4
+-
+---
+I really like the waffles at this restaurant.
+-
+3
+-
+-----
+Olive Garden
+---
+This restaurant is great! I would definiltely recommend it.
+-
+3
+-
+---
+great
+-
+5
+-
+-----
+Panda Express
+---
+Bad restaurant
+-
+1
+-
+---
+Great Restaurant
+-
+5
+-
+-----
+Starbucks
+---
+An awesome place. I love their chocolate croissants (idk if thats how u spell them).
+-
+4.9
+-
+---
+A great place to meet up with friends and argue...
+-
+1
+-
+-----
+Taste Of India
+---
+cool resstaurant yeaaaa
+-
+5
+-
+---
+A great place.
+-
+4.1
+-
+---
+Nice service and great food.
+-
+3.8
+-
