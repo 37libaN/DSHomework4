@@ -18,7 +18,7 @@
             <Font name="Lucida Handwriting Italic" size="46.0" />
          </font>
       </Text>
-      <Button fx:id="logout" layoutX="1139.0" layoutY="17.0" mnemonicParsing="false" onAction="#logout" text="Log Out" textFill="WHITE">
+      <Button fx:id="logout" layoutX="1139.0" layoutY="17.0" mnemonicParsing="false" onAction="#logout" text="Log Out">
          <font>
             <Font name="Lucida Bright" size="30.0" />
          </font>
@@ -62,9 +62,9 @@
             <Font name="Lucida Bright Demibold" size="33.0" />
          </font>
       </Text>
-      <Button fx:id="showAllRest" layoutX="911.0" layoutY="717.0" mnemonicParsing="false" onAction="#showAllRest" prefHeight="115.0" prefWidth="371.0" text="Show All Restaurants" textFill="WHITE">
+      <Button fx:id="showAllRest" layoutX="911.0" layoutY="717.0" mnemonicParsing="false" onAction="#showAllRest" prefHeight="115.0" prefWidth="371.0" text="Show All Restaurants">
          <font>
-            <Font name="Lucida Bright" size="23.0" />
+            <Font name="Lucida Bright" size="29.0" />
          </font>
          <opaqueInsets>
             <Insets />
