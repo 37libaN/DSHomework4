@@ -55,7 +55,7 @@
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="button8" mnemonicParsing="false" onAction="#toRestEight" prefHeight="56.0" prefWidth="338.0" textFill="WHITE">
+            <Button fx:id="button8" mnemonicParsing="false" onAction="#toRestEight" prefHeight="56.0" prefWidth="338.0">
                <font>
                   <Font name="Lucida Bright Regular" size="30.0" />
                </font>

@@ -36,12 +36,18 @@
             <Font name="Lucida Bright Regular" size="30.0" />
          </font>
       </Button>
-      <TextField fx:id="rating" layoutX="223.0" layoutY="480.0" />
+      <TextField fx:id="rating" layoutX="223.0" layoutY="480.0">
+         <font>
+            <Font size="22.0" />
+         </font></TextField>
       <Text layoutX="225.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Rating, out of 5 stars">
          <font>
             <Font name="Lucida Bright" size="19.0" />
          </font>
       </Text>
-      <TextArea fx:id="review" layoutX="215.0" layoutY="293.0" prefHeight="39.0" prefWidth="643.0" />
+      <TextArea fx:id="review" layoutX="215.0" layoutY="293.0" prefHeight="39.0" prefWidth="643.0">
+         <font>
+            <Font size="22.0" />
+         </font></TextArea>
    </children>
 </Pane>
