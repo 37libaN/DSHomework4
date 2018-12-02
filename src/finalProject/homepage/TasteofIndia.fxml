@@ -51,7 +51,7 @@
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
-      <Button fx:id="viewMenu" layoutX="62.0" layoutY="455.0" mnemonicParsing="false" onAction="#menu" prefHeight="56.0" prefWidth="152.0" text="View Menu" textFill="WHITE">
+      <Button fx:id="viewMenu" layoutX="62.0" layoutY="455.0" mnemonicParsing="false" onAction="#menu" prefHeight="56.0" prefWidth="152.0" text="View Menu">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
@@ -61,12 +61,12 @@
             <Font name="Lucida Bright Regular" size="38.0" />
          </font>
       </Text>
-      <Button fx:id="logout" layoutX="971.0" layoutY="22.0" mnemonicParsing="false" onAction="#logout" prefHeight="56.0" prefWidth="164.0" text="Log Out" textFill="WHITE">
+      <Button fx:id="logout" layoutX="971.0" layoutY="22.0" mnemonicParsing="false" onAction="#logout" prefHeight="56.0" prefWidth="164.0" text="Log Out">
          <font>
             <Font name="Lucida Bright Regular" size="30.0" />
          </font>
       </Button>
-      <Button fx:id="cart" layoutX="1150.0" layoutY="22.0" mnemonicParsing="false" onAction="#cart" prefHeight="56.0" prefWidth="152.0" text="Back" textFill="WHITE">
+      <Button fx:id="cart" layoutX="1150.0" layoutY="22.0" mnemonicParsing="false" onAction="#cart" prefHeight="56.0" prefWidth="152.0" text="Back">
          <font>
             <Font name="Lucida Bright Regular" size="30.0" />
          </font>
@@ -76,7 +76,7 @@
             <Font name="Lucida Handwriting Italic" size="46.0" />
          </font>
       </Text>
-      <Button fx:id="addReview" layoutX="268.0" layoutY="551.0" mnemonicParsing="false" onAction="#addReview" prefHeight="56.0" prefWidth="164.0" text="Add Review" textFill="WHITE">
+      <Button fx:id="addReview" layoutX="268.0" layoutY="551.0" mnemonicParsing="false" onAction="#addReview" prefHeight="56.0" prefWidth="164.0" text="Add Review">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
@@ -161,7 +161,7 @@
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
       </Text>
-      <Button fx:id="nextReview" layoutX="1038.0" layoutY="609.0" mnemonicParsing="false" onAction="#nextReview" prefHeight="56.0" prefWidth="164.0" text="Next Review" textFill="WHITE">
+      <Button fx:id="nextReview" layoutX="1038.0" layoutY="609.0" mnemonicParsing="false" onAction="#nextReview" prefHeight="56.0" prefWidth="164.0" text="Next Review">
          <font>
             <Font name="Lucida Bright Regular" size="22.0" />
          </font>
