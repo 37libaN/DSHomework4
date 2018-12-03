@@ -52,18 +52,9 @@ public class RestaurantAdvisor extends Application {
 
 	public boolean loginUser(String username, String password) throws FileNotFoundException {// used by login controller to
 																							// test login data
-		BinSearchTreeLogin<LoginInfo> loginDatabase = new BinSearchTreeLogin<LoginInfo>();
+		BinSearchTreeLogin<LoginInfo> loginDatabase = getLoginInfo();
 		// C:/Users/liban/Desktop/loginData.txt
 		// User: 123hibob password: jshihi
-		File loginFile = new File("C:/Users/vishn/Desktop/loginData.txt");
-		Scanner inputFile = new Scanner(loginFile);
-		while (inputFile.hasNextLine()) {
-			LoginInfo currLogin = new LoginInfo();
-			currLogin.setUsername(inputFile.nextLine());
-			currLogin.setPassword(inputFile.nextLine());
-			loginDatabase.add(currLogin);
-		}
-		inputFile.close();
 		// System.out.println(getRestaurantInfo().toString());
 		LoginInfo toCheck = new LoginInfo(username, password);
 		if (loginDatabase.contains(toCheck)) {
@@ -76,7 +67,21 @@ public class RestaurantAdvisor extends Application {
 		}
 		return false;
 	}
-
+	public BinSearchTreeLogin<LoginInfo> getLoginInfo() throws FileNotFoundException{
+		BinSearchTreeLogin<LoginInfo> loginDatabase = new BinSearchTreeLogin<LoginInfo>();
+		// C:/Users/liban/Desktop/loginData.txt
+		// User: 123hibob password: jshihi
+		File loginFile = new File("C:/Users/liban/Desktop/loginData.txt");
+		Scanner inputFile = new Scanner(loginFile);
+		while (inputFile.hasNextLine()) {
+			LoginInfo currLogin = new LoginInfo();
+			currLogin.setUsername(inputFile.nextLine());
+			currLogin.setPassword(inputFile.nextLine());
+			loginDatabase.add(currLogin);
+		}
+		inputFile.close();
+		return loginDatabase;
+	}
 	public void toHome() throws Exception {// go to home page
 		replaceSceneContent("Home.fxml");
 	}

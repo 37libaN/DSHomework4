@@ -17,8 +17,9 @@ public class CreateAccountController {
 	@FXML
 	private Button logout;
 	
-	public void create(ActionEvent event) throws Exception {// go to login page
-		RestaurantAdvisor.getInstance().toLogin();
+	public void create(ActionEvent event) throws Exception {//add account and go to home page
+		Writer.addAccount(username.getText(), password.getText());
+		RestaurantAdvisor.getInstance().toHome();
 	}
 	public void back(ActionEvent event) throws Exception {//go to login page
 		RestaurantAdvisor.getInstance().toLogin();

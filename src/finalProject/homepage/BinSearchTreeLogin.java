@@ -1,18 +1,33 @@
 package finalProject.homepage;
 
 public class BinSearchTreeLogin<T> {
-	private BSTNode root;
+	private BSTNode<T> root;
 	boolean found;
+	private LLQueue<T> inOrderQueue;
 	public boolean isEmpty() {
 		if(root == null)
 			return true;
 		return false;
 	}
+	public void reset() {
+		inOrderQueue = new LLQueue<T>();
+		inOrder(root);
+	}
+	private void inOrder(BSTNode<T> root2) {
+		if(root2!= null) {
+			inOrder(root2.getLeft());
+			inOrderQueue.enqueue(root2.getInfo());
+			inOrder(root2.getRight());
+		}
+	}
+	public LLQueue<T> getInOrderQueue() {
+		return inOrderQueue;
+	}
 	public boolean contains(T element) {
 		recContains(element, root);
 		return found;
 	}
-	private void recContains(T element, BSTNode root2) {
+	private void recContains(T element, BSTNode<T> root2) {
 		if(root2 == null) {
 			found = false;
 			return;
@@ -30,7 +45,7 @@ public class BinSearchTreeLogin<T> {
 		root = recRemove(element, root);
 		return found;
 	}
-	private BSTNode recRemove(T element, BSTNode root2) {
+	private BSTNode recRemove(T element, BSTNode<T> root2) {
 		if(root2 == null)
 			found = false;
 		else if(((Comparable) element).compareTo(root2.getInfo()) < 0)
@@ -43,7 +58,7 @@ public class BinSearchTreeLogin<T> {
 		}
 		return root2;
 	}
-	private BSTNode removeNode(BSTNode root2) {
+	private BSTNode removeNode(BSTNode<T> root2) {
 		T data = null;
 		if(root2.getLeft() == null)
 			return root2.getRight();
@@ -56,10 +71,10 @@ public class BinSearchTreeLogin<T> {
 			return root2;
 		}
 	}
-	private T getPredecessor(BSTNode root2) {
+	private T getPredecessor(BSTNode<T> root2) {
 		while(root2.getRight() != null)
 			root2 = root2.getRight();
-		return (T) root2.getInfo();
+		return root2.getInfo();
 	}
 	/*public T get(T element) {
 		

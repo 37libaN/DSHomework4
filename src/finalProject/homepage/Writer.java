@@ -1,5 +1,6 @@
 package finalProject.homepage;
 
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -62,5 +63,23 @@ public class Writer {
 			allReviews.step();
 		}
 		outFile.close();
+	}
+
+	public static boolean addAccount(String username, String password) throws IOException {
+		PrintWriter outFile = new PrintWriter(new FileWriter("C:/Users/liban/Desktop/loginData.txt"));
+		LoginInfo toAdd = new LoginInfo(username, password);
+		BinSearchTreeLogin<LoginInfo> loginDatabase = RestaurantAdvisor.getInstance().getLoginInfo();
+		if(loginDatabase.contains(toAdd))
+			return false;
+		loginDatabase.add(toAdd);
+		loginDatabase.reset();
+		LLQueue<LoginInfo> loginDataQueue = loginDatabase.getInOrderQueue();
+		while(!loginDataQueue.isEmpty()) {
+			LoginInfo currElement = loginDataQueue.dequeue();
+			outFile.println(currElement.getUsername());
+			outFile.println(currElement.getPassword());
+		}
+		outFile.close();
+		return true;
 	}
 }
