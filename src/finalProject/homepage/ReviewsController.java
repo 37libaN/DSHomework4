@@ -21,6 +21,16 @@ public class ReviewsController implements Initializable{
 	private TextArea review;
 	@FXML
 	private TextField rating;
+	@FXML
+	private Button one;
+	@FXML
+	private Button two;
+	@FXML
+	private Button three;
+	@FXML
+	private Button four;
+	@FXML
+	private Button five;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
