@@ -23,6 +23,8 @@ public class LoginController implements Initializable {
 	@FXML
 	private Button login;
 	@FXML
+	private Button createAcc;
+	@FXML
 	private TextField username;
 	@FXML
 	private PasswordField password;
@@ -35,5 +37,8 @@ public class LoginController implements Initializable {
 	public void login(ActionEvent event) throws IOException {// send main app login info to try to go to homepage
 		if(!RestaurantAdvisor.getInstance().loginUser(username.getText(), password.getText()));
 			errorMessage.setText("Error: username or password is incorrect.");
+	}
+	public void toCreateAcc(ActionEvent event) throws Exception {// go to create account page
+		RestaurantAdvisor.getInstance().toCreateAcc();
 	}
 }

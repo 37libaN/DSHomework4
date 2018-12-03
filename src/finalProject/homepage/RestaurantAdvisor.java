@@ -55,7 +55,7 @@ public class RestaurantAdvisor extends Application {
 		BinSearchTreeLogin<LoginInfo> loginDatabase = new BinSearchTreeLogin<LoginInfo>();
 		// C:/Users/liban/Desktop/loginData.txt
 		// User: 123hibob password: jshihi
-		File loginFile = new File("C:/Users/liban/Desktop/loginData.txt");
+		File loginFile = new File("C:/Users/vishn/Desktop/loginData.txt");
 		Scanner inputFile = new Scanner(loginFile);
 		while (inputFile.hasNextLine()) {
 			LoginInfo currLogin = new LoginInfo();
@@ -79,6 +79,9 @@ public class RestaurantAdvisor extends Application {
 
 	public void toHome() throws Exception {// go to home page
 		replaceSceneContent("Home.fxml");
+	}
+	public void toCreateAcc() throws Exception {// go to home page
+		replaceSceneContent("CreateAccount.fxml");
 	}
 
 	public void toCart() throws Exception {// go to cart page

@@ -39,5 +39,10 @@
          </font>
       </Button>
       <Text fx:id="errorMessage" fill="#ff4242" layoutX="495.0" layoutY="568.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="331.205078125" />
+      <Button fx:id="createAcc" layoutX="573.0" layoutY="549.0" mnemonicParsing="false" onAction="#login" text="Create Account">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
