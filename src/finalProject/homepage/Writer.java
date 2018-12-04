@@ -10,7 +10,7 @@ public class Writer {
 	private static PrintWriter reviewOutFile;
 
 	public static void writeRestaurant(RestaurantInfo restaurant) throws IOException {//write current restaurant's info to file
-		PrintWriter outFile = new PrintWriter(new FileWriter("C:/Users/liban/Desktop/singleRestaurantData.txt"));
+		PrintWriter outFile = new PrintWriter(new FileWriter("C:/Users/vishn/Desktop/singleRestaurantData.txt"));
 		outFile.println(restaurant.getName());
 		outFile.println(restaurant.getAddress());
 		outFile.println(restaurant.getPhoneNo());
@@ -34,7 +34,7 @@ public class Writer {
 
 	public static void writeReview(String review, String rating) throws IOException {//writes reviews to file
 		SortedLinkedList<RestaurantReviews> allReviews = RestaurantAdvisor.getInstance().getAllReviews();
-		PrintWriter outFile = new PrintWriter(new FileWriter("C:/Users/liban/Desktop/reviewData.txt"));
+		PrintWriter outFile = new PrintWriter(new FileWriter("C:/Users/vishn/Desktop/reviewData.txt"));
 		RestaurantInfo restaurant = RestaurantAdvisor.getInstance().getRestaurantInfo();
 		if (allReviews.findReview(restaurant.getName())) {
 			RestaurantReviews thisRestaurantReviews = allReviews.getFoundNode().getInfo();
@@ -66,7 +66,7 @@ public class Writer {
 	}
 
 	public static boolean addAccount(String username, String password) throws IOException {
-		PrintWriter outFile = new PrintWriter(new FileWriter("C:/Users/liban/Desktop/loginData.txt"));
+		PrintWriter outFile = new PrintWriter(new FileWriter("C:/Users/vishn/Desktop/loginData.txt"));
 		LoginInfo toAdd = new LoginInfo(username, password);
 		BinSearchTreeLogin<LoginInfo> loginDatabase = RestaurantAdvisor.getInstance().getLoginInfo();
 		if(loginDatabase.contains(toAdd))

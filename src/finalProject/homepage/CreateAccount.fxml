@@ -21,11 +21,6 @@
             <Font name="Lucida Bright Regular" size="30.0" />
          </font>
       </Button>
-      <Button fx:id="logout" layoutX="979.0" layoutY="18.0" mnemonicParsing="false" onAction="#logout" prefHeight="56.0" prefWidth="164.0" text="Log Out">
-         <font>
-            <Font name="Lucida Bright Regular" size="30.0" />
-         </font>
-      </Button>
       <Text layoutX="211.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Account">
          <font>
             <Font name="Lucida Bright" size="60.0" />
