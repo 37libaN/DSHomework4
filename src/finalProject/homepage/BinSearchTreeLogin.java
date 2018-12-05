@@ -97,4 +97,13 @@ public class BinSearchTreeLogin<T> {
 		l.add(test);
 		System.out.println(l.contains(new LoginInfo("hi", "you")));
 	}
+	public String toString() {
+		String toString = "";
+		while(!inOrderQueue.isEmpty()) {
+			LoginInfo currElement = (LoginInfo) inOrderQueue.dequeue();
+			toString+=currElement.getUsername();
+			toString+=currElement.getPassword();
+		}
+		return toString;
+	}
 }
