@@ -19,8 +19,8 @@ public class ReviewsController implements Initializable{
 	private Button addReview;
 	@FXML
 	private TextArea review;
-	@FXML
-	private TextField rating;
+	//@FXML
+	//private TextField rating;
 	@FXML
 	private Button one;
 	@FXML
@@ -31,15 +31,31 @@ public class ReviewsController implements Initializable{
 	private Button four;
 	@FXML
 	private Button five;
-	
+	private int rating;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		rating = 0;
 	}
 	public void logout(ActionEvent event) throws Exception {//go to login page
 		RestaurantAdvisor.getInstance().toLogin();
 	}
+	public void one() {
+		rating = 1;
+	}
+	public void two() {
+		rating = 2;
+	}
+	public void three() {
+		rating = 3;
+	}
+	public void four() {
+		rating = 4;
+	}
+	public void five() {
+		rating = 5;
+	}
 	public void addReview(ActionEvent event) throws Exception {//add a review and go back to allrestaurants
-		Writer.writeReview(review.getText(), rating.getText());
+		Writer.writeReview(review.getText(), Integer.toString(rating));
 		RestaurantAdvisor.getInstance().toRestaurant();
 	}
 	public void back(ActionEvent event) throws Exception {//go to login page

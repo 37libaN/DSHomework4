@@ -45,27 +45,27 @@
          <font>
             <Font size="22.0" />
          </font></TextArea>
-      <Button fx:id="one" layoutX="306.0" layoutY="479.0" mnemonicParsing="false" text="1">
+      <Button fx:id="one" layoutX="306.0" layoutY="479.0" mnemonicParsing="false" onAction="#one" text="1">
          <font>
             <Font name="Lucida Bright" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="four" layoutX="306.0" layoutY="649.0" mnemonicParsing="false" text="4">
+      <Button fx:id="four" layoutX="306.0" layoutY="649.0" mnemonicParsing="false" onAction="#four" text="4">
          <font>
             <Font name="Lucida Bright" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="five" layoutX="305.0" layoutY="713.0" mnemonicParsing="false" text="5">
+      <Button fx:id="five" layoutX="305.0" layoutY="713.0" mnemonicParsing="false" onAction="#five" text="5">
          <font>
             <Font name="Lucida Bright" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="two" layoutX="305.0" layoutY="528.0" mnemonicParsing="false" text="2">
+      <Button fx:id="two" layoutX="305.0" layoutY="528.0" mnemonicParsing="false" onAction="#two" text="2">
          <font>
             <Font name="Lucida Bright" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="three" layoutX="306.0" layoutY="586.0" mnemonicParsing="false" text="3">
+      <Button fx:id="three" layoutX="306.0" layoutY="586.0" mnemonicParsing="false" onAction="#three" text="3">
          <font>
             <Font name="Lucida Bright" size="18.0" />
          </font>
