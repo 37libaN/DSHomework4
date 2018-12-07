@@ -55,7 +55,7 @@ public class ReviewsController implements Initializable{
 		rating = 5;
 	}
 	public void addReview(ActionEvent event) throws Exception {//add a review and go back to allrestaurants
-		Writer.writeReview(review.getText(), Integer.toString(rating));
+		Writer.writeReview(review.getText(), rating);
 		RestaurantAdvisor.getInstance().toRestaurant();
 	}
 	public void back(ActionEvent event) throws Exception {//go to login page

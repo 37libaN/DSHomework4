@@ -175,7 +175,7 @@ public class RestaurantAdvisor extends Application {
 				inputFile.nextLine(); 
 				rating = inputFile.nextLine(); 
 				inputFile.nextLine();	 
-				reviews.Push(new Reviews(review, rating)); 
+				reviews.Push(new Reviews(review, Integer.parseInt(rating))); 
 				if (inputFile.hasNextLine()) { 
 					check2 = inputFile.nextLine(); 
 				} 

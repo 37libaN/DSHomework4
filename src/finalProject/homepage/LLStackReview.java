@@ -2,9 +2,10 @@ package finalProject.homepage;
 
 public class LLStackReview<T> {
 	private Node<T> list; // 1st node in list
-
+	private int numElements;
 	public LLStackReview() {
 		list = null;
+		numElements = 0;
 	}
 
 	public boolean isEmpty() { // returns true if empty, false if not
@@ -17,6 +18,7 @@ public class LLStackReview<T> {
 		Node<T> newNode = new Node<T>(element);
 		newNode.setLink(list);
 		list = newNode;
+		numElements++;
 	}
 
 	public T Top() {// returns the element at the front of list
@@ -26,5 +28,10 @@ public class LLStackReview<T> {
 	public void Pop() {// removes the element at the front of list
 		if (!isEmpty())
 			list = list.getLink();
+		numElements--;
+	}
+	
+	public int getSize() {
+		return numElements;
 	}
 }

@@ -54,7 +54,10 @@ public class RestaurantController implements Initializable {
 	private Text review;
 	@FXML
 	private Text rating;
+	@FXML
+	private Text avgRating;
 	private LLStackReview<Reviews> reviews;
+	private LLStackReview<Reviews> reviews1;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {//set info and reviews at start
@@ -80,12 +83,29 @@ public class RestaurantController implements Initializable {
 		cuisine.setText(restaurantInfo.getCuisine());
 		diningType.setText(restaurantInfo.getDineType());
 		priceRange.setText(restaurantInfo.getPriceRange());
+		reviews1 = new LLStackReview<Reviews>();
+		int averageRating = 0;
+		int totalElements = 0;
+		try {
+			getReviews1();
+			totalElements = reviews1.getSize();
+			while(!reviews1.isEmpty()) {
+				averageRating+=reviews1.Top().getRating();
+				reviews1.Pop();
+			}
+			if(totalElements!=0)
+				averageRating = averageRating/totalElements;
+			avgRating.setText(Integer.toString(averageRating));
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		reviews = new LLStackReview<Reviews>();
 		try {
 			getReviews();
 			if(!reviews.isEmpty()) {
 				review.setText(reviews.Top().getReview());
-				rating.setText(reviews.Top().getRating());
+				rating.setText(Integer.toString(reviews.Top().getRating()));
 				reviews.Pop();
 			}
 				
@@ -118,12 +138,20 @@ public class RestaurantController implements Initializable {
 			reviews = allReviews.getFoundNode().getInfo().getReviews();
 		}
 	}
+	
+	public void getReviews1() throws FileNotFoundException {//put reviews in stack
+		SortedLinkedList<RestaurantReviews> allReviews = RestaurantAdvisor.getInstance().getAllReviews();
+		if (allReviews.findReview(restaurantInfo.getName())) {
+			reviews1 = allReviews.getFoundNode().getInfo().getReviews();
+		}
+	}
+
 	public void nextReview(ActionEvent event) throws Exception {//show the next review
 		if(reviews.isEmpty())
 			getReviews();
 		if(!reviews.isEmpty()) {
 			review.setText(reviews.Top().getReview());
-			rating.setText(reviews.Top().getRating());
+			rating.setText(Integer.toString(reviews.Top().getRating()));
 			reviews.Pop();
 		}
 	}

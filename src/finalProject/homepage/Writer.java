@@ -32,7 +32,7 @@ public class Writer {
 		outFile.close();
 	}
 
-	public static void writeReview(String review, String rating) throws IOException {//writes reviews to file
+	public static void writeReview(String review, int rating) throws IOException {//writes reviews to file
 		SortedLinkedList<RestaurantReviews> allReviews = RestaurantAdvisor.getInstance().getAllReviews();
 		PrintWriter outFile = new PrintWriter(new FileWriter("C:/Users/liban/Desktop/reviewData.txt"));
 		RestaurantInfo restaurant = RestaurantAdvisor.getInstance().getRestaurantInfo();

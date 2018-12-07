@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Reviews {
 private String review;
-private String rating;
-public Reviews(String review, String rating) {
+private int rating;
+public Reviews(String review, int rating) {
 	this.setReview(review);
 	this.setRating(rating);
 }
@@ -15,10 +15,10 @@ public String getReview() {
 public void setReview(String review) {
 	this.review = review;
 }
-public String getRating() {
+public int getRating() {
 	return rating;
 }
-public void setRating(String rating) {
+public void setRating(int rating) {
 	this.rating = rating;
 }
 }
